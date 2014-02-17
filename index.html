@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MoarVM - A VM for NQP and Rakudo Perl 6</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+
+      <a href="https://github.com/MoarVM/MoarVM"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+
+      <div class="page-header" id="banner">
+        <h1>MoarVM</h1>
+        <p class="lead">A VM for NQP And Rakudo Perl 6</p>
+      </div>
+      <nav class="navbar navbar-default" role="navigation">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="roadmap.html">Roadmap</a></li>
+          <li><a href="releases.html">Releases</a></li>
+          <li><a href="contributing.html">Contributing</a></li>
+        </ul>
+      </nav>
+      
+      <div class="jumbotron">
+        <h1>MoarVM 2014.01</h1>
+        <p>The first MoarVM monthly release is here! From now on, we'll be
+          doing monthly releases of MoarVM, in the days before the monthly
+          Rakudo Perl 6 and NQP releases.</p>
+        <p><a href="releases/MoarVM-2014.01.tar.gz" class="btn btn-primary btn-lg" role="button">Download</a></p>
+      </div>
+      
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">What is MoarVM?</h3>
+        </div>
+        <div class="panel-body">
+          <p>Short for "Metamodel On A Runtime", MoarVM is a virtual machine built
+          especially for <a href="http://www.rakudo.org/">Rakudo Perl 6</a> and
+          the <a href="https://github.com/perl6/nqp/">NQP Compiler Toolchain</a>.
+          While still being under very active development, MoarVM already stands
+          out amongst the various Rakudo and NQP compilation targets by typically:</p>
+          <ul>
+            <li>Running the Perl 6 specification test suite fastest</li>
+            <li>Having the lowest memory usage</li>
+            <li>Having the best startup time</li>
+            <li>Being fastest to build both NQP and Rakudo - and thus in theory
+              your Perl 6 and NQP programs too!</li>
+          </ul>
+          <p>For long-running workloads where startup time doesn't matter, or
+            when you need tried-and-tested, mature threading support, Rakudo
+            on the JVM is a better bet; its JIT compiler gets to work and makes
+            quite a difference. For maximum module coverage, Rakudo on Parrot
+            still leads for now; we're working hard on closing the gap.</p>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+              <p>Site maintained by the MoarVM team.</p>
+              <p>Based on <a href="http://getbootstrap.com" rel="nofollow">Bootstrap</a>,
+              with theme from <a href="http://bootswatch.com/">Bootswatch</a>. Icons from
+              <a href="http://fortawesome.github.io/Font-Awesome/" rel="nofollow">Font Awesome</a>.
+              Web fonts from <a href="http://www.google.com/webfonts" rel="nofollow">Google</a>.
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
