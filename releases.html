@@ -34,6 +34,51 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2014.03</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Implement a fast-path for string strand flattening</li>
+            <li>Fix character lookup by name sometimes giving wrong result</li>
+            <li>Control and printable now know about Latin-1 control characters</li>
+            <li>Fix bug in Latin-1 handling</li>
+            <li>Fix and optimize various character property lookups</li>
+            <li>Implement lookup of non-boolean Unicode properties</li>
+            <li>Implement character code to name lookup</li>
+            <li>Implement lookup of enum/stringy Unicode properties</li>
+            <li>Fix memory leak of active handlers in continuations</li>
+            <li>Clear up gen2 memory at exit</li>
+            <li>Clear up frame pool at exit</li>
+            <li>Don't leak static frame instruction offsets</li>
+            <li>Fix memory leak in MVMHash</li>
+            <li>Simplified/optimized frame reference count handling in continuations</li>
+            <li>Fixed missing exception resume reference count decrement</li>
+            <li>Correct "on stack" continuation reference count handling</li>
+            <li>Add missing cleanup in MAST assembler</li>
+            <li>Fixed used named args tracking memory leak</li>
+            <li>Fixed SEGV in eof of non-file-based filehandle</li>
+            <li>Pass STDIN to subprocess in shell()</li>
+            <li>Fixed resolution of IPv6 host names</li>
+            <li>Implemented native calling</li>
+            <li>Implemented CPointer representation</li>
+            <li>Implemented CArray representation</li>
+            <li>Implemented CStruct representation</li>
+            <li>Improve GDB plug-in string usage analysis</li>
+            <li>Make GDB plug-in aware of gen2 overflows</li>
+            <li>Clean-up and optimization of many REPR allocate functions</li>
+            <li>Fixed over-eager / to \ conversion in nqp::shell on Windows</li>
+            <li>Implemented native callbacks</li>
+            <li>Correct copy size of args buffer, avoiding reading unmapped memory</li>
+            <li>Updated to new liblinenoise and re-instated usage of it</li>
+            <li>Bump dyncall to latest version</li>
+            <li>Add --has-libtommath option to Configure for using system libtommath</li>
+          </ul>
+          <p><a href="releases/MoarVM-2014.03.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2014.02</h3>
         </div>
         <div class="panel-body">

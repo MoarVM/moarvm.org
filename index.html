@@ -33,12 +33,12 @@
       </nav>
       
       <div class="jumbotron">
-        <h1>MoarVM 2014.02</h1>
-        <p>Numerous improvements to I/O, including socket support. Garbage
-          collection performance improvements. Every object 4/8 bytes smaller
-          (32-bit/64-bit). Automatic upgrade/downgrade of native ints and big
-          ints. A GDB plug-in to help analyze memory usage. And more!</p>
-        <p><a href="releases/MoarVM-2014.02.tar.gz" class="btn btn-primary btn-lg" role="button">Download</a></p>
+        <h1>MoarVM 2014.03</h1>
+        <p>Native calling support, including opaque pointers, C arrays and
+          structs, and callbacks. Numerous Unicode Character Database
+          introspection additions, improvements, and fixes. Various memory
+          leaks fixed. And more!</p>
+        <p><a href="releases/MoarVM-2014.03.tar.gz" class="btn btn-primary btn-lg" role="button">Download</a></p>
       </div>
       
       <div class="panel panel-default">
@@ -52,7 +52,9 @@
           While still being under very active development, MoarVM already stands
           out amongst the various Rakudo and NQP compilation targets by typically:</p>
           <ul>
-            <li>Running the Perl 6 specification test suite fastest</li>
+            <li>Running the Perl 6 specification test suite in the least time</li>
+            <li>Passing more of the Perl 6 specification tests than Rakudo Perl 6
+              on other backends</li>
             <li>Having the lowest memory usage</li>
             <li>Having the best startup time</li>
             <li>Being fastest to build both NQP and Rakudo - and thus in theory
