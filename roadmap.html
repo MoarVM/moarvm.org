@@ -34,42 +34,27 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Support Perl 6 Concurrency (goal: 2014.04)</h3>
+          <h3 class="panel-title">Asynchronous I/O (goal: 2014.05)</h3>
         </div>
         <div class="panel-body">
-          <p>MoarVM does already have basic thread support. Now it needs to be
-          exposed for use by Rakudo Perl 6, and stress-tested. Mechanisms such
-          as locks, semaphores, queues, and timers also need to be provided, in
-          order that Rakudo's implementation of schedulers, promises, channels,
-          and supplies can be provided. This includes providing asynchronous
-          I/O.</p>
+          <p>Support asynchronous sockets, asyncrhonous file I/O, and file
+          system change notifications.</p>
         </div>
       </div>
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Bytecode Specialization (goal: 2014.05)</h3>
+          <h3 class="panel-title">Bytecode Specialization Improvements (goal: 2014.05)</h3>
         </div>
         <div class="panel-body">
-          <p>The initial round of optimization that MoarVM will do is bytecode
-          specialization: using runtime information to produce smarter, smaller
-          bytecode, including using a number of internal operations that it can
-          prove are safe.</p>
+          <p>Turn named parameter lookups into positional ones on hot paths.
+          Make attribute accesses, boxing, and unboxing cheaper.</p>
         </div>
       </div>
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">NFG Support</h3>
-        </div>
-        <div class="panel-body">
-          <p>Provide Unicode strings at grapheme level.</p>
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Inlining and Escape Analysis</h3>
+          <h3 class="panel-title">Inlining and Escape Analysis (goal: 2014.07)</h3>
         </div>
         <div class="panel-body">
           <p>Teach the specializer to inline and perform escape analysis, and
@@ -83,6 +68,15 @@
         </div>
         <div class="panel-body">
           <p>Turn specialized bytecode into machine code, on hot paths.</p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">NFG Support</h3>
+        </div>
+        <div class="panel-body">
+          <p>Provide Unicode strings at grapheme level.</p>
         </div>
       </div>
       

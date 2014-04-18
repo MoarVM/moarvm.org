@@ -34,6 +34,79 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2014.04</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Brought thread ops in line with nqp:: op API</li>
+            <li>No longer inherit caller chain when starting a new thread</li>
+            <li>Fix a range of parallel garbage collection bugs</li>
+            <li>Block/unblock threads for GC while sleeping</li>
+            <li>Implement reentrant mutexes</li>
+            <li>Implement semaphores</li>
+            <li>Implement concurrent blocking queue support</li>
+            <li>Implement condition variables</li>
+            <li>Main thread has ID 1 now</li>
+            <li>Move nursery corruption check to after inter-thread work passing</li>
+            <li>Fix a gen2roots compaction optimization bug</li>
+            <li>Add flag '--has-sha' option to Configure to use a system SHA-1 library</li>
+            <li>GC orchestration cleanups and extra logging</li>
+            <li>Compact the gen2 overflows list</li>
+            <li>Fix decodestream_bytes_to_buf eating too much data</li>
+            <li>Added some missing MVMROOTs on config setup</li>
+            <li>Removed duplicate gen2 root cleanup call</li>
+            <li>Small cleanups to serialization</li>
+            <li>Avoid an extra level of function call in various REPR allocate functions</li>
+            <li>Add locking for IO handles</li>
+            <li>Add the Configure flags '--has-libuv and '--has-libatomic_ops'</li>
+            <li>Shortcut shr when we have a small lhs but rhs is >= 32</li>
+            <li>Add logic to turn bytecode into SSA form, and from SSA back to bytecode</li>
+            <li>Added infrastructure for "spesh ops", to use in type-specialized bytecode</li>
+            <li>Start interning positional callsites</li>
+            <li>Keep a rough call count per static frame</li>
+            <li>Add bytecdoe specialization infrastructure</li>
+            <li>Optimize simple positional arg fetch in specialized bytecode</li>
+            <li>Resolve methods at specialization time when type is known</li>
+            <li>Add a monomorphic method cache</li>
+            <li>If MVM_SPESH_LOG is in env, log spesh work to it</li>
+            <li>Turn known-unrequired decont into set</li>
+            <li>Make MVM_SPESH_DISABLE env var disable spesh</li>
+            <li>Add :pure annotations to side-effect-free ops; eliminate dead code</li>
+            <li>Add a tool for splitting and diffing spesh log output</li>
+            <li>Add setmultispec mechanism for optimizing away only-star proto</li>
+            <li>Optimize optional positoin arguments in bytecode specialization</li>
+            <li>Optimize out istype for a spesh-time-known value or type</li>
+            <li>Optimize if_i and unless_i for known values</li>
+            <li>Corrected atan2 op signature</li>
+            <li>Implement de-optimization on mixins</li>
+            <li>Don't lose HLL owner during serialization</li>
+            <li>Optimize away hllize when possible</li>
+            <li>Optimize away assertparamcheck when possible</li>
+            <li>Infrastructure to allow REPRs to participate in spesh</li>
+            <li>Optimize object creation in common cases with known types</li>
+            <li>Small fixes to MVM_string_(latin1|windows1252)_encode_substr</li>
+            <li>Optimize bindattr_o on P6opaque when possible</li>
+            <li>Change the way lexotic is handled to avoid the need for allocation</li>
+            <li>Specialize empty named slurpy args</li>
+            <li>Add a way to flag a frame as a "thunk"</li>
+            <li>Add ctx[outer|caller]skipthunks ops</li>
+            <li>Make backtrace generation ignore thunks</li>
+            <li>When readline/linenoise see EOF, mark handle EOF</li>
+            <li>Set hint for invokespec and multispec, improving invocation performance</li>
+            <li>Improve the VM exit strategy, so non-app-lifetime threads are waited on</li>
+            <li>Correctly handle temp roots stack in callbacks</li>
+            <li>add sched_yield for NetBSD</li>
+            <li>Fix callsite size calculation in tweak_cs</li>
+            <li>Fix buffer overflow in UTF-16 encoding</li>
+            <li>Trigger repossession on OP(push_*)</li>
+            <li>Fake up a final entry off the end of Unicode, fixing some lookup bugs</li>
+          </ul>
+          <p><a href="releases/MoarVM-2014.04.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2014.03</h3>
         </div>
         <div class="panel-body">
