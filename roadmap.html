@@ -34,37 +34,46 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Asynchronous I/O (goal: 2014.05)</h3>
+          <h3 class="panel-title">Further asynchronous I/O work (goal: 2014.06)</h3>
         </div>
         <div class="panel-body">
-          <p>Support asynchronous sockets, asyncrhonous file I/O, and file
-          system change notifications.</p>
+          <p>Complete implementing cancellation. Additionally, support asynchronous
+            file I/O, to go with the asynchronous socket support.</p>
         </div>
       </div>
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Bytecode Specialization Improvements (goal: 2014.05)</h3>
+          <h3 class="panel-title">Named parameter specialization (goal: 2014.06)</h3>
         </div>
         <div class="panel-body">
-          <p>Turn named parameter lookups into positional ones on hot paths.
-          Make attribute accesses, boxing, and unboxing cheaper.</p>
+          <p>Turn named parameter lookups into positional ones on hot paths,
+            as part of bytecode specialization.</p>
         </div>
       </div>
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Inlining and Escape Analysis (goal: 2014.07)</h3>
+          <h3 class="panel-title">Inlining (goal: 2014.06/2014.07)</h3>
         </div>
         <div class="panel-body">
-          <p>Teach the specializer to inline and perform escape analysis, and
-          do the allocation transformations it allows.</p>
+          <p>Teach the specializer to inline small, hot, code. Needs smarter
+            de-optimization also.</p>
         </div>
       </div>
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">JIT Compilation</h3>
+          <h3 class="panel-title">Escape Analysis (goal: 2014.07/2014.08)</h3>
+        </div>
+        <div class="panel-body">
+          <p>Implement escape analysis at bytecode specialization time.</p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">JIT Compilation (goal: 2014.08)</h3>
         </div>
         <div class="panel-body">
           <p>Turn specialized bytecode into machine code, on hot paths.</p>

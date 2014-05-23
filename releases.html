@@ -34,6 +34,88 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2014.05</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Add a libuv-managed event loop thread</li>
+            <li>Implement timers</li>
+            <li>Implement nqp::signal; support various signals</li>
+            <li>Add async read/write sections to IO op table</li>
+            <li>Implement async socket listen/connect</li>
+            <li>Implement async read/write ops</li>
+            <li>Implement chars case of async socket reads</li>
+            <li>Fix HLL mapping of type objects</li>
+            <li>Implement file watchers</li>
+            <li>Add infrastructure for cancellation</li>
+            <li>Implement cancellation of timers</li>
+            <li>stat the target of a symlink when we query for filesize</li>
+            <li>Dump deopt instruction spesh annotations</li>
+            <li>stat file descriptor in eof() when filename is unset</li>
+            <li>Serialize CStruct repr_data</li>
+            <li>Add MVMNull REPR and a singleton VMNull instance</li>
+            <li>Teach various parts of the VM about VMNull</li>
+            <li>Lazily allocate lexical containers</li>
+            <li>Optimize frame allocation</li>
+            <li>Remove BOM-discarding code from MVM_string_utf8_decode()</li>
+            <li>MVM_string_utf8_decode() should take a MVMuint8 *, not a char *</li>
+            <li>P6opaque now handles C structure member alignment, just like CStruct does</li>
+            <li>Steal P5's unlink magic for Windows; clear readonly flag when needed</li>
+            <li>Add lexical lookup lifetime hinting ops</li>
+            <li>Re-organize spesh to have log/specialize phases</li>
+            <li>Use spesh logging to emit guards into code</li>
+            <li>getlexstatic_o optimization in spesh</li>
+            <li>Better error on handler fixup failure in spesh</li>
+            <li>Implement op execname, which stores the path of the runner</li>
+            <li>Implement all vs. one deopt</li>
+            <li>Fix moving of handler annotations</li>
+            <li>Basic dumping of facts in spesh</li>
+            <li>Cope with annotations being moved to a phi</li>
+            <li>Make sure we don't clobber block handler setting in spesh</li>
+            <li>Iterate to fixed point when finding unused instructions, giving better results</li>
+            <li>Pre-invalidate all deopt target addresses, to catch fixup failures</li>
+            <li>Optimize simple calls and multi-dispatch at spesh time if possible</li>
+            <li>Add Makefile rules to generate pre-processed source</li>
+            <li>Add Makefile rules to generate assembler</li>
+            <li>Support for ARMv6. Don't try to read unaligned doubles or long longs</li>
+            <li>Ensure that MVMCompUnit can correctly free data_start</li>
+            <li>MVMStaticFrame now supports bytecode pointing to a private malloc()ed copy</li>
+            <li>Do proper endian correction on bytecode</li>
+            <li>Add Ops for 32/16 bit 64 int literals</li>
+            <li>isnonnull op for use in spesh</li>
+            <li>turn islist/... into either isnonnull or a literal 0</li>
+            <li>Teach spesh_diff.p6 about the new output of spesh dump</li>
+            <li>Teach spesh_diff.p6 about Facts</li>
+            <li>improve run time performance of spesh_diff.p6</li>
+            <li>Harvest strings in facts discovery process</li>
+            <li>Specialise can and can_s ops into const_i64 when possible</li>
+            <li>Change the way we store SCs in object headers to allow faster lookups of indexes</li>
+            <li>Fix bigint bitops</li>
+            <li>Ensure spesh_alloc aligns on platforms needing it</li>
+            <li>Include SC identifiers in bytecode dump</li>
+            <li>Make dump_backtrace more widely available</li>
+            <li>Merge the bodies of MVM_sc_get_{obj,stable}_sc and *_set_*</li>
+            <li>Change serialization context indexes to be unsigned. Use ~0 as a sentinel</li>
+            <li>Add inline functions to wrap accesses to sc.sc_idx and sc.idx</li>
+            <li>Add struct MVMSerializationIndex to hold large STable indexes</li>
+            <li>Free any allocated MVMSerializationIndex structs</li>
+            <li>Add a probe to determine the pointer size</li>
+            <li>Conditionally compile the MVMSerializationIndex for 32 bit platforms only</li>
+            <li>Allocate a MVMSerializationIndex if sc_idx would overflow in the union</li>
+            <li>Specialize getattr_[ins] on P6opaque</li>
+            <li>Fix bigint upgrade check</li>
+            <li>Optimize object attribute accesses in spesh</li>
+            <li>Spesh indirect form of attr ops with known names</li>
+            <li>Rakudo Bug #121273 fixed - losing a 0 from end of exponent</li>
+            <li>Re-arrange various structures for memory saving</li>
+            <li>Add handler infrastructure for supporting labeled loop exceptions</li>
+          </ul>
+          <p><a href="releases/MoarVM-2014.05.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2014.04</h3>
         </div>
         <div class="panel-body">
