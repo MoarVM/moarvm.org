@@ -34,7 +34,7 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Further asynchronous I/O work (goal: 2014.06)</h3>
+          <h3 class="panel-title">Further asynchronous I/O work (goal: 2014.07)</h3>
         </div>
         <div class="panel-body">
           <p>Complete implementing cancellation. Additionally, support asynchronous
@@ -44,27 +44,25 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Named parameter specialization (goal: 2014.06)</h3>
+          <h3 class="panel-title">Improve Inlining (goal: 2014.07)</h3>
         </div>
         <div class="panel-body">
-          <p>Turn named parameter lookups into positional ones on hot paths,
-            as part of bytecode specialization.</p>
+          <p>Inline code with handlers and extops.</p>
         </div>
       </div>
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Inlining (goal: 2014.06/2014.07)</h3>
+          <h3 class="panel-title">On Stack Repalcement (goal: 2014.07/2014.08)</h3>
         </div>
         <div class="panel-body">
-          <p>Teach the specializer to inline small, hot, code. Needs smarter
-            de-optimization also.</p>
+          <p>Optimize frames we're in, if we detect them as having hot loops.</p>
         </div>
       </div>
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Escape Analysis (goal: 2014.07/2014.08)</h3>
+          <h3 class="panel-title">Escape Analysis (goal: 2014.08/2014.09)</h3>
         </div>
         <div class="panel-body">
           <p>Implement escape analysis at bytecode specialization time.</p>
