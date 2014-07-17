@@ -34,6 +34,50 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2014.07</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Make default file mode 0666</li>
+            <li>Auto-detect computed goto support and enable it when available</li>
+            <li>Implement On Stack Replacement for hot loops</li>
+            <li>Fix and enable isconcrete optimization</li>
+            <li>Use const_i64_16 in spesh-produced code for more compact output</li>
+            <li>Fix bug where [work|env]_alloc were not cleared, leading to mis-frees</li>
+            <li>Support inlining frames that use with extops</li>
+            <li>Add missing decl in header to quiet warnings</li>
+            <li>Fix logical bug in fixed-size-allocator</li>
+            <li>Fix capturelex race condition</li>
+            <li>Add missing MVMROOT in ConditionVariable setup</li>
+            <li>Don't share cached Lexotics over threads</li>
+            <li>Re-order code to avoid race on event loop startup</li>
+            <li>Add a bunch of missing MVMROOTing in asyncsocket</li>
+            <li>Make exit get out quickly</li>
+            <li>Close async sockets on event loop thread to avoid corruption</li>
+            <li>Make --no-optimize and --no-debug work in Configure</li>
+            <li>Implement (de)serializing of Array[uint]</li>
+            <li>Specialize getlexperinvtype_o (enables better roles optimization)</li>
+            <li>Allow pointer math using CPointer repr</li>
+            <li>Fix typo in CArray.elems error message</li>
+            <li>Add a cast to get rid of a warning in nativecall.c</li>
+            <li>Fix merging of inline table entries</li>
+            <li>Eliminate unused guard instructions at end of specialization</li>
+            <li>Update uthash to latest version</li>
+            <li>Correct computation of lexical vivifications</li>
+            <li>Add nativecallcast operation</li>
+            <li>Fix use-after-free bug with thread entry callsite</li>
+            <li>Cope with cross-deopt-point usage analysis</li>
+            <li>Give ContainerSpec a spesh function, use it for decont</li>
+            <li>Make various spesh things available publicly, for VM extensions</li>
+            <li>Significantly overhaul the strings code, fixing many performance issues</li>
+            <li>Optimize find_cclass and find_not_cclass</li>
+          </ul>
+          <p><a href="releases/MoarVM-2014.07.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2014.06</h3>
         </div>
         <div class="panel-body">

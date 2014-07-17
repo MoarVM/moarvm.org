@@ -34,38 +34,11 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Further asynchronous I/O work (goal: 2014.07)</h3>
+          <h3 class="panel-title">Handler optimization (goal: 2014.08)</h3>
         </div>
         <div class="panel-body">
-          <p>Complete implementing cancellation. Additionally, support asynchronous
-            file I/O, to go with the asynchronous socket support.</p>
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Improve Inlining (goal: 2014.07)</h3>
-        </div>
-        <div class="panel-body">
-          <p>Inline code with handlers and extops.</p>
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">On Stack Replacement (goal: 2014.07/2014.08)</h3>
-        </div>
-        <div class="panel-body">
-          <p>Optimize frames we're in, if we detect them as having hot loops.</p>
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Escape Analysis (goal: 2014.08/2014.09)</h3>
-        </div>
-        <div class="panel-body">
-          <p>Implement escape analysis at bytecode specialization time.</p>
+          <p>Inline code with exception handlers, and rewrite throws into
+            gotos where possible.</p>
         </div>
       </div>
 
@@ -80,7 +53,26 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">NFG Support</h3>
+          <h3 class="panel-title">Further asynchronous I/O work (goal: 2014.08)</h3>
+        </div>
+        <div class="panel-body">
+          <p>Complete implementing cancellation. Additionally, support asynchronous
+            file I/O, to go with the asynchronous socket support.</p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Escape Analysis (goal: 2014.09/2014.10)</h3>
+        </div>
+        <div class="panel-body">
+          <p>Implement escape analysis at bytecode specialization time.</p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">NFG Support (goal: 2014.10/2014.11)</h3>
         </div>
         <div class="panel-body">
           <p>Provide Unicode strings at grapheme level.</p>
