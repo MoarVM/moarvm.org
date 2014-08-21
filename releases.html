@@ -34,6 +34,68 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2014.08</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Add support for JIT compilation on x64 (when configured with --enable-jit);
+            supports basic arithmetic and logical operations, branching, method finding,
+            invocation with argument passing, basic parameter handling, boxing/unboxing,
+            attribute access, array and hash access, some big integer operations, some
+            string operations, type checks, and more. Integrated with deoptimization,
+            OSR (On Stack Replacement), extension ops, and exception handling.</li>
+            <li>Specialize various cases of istrue/isfalse to remove some indirections</li>
+            <li>Add charrange handling to the NFA evaluator</li>
+            <li>Update Unicode database generation script with latest string API</li>
+            <li>Add char name lookup aliases (LF, FF, CR and NEL) as line separators</li>
+            <li>Update moar-gdb.py for new structure of MVMString</li>
+            <li>Add Configure support for ASAN</li>
+            <li>Fix multi cache bug for no positionals, some nameds case</li>
+            <li>Make spesh dump show numeric literals and lexicals properly</li>
+            <li>Assorted OSR fixes for frames that deoptimized, then hit OSR points</li>
+            <li>Fix a number of SSA/dominance memory leaks</li>
+            <li>Fix memory leak in inlining</li>
+            <li>Make dead code elimination not cause unrequired guards to be kept</li>
+            <li>Add an API for extops to be involved in fact discovery and specialization</li>
+            <li>Add type and no-container facts for bigint ops</li>
+            <li>Support inlining of frames with handlers</li>
+            <li>Enable inlining of lexotic (return) handlers</li>
+            <li>Allow addition of temporary registers when specializing</li>
+            <li>Specialize boxing and unboxing of args, both named and positional</li>
+            <li>Avoid repeatedly allocating memory for NFAs</li>
+            <li>Cache frame index in MAST assembly, to avoid a linear scan</li>
+            <li>Fix various dynamic variable and inlining interaction bugs</li>
+            <li>Add a dynamic variable lookup cache</li>
+            <li>Devirtualize serialization read/write functions</li>
+            <li>Make full frame deserialization lazy, reducing memory and startup time</li>
+            <li>Handle static lexical values far more efficiently</li>
+            <li>Identify MAST nodes in assembler by exact type, cheapening assembly</li>
+            <li>Specialize smart stringify/numify into simpler ops in some cases</li>
+            <li>MAST::Label works on identify now, not name matching</li>
+            <li>Make "allocate in gen2" mode reentrant</li>
+            <li>Support lazy deserialization of static lexical values, method caches, and
+            meta-objects</li>
+            <li>Remove some unused fields from STable</li>
+            <li>Optimize some simple control exceptions into gotos</li>
+            <li>Don't redo dead instruction elim on inlinees</li>
+            <li>Make sure inlined args are always marked as used, fixing a bug</li>
+            <li>Add an int -> str cache for 0..^64</li>
+            <li>Add asynchronous process spawning, I/O, and killing</li>
+            <li>Check dll cache before searching through libpath, saving many stats</li>
+            <li>Make a better guess at MAST assembly output buffer sizes</li>
+            <li>Add a mechanism for debugging strand issues</li>
+            <li>Fix bug in string repeat of an already repeated strand</li>
+            <li>Complain properly about missing late-bound methods</li>
+            <li>Clear special return data more eagerly, fixing a double-free</li>
+            <li>Refactor get_storage_spec</li>
+            <li>Fix P6bigint unbox portability bug</li>
+          </ul>
+          <p><a href="releases/MoarVM-2014.08.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2014.07</h3>
         </div>
         <div class="panel-body">
