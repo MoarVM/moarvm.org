@@ -34,6 +34,48 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2014.09</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Add an instrumenting profiler, recording profiling information at routine
+              level and tracking use of specialized/JITted code and inlinings</li>
+            <li>Support profiling allocations and GC runs</li>
+            <li>Use arc4random on platforms that support it</li>
+            <li>Fix numerous warnings</li>
+            <li>JIT more big integer ops: div_I, div_In, mod_I, gcd_I, coerce_In, and bool_I</li>
+            <li>Specialization and JIT-compilation of various iteration-related instructions</li>
+            <li>JIT curcode and getcodeobj</li>
+            <li>Include filename in spesh log</li>
+            <li>Fix negative division in JIT</li>
+            <li>Mark getlexouter as not inlinable</li>
+            <li>Add mechanism for objects to get a persistent ID, used in Perl 6's .WHICH</li>
+            <li>Fix regression on PowerPC</li>
+            <li>Add missing SC write barrier to MVM_repr_bind_attr_*</li>
+            <li>JIT getattrs_* and bindattrs_* ops</li>
+            <li>JIT more string operations: indexat, findcclass, and findnotcclass</li>
+            <li>Add JIT logging of inlines</li>
+            <li>Cleanly panic if allocation fails, rather than crashing</li>
+            <li>Fix the build on ARM 32 + gcc 4.8.2</li>
+            <li>Better style on arg count errors</li>
+            <li>Avoid unaligned reads on ARMv7</li>
+            <li>Conditionally set include dirs and install rules (e.g. --has-libuv)</li>
+            <li>Add type finalizer support to the GC</li>
+            <li>Update libuv from 0.11.18 to 0.11.29</li>
+            <li>Base full collections off promotion rate, often reducing full collections</li>
+            <li>Add force_gc instruction</li>
+            <li>Set up travis continuous integration</li>
+            <li>Fix mis-use of libuv: we are not supposed to open a child's pipe to our stdin</li>
+            <li>Fix pointer to pointer native cast</li>
+            <li>Conditionally use/install our libtommath headers</li>
+            <li>Don't try to serialize file handles</li>
+          </ul>
+          <p><a href="releases/MoarVM-2014.09.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2014.08</h3>
         </div>
         <div class="panel-body">

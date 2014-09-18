@@ -61,7 +61,7 @@
           lifetime, garbage collection is precise. When multiple threads are
           running, collection can run in parallel (meaning that the world is
           stopped, and multiple threads work on the collection job to get
-          it done more swiftly).</p>
+          it done more swiftly). There is also support for finalizers.</p>
           <p>The GC has undergone stress-testing, including doing Rakudo
           builds with collection runs after every object allocation and
           using many memory-protected past fromspaces in order to catch a
@@ -95,6 +95,20 @@
             <li>Asynchronous sockets, timers, signal handlers, file system
               notifications, and processes</li>
           </ul>
+        </div>
+      </div>
+      
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Dynamic Optimization and JIT Compilation</h3>
+        </div>
+        <div class="panel-body">
+          <p>Hot code is detected and optimized. On x64, much hot code can also be
+            JIT-compiled into machine code. The optimizer specializes code by the
+            number and types of incoming arguments. Since de-optimization is also
+            available, speculative optimizations can be performed. Small routines
+            called by hot code may be inlined, and hot loops are detected and
+            replaced with an optimized version (known as On Stack Replacement).</p>
         </div>
       </div>
       
