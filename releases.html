@@ -32,6 +32,64 @@
         </ul>
       </nav>
 
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">2014.11</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>JIT multicacheadd, multicachefind, radix_I, bindpos_n, bindpos_s,
+              escape, blshift_i,  brshift_i, write_fhs, cmp_I</li>
+            <li>Optimize out a bunch of unnecessary "set" instructions</li>
+            <li>Turn a bunch of const_s + findmeth_s into cheaper findmeth</li>
+            <li>Implement nqp::closefh_i which retuns the exit code of a pipe</li>
+            <li>Allow nativecasting a CStruct to another CStruct</li>
+            <li>Fix temp register usage in optimize_istrue_isfalse</li>
+            <li>Fix a regression by eagerly deserializing stables/objects</li>
+            <li>Added tool to colorize registers in spesh logs and another
+              to turn spesh logs into a data-flow and control-flow graph</li>
+            <li>Let update_ops.p6 also write a perl6 module with ops data</li>
+            <li>Add --bindir, --libdir and --mastdir as Configure options</li>
+            <li>Create pkgconfig file as pkgconfig/moar.pc</li>
+          </ul>
+          <p><a href="releases/MoarVM-2014.11.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">2014.10</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Added op nativecallglobal</li>
+            <li>Update DynASM</li>
+            <li>Give Configurepl --has-linenoise, --has-dyncall and --has-dynasm</li>
+            <li>Build and install libatomic_ops conditionally</li>
+            <li>Improve usage, include environment variables</li>
+            <li>Document bytecode directory environment flag</li>
+            <li>Add beginnings of a manual page in docs/moar.pod</li>
+            <li>Don't mark inlined locals for logging frames</li>
+            <li>Fix crash upon trying to clone a type object</li>
+            <li>Fix concreteness test for the reprconv</li>
+            <li>Fix handling of command line args on Win32</li>
+            <li>Build with jit by default, add --no-jit option</li>
+            <li>Prettify --enable-jit obsoletion notice</li>
+            <li>JIT savecapture, usecapture, getobjsc, sin, cos, tan, asin, acos, atan.
+            atan2_n, time_n, pow_n and sqrt_n, nativecallinvoke and numeric negation</li>
+            <li>Added MVM_calloc function</li>
+            <li>Make "cannot invoke" errors consistent.</li>
+            <li>Improve err msg about oob in io_read_bytes</li>
+            <li>Optimize out non-interned static callsites</li>
+            <li>Attempt interning the callsites we use in nativecall callbacks</li>
+            <li>Implement set_separator for syncfiles</li>
+            <li>Panic if MVM_platform_alloc_pages failed on posix system</li>            
+          </ul>
+          <p><a href="releases/MoarVM-2014.10.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+      
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">2014.09</h3>
