@@ -32,6 +32,50 @@
         </ul>
       </nav>
 
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">2014.12</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Various warnings produced by clang fixed</li>
+            <li>Fixed ceil_n and floor_n to return n64, not i64</li>
+            <li>Pass -faddress-sanitizer when --asan is set</li>
+            <li>Eliminate various unneeded set instructions</li>
+            <li>Properly update successors for non-passed optional parameters</li>
+            <li>Optimize can operations</li>
+            <li>When bindlex fails, we should report "bindlex", not "getlex"</li>
+            <li>Mark takeclosure as n popular allocating op in the profiler</li>
+            <li>Expose callsite interning for extops</li>
+            <li>JIT randscale_n</li>
+            <li>Dump lexical names when dumping spesh graph</li>
+            <li>Only look at MVM_NFA_DEB environment variable once, not every NFA run</li>
+            <li>Implement longest literal tie-breaker in NFA</li>
+            <li>JIT cmp_i</li>
+            <li>JIT isnanorinf</li>
+            <li>JIT cmp_n</li>
+            <li>Handle sometimes-allocating ops in the profiler</li>
+            <li>JIT invokewithcapture</li>
+            <li>Count allocs in spesh'd/jitted frames separately in profiler</li>
+            <li>Turn a bunch of can_s ops into can ops instead</li>
+            <li>Give graph_spesh.p6 a little introduction text</li>
+            <li>Avoid a pointer getting outdated on the stack in environment access</li>
+            <li>Replace quicksort with insertion sort in NFA fate sorting</li>
+            <li>Fix MVMROOT of a non-collectable in state variable handling</li>
+            <li>Detect useless SUBRULE edges in NFA, and trap epsilons to 0</li>
+            <li>Mark callback Str parameters as not to be freed</li>
+            <li>Record size of gen2_roots list after each GC when profiling</li>
+            <li>Do not call srand() if not using rand()</li>
+            <li>Don't use filename to determine EOFness</li>
+            <li>Allow passing of length = -1 to MVM_string_utf16_encode_substr</li>
+            <li>Don't resolve symlinks by hand</li>
+            <li>Avoid some duplicate work in inter-gen root processing</li>
+            <li>Fix a use-after-free in openpipe, which occurred quite often on OSX</li>
+            <li>Don't include PHIs when rendering spesh graph diagrams</li>
+          </ul>
+          <p><a href="releases/MoarVM-2014.12.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
 
       <div class="panel panel-default">
         <div class="panel-heading">
