@@ -34,6 +34,37 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2015.01</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Decrement usage of class type for setattr ops, enabling wval elimination</li>
+            <li>Add missing concreteness checks in concurrency ops</li>
+            <li>First operand of sp_guard* is r(obj) not int16</li>
+            <li>Make ReentrantMutex not prevent serialization</li>
+            <li>Fix various ops that could return real NULL pointers and cause SEGVs</li>
+            <li>Spesh gethow (can be spesh slot lookup)</li>
+            <li>Start documenting the parametric 6model design</li>
+            <li>Implement parametric 6model ops</li>
+            <li>Avoid calling MVM_callsite_get_common twice in many situations</li>
+            <li>Use labs instead of abs to avoid truncation on 64-bit values</li>
+            <li>Fix signed/unsigned warnings in bytecode handling</li>
+            <li>Big signed/unsigned cleanup in string/buffer handling</li>
+            <li>Fix leak when join returns early</li>
+            <li>Fix missing free in args spesh</li>
+            <li>Tweak fixed size alloc configuration for a small memory saving</li>
+            <li>Improve missing SC code ref error reporting</li>
+            <li>Start integrating 6model parametrics with serialization</li>
+            <li>Don't delete BBs with handler annotations</li>
+            <li>Handle assigning Str to a CArray[Str] slot (to assign NULL)</li>
+            <li>Simplify and optimize varint serialization/deserialization</li>
+          </ul>
+          <p><a href="releases/MoarVM-2015.01.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2014.12</h3>
         </div>
         <div class="panel-body">

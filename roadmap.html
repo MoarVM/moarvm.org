@@ -34,29 +34,17 @@
       
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">6model parametric extensions (goal: 2014.12)</h3>
+          <h3 class="panel-title">Full parametrics serialization support (goal: 2015.02)</h3>
         </div>
         <div class="panel-body">
-          <p>Provide VM-level support for parametric types within 6model. This will
-            be used as part of implementing native arrays in Perl 6, along with
-            improving parametric roles and mixin type caching, and implementing
-            coercion types.</p>
+          <p>6model parametric extensions are already supported by MoarVM, but
+            further work is needed to fully integrate them with serialization.</p>
         </div>
       </div>
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Threads and asynchrony stability improvements (goal: 2015.01)</h3>
-        </div>
-        <div class="panel-body">
-          <p>There are a number of stability issues in these areas that need to
-            be investigated, debugged, and resolved.</p>
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">NFG Support (goal: 2015.02)</h3>
+          <h3 class="panel-title">NFG Support (goal: 2015.02/2015.03)</h3>
         </div>
         <div class="panel-body">
           <p>Make strings work at grapheme level rather than codepoint level, by
@@ -67,7 +55,17 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Better optimization around closures</h3>
+          <h3 class="panel-title">Threads and asynchrony stability improvements (goal: 2015.03/2015.04)</h3>
+        </div>
+        <div class="panel-body">
+          <p>There are a number of stability issues in these areas that need to
+            be investigated, debugged, and resolved.</p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Better optimization around closures (2015.04)</h3>
         </div>
         <div class="panel-body">
           <p>At the moment, the specializer struggles to inline or even lift guards
