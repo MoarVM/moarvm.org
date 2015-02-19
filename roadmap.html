@@ -31,10 +31,30 @@
           <li><a href="contributing.html">Contributing</a></li>
         </ul>
       </nav>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Native reference related optimizations (goal: 2015.03)</h3>
+        </div>
+        <div class="panel-body">
+          <p>Optimize away unrequired native reference takes and dereferences, including
+            over inlining boundaries.</p>
+        </div>
+      </div>
       
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Full parametrics serialization support (goal: 2015.02)</h3>
+          <h3 class="panel-title">Reduce set instructions chains (2015.03)</h3>
+        </div>
+        <div class="panel-body">
+          <p>Post-specialized code often has many unneeded set instructions,
+            which can be collapsed.</p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Full parametrics serialization support (goal: 2015.03)</h3>
         </div>
         <div class="panel-body">
           <p>6model parametric extensions are already supported by MoarVM, but
@@ -44,7 +64,7 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">NFG Support (goal: 2015.02/2015.03)</h3>
+          <h3 class="panel-title">NFG Support (goal: 2015.03/2015.04)</h3>
         </div>
         <div class="panel-body">
           <p>Make strings work at grapheme level rather than codepoint level, by
@@ -72,16 +92,6 @@
             in a number of situations when it easily could. This will involve some
             improvements to the takeclosure/capturelex API, so it's useful to Rakudo
             to use directly (rather than the more indirect approach taken today).</p>
-        </div>
-      </div>
-      
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Reduce set instructions chains</h3>
-        </div>
-        <div class="panel-body">
-          <p>Post-specialized code often has many unneeded set instructions,
-            which can be collapsed.</p>
         </div>
       </div>
       
