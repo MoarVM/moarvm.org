@@ -34,7 +34,7 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Native reference related optimizations (goal: 2015.03)</h3>
+          <h3 class="panel-title">Native reference related optimizations (goal: 2015.04)</h3>
         </div>
         <div class="panel-body">
           <p>Optimize away unrequired native reference takes and dereferences, including
@@ -44,17 +44,17 @@
       
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Reduce set instructions chains (2015.03)</h3>
+          <h3 class="panel-title">Better JIT-compilation of REPR operations (2015.04)</h3>
         </div>
         <div class="panel-body">
-          <p>Post-specialized code often has many unneeded set instructions,
-            which can be collapsed.</p>
+          <p>We can turn various of these into direct function calls and avoid having to
+            do a number of indirect calls.</p>
         </div>
       </div>
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Full parametrics serialization support (goal: 2015.03)</h3>
+          <h3 class="panel-title">Full parametrics serialization support (goal: 2015.04)</h3>
         </div>
         <div class="panel-body">
           <p>6model parametric extensions are already supported by MoarVM, but
@@ -64,7 +64,7 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">NFG Support (goal: 2015.03/2015.04)</h3>
+          <h3 class="panel-title">NFG Support (goal: 2015.04)</h3>
         </div>
         <div class="panel-body">
           <p>Make strings work at grapheme level rather than codepoint level, by
@@ -75,7 +75,7 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Threads and asynchrony stability improvements (goal: 2015.03/2015.04)</h3>
+          <h3 class="panel-title">Threads and asynchrony stability improvements (goal: 2015.04/2015.05)</h3>
         </div>
         <div class="panel-body">
           <p>There are a number of stability issues in these areas that need to
@@ -85,23 +85,13 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Better optimization around closures (2015.04)</h3>
+          <h3 class="panel-title">Better optimization around closures (2015.05)</h3>
         </div>
         <div class="panel-body">
           <p>At the moment, the specializer struggles to inline or even lift guards
             in a number of situations when it easily could. This will involve some
             improvements to the takeclosure/capturelex API, so it's useful to Rakudo
             to use directly (rather than the more indirect approach taken today).</p>
-        </div>
-      </div>
-      
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Better JIT-compilation of REPR operations</h3>
-        </div>
-        <div class="panel-body">
-          <p>We can turn various of these into direct function calls and avoid having to
-            do a number of indirect calls.</p>
         </div>
       </div>
       

@@ -34,6 +34,48 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2015.03</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Add a macports Portfile</li>
+            <li>Implement nativecallsizeof op</li>
+            <li>Rewrite MVM_file_copy so it handles files larger than 2GB</li>
+            <li>Mostly quiet MSVC warnings when compiling the JIT emitter</li>
+            <li>Chase libuv thread ID API change, and fix thread ID lookup on Windows</li>
+            <li>Teach profiler about native ref taking ops</li>
+            <li>Fix allocating an empty (no members) CStruct</li>
+            <li>JIT compilation for native reference related operations</li>
+            <li>Implement native register references</li>
+            <li>Support references to sized int and num lexicals</li>
+            <li>Fix missing GC rooting of callback object arguments</li>
+            <li>Fix big endian bug in if/unless optimization</li>
+            <li>Simplify known value handling in the optimizer</li>
+            <li>Make graph_spesh.p6 also show the dominance tree</li>
+            <li>Fix bugs in string_index_from_end</li>
+            <li>Bump dyncall revision</li>
+            <li>Fix big endian bug in the P6bigint REPR</li>
+            <li>Fix system detection in triple for cross compilation</li>
+            <li>Stop fiddling with slashes in openpipe on Windows</li>
+            <li>Make index('foo','') return 0, and handle null needle when start > 0</li>
+            <li>Type specialization for the bindattrs_s op</li>
+            <li>Optimize out many set instructions</li>
+            <li>Add helper functions so embedders won't need to poke into MVMInstance so much</li>
+            <li>Use CFLAGS, CPPFLAGS, and LDFLAGS from the environment, if set</li>
+            <li>Re-use allocated PHI node descriptors, to reduce allocations during optimization</li>
+            <li>Improve optimizer memory allocation block scheme to decrease waste</li>
+            <li>Allow STable changes in repossessed objects</li>
+            <li>Fix JIT of bindpos_n</li>
+            <li>Fix bogus pointer casts and libc name clashes to fix MinGW build</li>
+            <li>Fix a bug in iter optimization</li>
+            <li>Better armv6 and v7 detection</li>
+          </ul>
+          <p><a href="releases/MoarVM-2015.03.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2015.02</h3>
         </div>
         <div class="panel-body">
