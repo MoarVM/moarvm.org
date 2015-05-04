@@ -33,15 +33,16 @@
       </nav>
       
       <div class="jumbotron">
-        <h1>MoarVM 2015.03</h1>
+        <h1>MoarVM 2015.04</h1>
         <p>
-          JIT compilation and profiler handling for native reference related operations.
-          Various dynamic optimizer improvements, enhancing quality of produced code and
-          decreasing overhead. Big Endian fixes for Power (32 and 64 bit), along with other
-          porting work. Native calling enhancements. And numerous other fixes and
-          improvements.
+          Implementation of Unicode Normalization (NFC, NFD, NFKC, NFKD), and
+          a partial implementation of Normal Form Grapheme. Unicode Database
+          upgraded to version 7.0. Completed integration of parameterized types
+          and bounded serialization. More compact serialization of objects, and
+          a range of startup time improvements. And numerous other improvements
+          to I/O, portability, native calling, and more!
         </p>
-        <p><a href="releases/MoarVM-2015.03.tar.gz" class="btn btn-primary btn-lg" role="button">Download</a></p>
+        <p><a href="releases/MoarVM-2015.04.tar.gz" class="btn btn-primary btn-lg" role="button">Download</a></p>
       </div>
       
       <div class="panel panel-default">
@@ -62,6 +63,7 @@
             <li>Having the best startup time</li>
             <li>Being fastest to build both NQP and Rakudo - and thus your Perl 6
               and NQP programs too!</li>
+            <li>Being the only backend to support strings at grapheme level</li>
           </ul>
           <p>For long-running workloads where startup time doesn't matter and
             you need tried-and-tested threading support, Rakudo on the JVM may be

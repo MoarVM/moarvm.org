@@ -34,6 +34,64 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2015.04</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Re-enabled lazy deserialization, decreasing Rakudo startup time and memory</li>
+            <li>Fix a possible buffer-overrun in MVMArray's existspos</li>
+            <li>Fix for ARMv5</li>
+            <li>Configure: add an option --ar</li>
+            <li>Mark existspos op as pure to allow better optimization</li>
+            <li>Tweak dynamic optimization and OSR thresholds to tune startup performance</li>
+            <li>Implement bounded serialization of parameterized types</li>
+            <li>Include file names in some deserialization errors</li>
+            <li>Clean up some unused functions and variables</li>
+            <li>Add __attribute__((format())) where appropriate</li>
+            <li>Correct some format strings</li>
+            <li>Allow nativecast from VMArray e.g. Blob/Buf</li>
+            <li>Output callsites in spesh log</li>
+            <li>Implement unsigned int types for native calls</li>
+            <li>Upgrade Unicode DB to Unicode 7.0</li>
+            <li>Include module that asked for stale dependency in error message</li>
+            <li>Handle 'is rw' params in native calls</li>
+            <li>Make some hot functions at startup time as always being inlined</li>
+            <li>Fix exception message when utf8 string is invalid from the start</li>
+            <li>Implement NFC/NFD/NFKC/NFKD Unicode normalization algorithms</li>
+            <li>Add op to normalize buffers of codepoints</li>
+            <li>Remove unused Unicode database script</li>
+            <li>Support cross-compiling with computed goto</li>
+            <li>Refactor pthread_yield detection</li>
+            <li>Add op "getcodelocation"; gets file and line of a MVMCode</li>
+            <li>Tweak istrue_s; every non-empty string is true now</li>
+            <li>Bump minimum serialization format version; remove code for old versions</li>
+            <li>Implement a more efficient varint serialization format</li>
+            <li>Remove the vestigial serialized 0 that used to be v-table length</li>
+            <li>Re-order struct MVMCollectable to slightly reduce L1 cache misses</li>
+            <li>Store the serialized reference type discriminator in 1 byte, not 2</li>
+            <li>Add missing IS_CONCRETE checks in serialization</li>
+            <li>Make unbox int/num/str functions test IS_CONCRETE always</li>
+            <li>Fix conflict with splice from bits/fcntl-linux.h</li>
+            <li>Fix missing frees of bytecode annotations</li>
+            <li>Serialize object headers more compactly</li>
+            <li>Serialize object references more compactly</li>
+            <li>Split codepoint iterator from grapheme iterator</li>
+            <li>Implement grapheme normalization algorithm (aka. "NFG")</li>
+            <li>Implement encoding of grapheme-level strings to bytes</li>
+            <li>Implement retrieving codepoints in different normal forms from NFG strings</li>
+            <li>Fake POSIX exit codes consequently on windows</li>
+            <li>Remove extra call to uv_run when closing a pipe</li>
+            <li>Loop over waitpid to get correct exit code for closed pipe</li>
+            <li>Basic implementation of case change with NFG</li>
+            <li>Make character class check on NFG synthetic uses base codepoint</li>
+            <li>Make Unicode property checks on NFG synthetics use base codepoint</li>
+          </ul>
+          <p><a href="releases/MoarVM-2015.04.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2015.03</h3>
         </div>
         <div class="panel-body">
