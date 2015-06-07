@@ -121,9 +121,8 @@
         <div class="panel-body">
           <p>MoarVM includes the Unicode 7.0 database, and can do property
           lookups (such as those required in regular expression matching),
-          character resolution by name, case change operations, etc. The
-          current string support is at codepoint level, and grapheme level
-          support is in the works. MoarVM strings are opaque, and there is
+          character resolution by name, case change operations, etc. Strings
+          work at grapheme level. MoarVM strings are opaque, and there is
           no confusion between strings and bunches of bytes. It makes no
           sense to ask for a string's encoding; rather, a string can be
           turned into a bunch of bytes using an encoding.</p>

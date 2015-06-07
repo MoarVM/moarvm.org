@@ -34,6 +34,86 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2015.05</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Add missing C prototype for MVM_string_windows1252_decodestream</li>
+            <li>Fix uniname out of range error reporting</li>
+            <li>Fix SSA crash when huge number of basic blocks</li>
+            <li>Implement normalization buffer growth handling</li>
+            <li>Add missing frees on invalid UTF-8 decoding</li>
+            <li>Integrate NFG with UTF-16 non-stream decode</li>
+            <li>Remove linenoise/readline</li>
+            <li>Integrate normalizer with decode stream</li>
+            <li>Fix chr for our brave new NFG world</li>
+            <li>Make \n a "normalization terminator"</li>
+            <li>Ensure concatenation is closed under NFG</li>
+            <li>Don't leak synthetics from ord</li>
+            <li>Integrate NFG with UTF-8 decoding</li>
+            <li>Fix use-after-free in open file error reporting</li>
+            <li>Display exactly what thread ID was passed in a GC error</li>
+            <li>Fix various memory leaks</li>
+            <li>Remove fragile assumption about buffer size from UTF-8 decoder</li>
+            <li>More robust NULL string checking</li>
+            <li>Ensure we get NULL-terminated strings if needed</li>
+            <li>Bytecode file stores Latin-1 when possible</li>
+            <li>Optimize temporary root handling</li>
+            <li>Cache and mark the backend config hash</li>
+            <li>Dual-purpose comp unit string heap as SC string heap</li>
+            <li>Re-order bytecode read struct to be smaller</li>
+            <li>Don't repeatedly calculate limit in bytecode read</li>
+            <li>Toss some bits of ut_hash we don't use</li>
+            <li>Optimize at level 3 by default</li>
+            <li>Re-implement MVMIter on hashes using buckets</li>
+            <li>Use a simpler "deleting the last item" check in hashes</li>
+            <li>Eliminate double-linked-list in hashes</li>
+            <li>Re-implement simple say/print using MoarVM I/O</li>
+            <li>Thread ID handling cleanup</li>
+            <li>Fix an ABA bug in the fixed size allocator</li>
+            <li>Concurrency control on multi-cache additions</li>
+            <li>Show line numbers for deopt annotations</li>
+            <li>Give every BB in the spesh log a line number</li>
+            <li>Devirtualize bindkey and bindpos ops</li>
+            <li>Implement MVM_op_elems for devirtualization</li>
+            <li>Implement getattr_* and getattrs_* devirtualization</li>
+            <li>Implement pop_* and shift_*  for devirt</li>
+            <li>Implement bindattr and bindattrs ops for devirt</li>
+            <li>When failing from consume_reprop, do it loudly</li>
+            <li>No longer bail from many unhandled repr ops</li>
+            <li>Devirtualize setelemspos, existspos and existskey</li>
+            <li>Implement ordbaseat and eqatim_s ops for ignoremark</li>
+            <li>Increase stack space for call arguments</li>
+            <li>More compact jit for add, sub, bor, band and bxor</li>
+            <li>Add lib install dir to rpath</li>
+            <li>Display "Inlined" flag in the spesh log</li>
+            <li>Add a missing barrier in multi-dispatch cache</li>
+            <li>Tweak error reporting of wrong outer frame</li>
+            <li>Remove the frame pool</li>
+            <li>Spesh dump shows little words for fact flags</li>
+            <li>Spesh dump coderefs as filename + line number and "(closure)"</li>
+            <li>Handle LTM for ignorecase+ignoremark</li>
+            <li>Fix ref-count management of deserialized contexts</li>
+            <li>Provide a "never repossess this" mechanism</li>
+            <li>Fix a GC marking bug in parametric type setup</li>
+            <li>Implement exception object creation from category</li>
+            <li>Emit add, sub, bor, band, bxor with constant if possible</li>
+            <li>Kill duplicate getspeshslot ins for the same register</li>
+            <li>Formally bump minimum bytecode version to 5</li>
+            <li>JIT - check if constant value fits in 32 bit</li>
+            <li>Fix format type error in JIT logging</li>
+            <li>Add MVM_oops() function to panic with backtrace, used in spesh and JIT</li>
+            <li>Add op for disclaiming all objects of an serialization context (SC)</li>
+            <li>Check that owning object wasn't disclaimed by an SC.</li>
+            <li>Add support for CUnion repr to use with NativeCall</li>
+            <li>Add support for inlined CStructs and CUnions</li>
+          </ul>
+          <p><a href="releases/MoarVM-2015.05.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2015.04</h3>
         </div>
         <div class="panel-body">
