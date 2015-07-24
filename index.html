@@ -33,15 +33,14 @@
       </nav>
       
       <div class="jumbotron">
-        <h1>MoarVM 2015.05</h1>
+        <h1>MoarVM 2015.07</h1>
         <p>
-          Normal Form Grapheme support improved and fully integrated with I/O.
-          More efficient string storage in bytecode files, and various other
-          bytecode size and startup time improvements. All hashes now uses less
-          memory. Better JIT for many representation access operations. Various
-          concurrency bugs fixed. Native call support for unions. And much more!
+          Updated to Unicode 8. Multi-dimensional array support. Improved APIs
+          for spawning processes. Support for libffi in addition to dyncall.
+          Profiling data for time spent in native calls. Cross-thread write
+          instrumentation to aid debugging. And many more fixes and improvements!
         </p>
-        <p><a href="releases/MoarVM-2015.05.tar.gz" class="btn btn-primary btn-lg" role="button">Download</a></p>
+        <p><a href="releases/MoarVM-2015.07.tar.gz" class="btn btn-primary btn-lg" role="button">Download</a></p>
       </div>
       
       <div class="panel panel-default">
@@ -52,6 +51,7 @@
           <p>Short for "Metamodel On A Runtime", MoarVM is a virtual machine built
           especially for <a href="http://www.rakudo.org/">Rakudo Perl 6</a> and
           the <a href="https://github.com/perl6/nqp/">NQP Compiler Toolchain</a>.
+          The primary backend target for the Christmas 2015 release of Perl 6,
           MoarVM stands out amongst the various Rakudo and NQP compilation targets
           by:</p>
           <ul>

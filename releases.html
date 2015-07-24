@@ -34,6 +34,65 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2015.07</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Support for multi-dimensional arrays</li>
+            <li>Improved support for pipes</li>
+            <li>Updated to Unicode 8</li>
+            <li>Die when we try to accept() or read() outside an originating
+              thread (used to silently not work)</li>
+            <li>Instrumentation for findings writes without locks to objects
+              originating from another thread</li>
+            <li>The profiler will now also show natively called functions</li>
+            <li>Support for libffi as an alternative to dyncall</li>
+            <li>exists_pos is no longer part of the REPR API</li>
+            <li>Accessing an object's HOW is now part of the API</li>
+            <li>libuv will now autoquote cmdline arguments on windows</li>
+            <li>Fixed some code object related ops that could segfault</li>
+            <li>New openpipe implementation that allows to read from and write
+              to stdin/stdout/stderr</li>
+            <li>spesh will now track facts across BB nodes even through PHI</li>
+            <li>Fixed numerous memory leaks when C strings were included in exceptions</li>
+            <li>Implemented "free at next safepoint" mechanism for safely freeing memory
+              from internal data structures in a threaded context, thus fixing NFG table
+              growth in multi-threaded applications</li>
+            <li>Fix compile on FreeBSD 8.4 and probably earlier by detecting gcc</li>
+            <li>Fixes for build repeatability</li>
+            <li>Optimization of can op fixed and fully enabled</li>
+            <li>Fix async process handle closing</li>
+            <li>Numerous warning cleanups for various compilers</li>
+          </ul>
+          <p><a href="releases/MoarVM-2015.07.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">2015.06</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>No longer use up a full core in some async situations</li>
+            <li>Errors from nativecall include dlerror() output for clarity</li>
+            <li>More verbose and aligned output in MVM_SPESH_LOG</li>
+            <li>Several ops added to the JIT</li>
+            <li>Throwing and resuming ops for exceptions supported in the JIT</li>
+            <li>More places now go through the Int cache</li>
+            <li>Support for str attributes in CUnion and CStruct</li>
+            <li>Non-characters now correctly considered valid for UTF-8 encoding</li>
+            <li>Fix exception handler resolution bug</li>
+            <li>Introduced MVM_SPESH_NODELAY to set spesh thresholds very low</li>
+            <li>Support for building with gmake and gcc on windows</li>
+            <li>Support for GNU/kFreeBSD</li>
+          </ul>
+          <p><a href="releases/MoarVM-2015.06.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2015.05</h3>
         </div>
         <div class="panel-body">
