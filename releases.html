@@ -34,6 +34,135 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2015.11</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Fix const warnings about pointers to Unicode case table</li>
+            <li>Elide a few key-values from profiler data for default values</li>
+            <li>All Latin-1 controls are normalization terminators</li>
+            <li>NFG now uses Unicode Grapheme Cluster algorithm; "\r\n" is now one grapheme</li>
+            <li>Fix a canonical composition bug</li>
+            <li>Fix SEGV on nqp::chars on a null string</li>
+            <li>Support multiple line separators on I/O handles</li>
+            <li>Support multi-grapheme line separators on I/O handles</li>
+            <li>Include \r\n synthetic in default line separators</li>
+            <li>Serialization writes string offsets as 2 bytes if possible</li>
+            <li>Used varints in a few more places in the serialization format</li>
+            <li>Serialize the STable mode flags in a single byte</li>
+            <li>Serialize the STABLE boolification_spec mode in 1 byte</li>
+            <li>Serialize the container and invocation spec flag bits with the bool spec</li>
+            <li>Implement readlinechomp_fh op, for reading lines without line ending</li>
+            <li>Fix moar build on DragonFly BSD</li>
+            <li>Fix join NFG bug when separator is empty</li>
+            <li>Improve normalizer performance on paths needing canonical combining class</li>
+            <li>Boost number of fixed size allocation bins, to handle more allocations</li>
+            <li>Fix encoding/decoding \r\n grapheme in all encodings</li>
+            <li>Make radix ops not blow up over synthetics</li>
+            <li>Fix normalizer to never re-normalize what was already considered</li>
+            <li>Encoders now throw exceptions on unencodeable characters by default</li>
+            <li>Allow specifying a replacement string for unencodeable characters</li>
+            <li>New UTF-8 Clean-8bit encoding for strings we exchange with the OS</li>
+            <li>Make escape handle \r\n properly</li>
+            <li>Handle files where stat falseley reports 0 bytes size</li>
+            <li>Provide a way for NFA to be given synthetics, not just codepoints</li>
+            <li>Teach NFA about ignoremark charrange case</li>
+            <li>Make MVMMultiCache container aware, including spesh/JIT gurd updates</li>
+            <li>isrwcont can now be jit-compiled</li>
+            <li>We can spesh isrwcont into a const now</li>
+            <li>Document ASAN_OPTIONS</li>
+            <li>Fix possible SEGV in getlex and bindlex when walking scopes</li>
+            <li>Release mutex in MVM_load_bytecode on exception</li>
+            <li>Allow named flattening args to show up amongst named args in callsites</li>
+            <li>Make later named args that are flattened in override earlier ones</li>
+            <li>Override setjmp to two-argument version on mingw64</li>
+            <li>Fix a callsite memory leak</li>
+            <li>Fix ordfist/ordat JIT</li>
+            <li>JIT bigint ops or, and, xor, brshift, blshift and bnot</li>
+            <li>JIT hintfor op</li>
+            <li>Fix native call struct size calculation bug</li>
+            <li>Implement istty_fh op</li>
+          </ul>
+          <p><a href="releases/MoarVM-2015.11.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">2015.10</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Profiling: fix data collection when exiting</li>
+            <li>Profiling: improve timing calculation</li>
+            <li>NFG: Strip BOM from UTF-8</li>
+            <li>NFG: Implement casefolding</li>
+            <li>NFG: handle SpecialCasing</li>
+            <li>JIT: fix devirtualized REPR ops; devirt more ops</li>
+            <li>JIT: improve logging</li>
+            <li>Misc: Improve handling of state when spawning child processes</li>
+            <li>Code: Throw better exceptions in several cases</li>
+            <li>Code: linting, consting, avoid segfaults, etc.</li>
+          </ul>
+          <p><a href="releases/MoarVM-2015.10.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">2015.09</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Fix write to null handle on async socket</li>
+            <li>Add C++ support to native calling functionality</li>
+            <li>Make thread join force a GC run, preventing start/join loops eating memory</li>
+            <li>Remove more config and generated files in distclean target</li>
+            <li>Add MVM_CROSS_THREAD_WRITE_LOG to usage message</li>
+            <li>Try to get PC on valid instruction for cross thread write logging</li>
+            <li>JIT continuationreset and continuationcontrol</li>
+            <li>JIT string comparison ops</li>
+            <li>Don't devirtualize push_n or unshift_n for now</li>
+            <li>Async sockets: handle close,close and close,write</li>
+            <li>Differeniate when nativecasting to intN/uintN</li>
+            <li>Fix data race in frame reference count handling</li>
+            <li>Make findcclass and findnotcclass return one past end of string on non-match</li>
+            <li>Fix buffer overrun in assembler for labelled exception handlers</li>
+            <li>Free STables in a safer place, fixing a parallel finalization data race</li>
+            <li>Fix alignment of inlined structs/unions</li>
+          </ul>
+          <p><a href="releases/MoarVM-2015.09.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">2015.08</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Removed multiple internal data races</li>
+            <li>Add ctxcode op to get the code object of a context</li>
+            <li>Inlining in spesh will now check post-optimization size of code</li>
+            <li>Use a binary search in unicode block lookup</li>
+            <li>Unicode database file now compilable with newer MSVC</li>
+            <li>Lots of fixes for problems reported by linter software</li>
+            <li>Support for parsing Unicode numbers</li>
+            <li>Some potential segfaults fixed</li>
+            <li>New control exceptions "await", "emit" and "done"</li>
+            <li>Trying to unbox a bigint larger than 64 bit now throws</li>
+            <li>Fix "merge facts at phi" opt in spesh forgetting the first argument</li>
+            <li>Many memory leaks fixed</li>
+            <li>Properly close stdin handle when an async process dies</li>
+            <li>Async processes now have a "ready" callback</li>
+            <li>Sleep API now split into sleep and nanosleep</li>
+          </ul>
+          <p><a href="releases/MoarVM-2015.08.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2015.07</h3>
         </div>
         <div class="panel-body">
