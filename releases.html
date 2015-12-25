@@ -34,6 +34,65 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2015.12</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Allow the backlog arg for socket listening to be set</li>
+            <li>Resize buffers as needed when taking a UTF-16 substring</li>
+            <li>Context-captured frames should remember caller</li>
+            <li>Re-use MVM_frame_context_wrapper for ctx op, to reduce code duplication</li>
+            <li>Fix bug with dynvar lookups when we fall out of JITted code</li>
+            <li>Clean up callsites in comp unit objects</li>
+            <li>Clean up interned callsites on interpreter shutdown</li>
+            <li>Clean up memory allocated by FSA</li>
+            <li>Copy callsites when inlining</li>
+            <li>Cleanup Unicode property lookups on shutdown</li>
+            <li>When async streams are done, emit sequence number but no data</li>
+            <li>Force SC initialization to allocate in gen2, fixing a deadlock</li>
+            <li>Add a sanity check for gen2 allocation flag</li>
+            <li>Allow NativeRef to spesh assign_i and decont_i</li>
+            <li>Implement sp_deref_bind/get_i64/n in the JIT</li>
+            <li>Handle "is rw" pointers in native routines</li>
+            <li>Teach our guard op generator about NativeRef</li>
+            <li>Fix ordbaseat interaction with synthetics, and end of string semantics</li>
+            <li>make ordfirst and ordat consistent with ordbaseat</li>
+            <li>Add casts to resolve type warnings</li>
+            <li>Add UBSAN support to Configure.pl</li>
+            <li>Support native references to multi-dimensional indexes</li>
+            <li>Implement fileno_fh op</li>
+            <li>Implement async UDP sockets</li>
+            <li>Probe for _Bool, and expose bool/size_t to nativecall</li>
+            <li>Implement input newline translation, and translation on output on Win32</li>
+            <li>Validate lexical types properly</li>
+            <li>Implement truncate/extend ops for sized natives</li>
+            <li>Init cd->arg_flags so callsites_equal wont complain</li>
+            <li>Avoid memcpy(x, NULL, 0) in spesh</li>
+            <li>Ops to introspect type bits/unsignedness</li>
+            <li>Disable unaligned reads under UBSAN</li>
+            <li>Align bytecode sections to 8 bytes</li>
+            <li>Dump "known to be RW container" flag to speshlog</li>
+            <li>Add missing unsigned operand types; clean up unsigned int ops</li>
+            <li>Add box unsigned to REPR boxing API</li>
+            <li>A handful of extra unsigned int related ops</li>
+            <li>Teach assembler about unsigneds</li>
+            <li>JIT captureposprimspec, sized getlexref_, captureposelems, capturehasnameds</li>
+            <li>JIT jit eof_fh, readline[chomp]_fh, replace, gethllsym, objprimbits, say_fhs</li>
+            <li>JIT typeparameters, typeparameterized, typeparameterat</li>
+            <li>Coercion between num and unsigned int</li>
+            <li>Support boxing unsigneds in P6int REPR</li>
+            <li>Recognize unsigned extop operands</li>
+            <li>Cheating native ref ops for unsigneds</li>
+            <li>Somewhat cheating unsigned parameter ops</li>
+            <li>Kick out remaining unused arg_*/argconst_* ops after inlining</li>
+            <li>Fix bug that made Win32 throw on deleting nonexistent files</li>
+          </ul>
+          <p><a href="releases/MoarVM-2015.12.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2015.11</h3>
         </div>
         <div class="panel-body">
