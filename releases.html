@@ -34,6 +34,64 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2016.02</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+              <li>Numerous fixes for places where --full-cleanup leaked</li>
+              <li>Free per-thread NFA evaluation memory and lexotic cache</li>
+              <li>Free SC root objects and dependencies array when freeing SC</li>
+              <li>Free arg_names when interning callsites</li>
+              <li>Free deserialization work index lists</li>
+              <li>Clean up decode stream separators on handles</li>
+              <li>Don't leak a replaced boolification spec</li>
+              <li>Fully clean up callsite re-use hash in assembler</li>
+              <li>Fix leak involving inlining handlers</li>
+              <li>Fix a couple of leaks when decoding strings</li>
+              <li>JITted calls to functions with MVMRegister argument don't want float calling
+                conventions</li>
+              <li>Fix leak in type parameterization.</li>
+              <li>Don't create partly-initialized callsites in nativecall callback handlers</li>
+              <li>Check for NULL in exception payload and return VMNull in getexpayload</li>
+              <li>Fix bug for inlined structures in strutures in nativecall code</li>
+              <li>Fix structure size calculation when other structures are inlined</li>
+              <li>Plug memory leak when shelling out without capturing</li>
+              <li>Fix leak on out-of-bounds multi-dim access</li>
+              <li>Make sure unused continuation tags get freed</li>
+          </ul>
+          <p><a href="releases/MoarVM-2016.02.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">2016.01</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+              <li>Assorted code cleanups (unreachable code, duplicated includes, etc.)</li>
+              <li>Various update to MacPorts portfile and instructions</li>
+              <li>Only optimize istrue to unbox_i when known concrete</li>
+              <li>Bump libuv to 1.8</li>
+              <li>Add submodule sync before update in Configure.pl</li>
+              <li>Suggest build-essential if no gcc</li>
+              <li>Various fixes/updates to graph_spesh.p6</li>
+              <li>Don't install sha1 and tinymt headers; they're only used internally</li>
+              <li>Only install msinttypes on MS platform</li>
+              <li>Fix a gc bug in string concatenation</li>
+              <li>Add subsecond file time ops stat_time and lstat_time</li>
+              <li>Fix stat CREATETIME return value</li>
+              <li>Note graphs_s will be deprecated; dupe of chars</li>
+              <li>Re-order ops in interp.c to match oplist</li>
+              <li>Add compile-time platform check for JIT support, to handle
+                  universal binaries</li>
+          </ul>
+          <p><a href="releases/MoarVM-2016.01.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2015.12</h3>
         </div>
         <div class="panel-body">
@@ -616,12 +674,12 @@
             <li>Optimize out non-interned static callsites</li>
             <li>Attempt interning the callsites we use in nativecall callbacks</li>
             <li>Implement set_separator for syncfiles</li>
-            <li>Panic if MVM_platform_alloc_pages failed on posix system</li>            
+            <li>Panic if MVM_platform_alloc_pages failed on posix system</li>
           </ul>
           <p><a href="releases/MoarVM-2014.10.tar.gz" class="btn btn-primary" role="button">Download</a></p>
         </div>
       </div>
-      
+
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">2014.09</h3>
@@ -1066,7 +1124,7 @@
           <p><a href="releases/MoarVM-2014.01.tar.gz" class="btn btn-primary" role="button">Download</a></p>
         </div>
       </div>
-      
+
       <footer>
         <div class="row">
           <div class="col-lg-12">
@@ -1079,7 +1137,7 @@
         </div>
       </footer>
     </div>
-    
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
