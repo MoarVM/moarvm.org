@@ -34,6 +34,43 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2016.03</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+              <li>Fix the build when not bundling libtommath</li>
+              <li>Updates to moar-gdb.py (MoarVM GDB plug-in)</li>
+              <li>Add serialize and deserialize to CPointer REPR</li>
+              <li>Don't do cross-HLL inlining</li>
+              <li>Fix missing call optimization/inlining of non-multis in some cases</li>
+              <li>Remove dangerous/broken usecapture optimization, fixing a big memory leak</li>
+              <li>Lazily decode the string heap, improving startup time and reducing memory</li>
+              <li>JIT the atposref_* ops</li>
+              <li>All the ref ops now properly set up facts in spesh</li>
+              <li>Fix dyncall on raspberrypi for calls > 4 params</li>
+              <li>Don't allocate a thread's second GC semi-space until needed</li>
+              <li>Don't keep an MVMStaticFrame array in MVMCompUnit, saving memory</li>
+              <li>Fix primary composite table generation, in turn fixing a SEGV</li>
+              <li>Measure slurpy param and param autoboxing allocations in the profiler</li>
+              <li>Implement native descriptor introspection for pipes</li>
+              <li>Further support for function pointers in native calling</li>
+              <li>Add debug_name field to STable struct and setdebugtypename, to allow easier
+                debugging and analysis</li>
+              <li>Get directory listing in utf8-c8 encoding</li>
+              <li>Fix JIT compiler bug in string le/ge ops</li>
+              <li>Handle nonblocking stdout properly for --dump</li>
+              <li>Fix linelocs buffer overflow in bytecode dumping</li>
+              <li>Include type info of wval/wval_wide referenced objects in spesh log</li>
+              <li>Don't keep around barely-used bytecode maps, saving memory</li>
+              <li>Only allocate instrumentation state if needed, saving memory</li>
+              <li>Boost size of the multi-dispatch cache</li>
+          </ul>
+          <p><a href="releases/MoarVM-2016.03.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2016.02</h3>
         </div>
         <div class="panel-body">
