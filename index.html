@@ -33,16 +33,15 @@
       </nav>
 
       <div class="jumbotron">
-        <h1>MoarVM 2016.03</h1>
+        <h1>MoarVM 2016.04</h1>
         <p>
-          Improved memory efficiency, through slimming down various data
-          structures and added laziness. NativeCall improvements, including
-          better function pointer support. Various optimization and JIT
-          enhancements, as well as improved optimization debugging output.
-          Allocation profiling made more accurate. And the usual range of other
-          assorted fixes and improvements.
+          Implemented heap snapshots in order to support memory profiling and leak
+          discovery. Fixed a gen2 garbage collection bug that could cause leaks,
+          and tuned the mechanism for deciding when to perform full collections.
+          Improvements to I/O performance and JIT compilation. And the usual
+          happy mix of bug fixes and portability tweaks. Enjoy!
         </p>
-        <p><a href="releases/MoarVM-2016.03.tar.gz" class="btn btn-primary btn-lg" role="button">Download</a></p>
+        <p><a href="releases/MoarVM-2016.04.tar.gz" class="btn btn-primary btn-lg" role="button">Download</a></p>
       </div>
 
       <div class="panel panel-default">

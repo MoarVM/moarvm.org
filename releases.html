@@ -34,6 +34,42 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2016.04</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Implement heap snapshots support, exposed through the profiling API</li>
+            <li>Don't mark tc->cur_frame twice during GC</li>
+            <li>Move thread object mark into thread root mark, removing a special case in the
+              main collector</li>
+            <li>Add API for adding a permanent root together with a description</li>
+            <li>Mark thread blocked for GC when doing synchronous reads</li>
+            <li>Make MVM_bigint_from_num jit-friendly</li>
+            <li>JIT coerce_nI as a call to bigint_from_num</li>
+            <li>Set debug_name on a few more built-in types</li>
+            <li>Add REPR API for getting unmanaged size, implement it for many REPRs</li>
+            <li>Fix compile on FreeBSD 9</li>
+            <li>Handle single-char build directory names by changing capture to lookahead</li>
+            <li>Fix performance of reading very long lines</li>
+            <li>Fix utf8-c8 decode crash caused by off-by-1</li>
+            <li>Fix a full vs. partial collection detection bug</li>
+            <li>Factor unmanaged size into promoted bytes</li>
+            <li>Enhance scheme for deciding when to do a full collect</li>
+            <li>Bail out if HLL name string index is invalid in bytecode unpack</li>
+            <li>Don't try to set flags beyond num_lexicals when reading in call frames</li>
+            <li>Adjust byte count when UTF-16 BOM marker consumed</li>
+            <li>Fix buffer overrun in utf8-c8 decoding</li>
+            <li>Initialize object registers with VMNull when allocating frames, to avoid a
+              number of possible segfaults</li>
+            <li>Fix incorrect boolification of "" under mode MODE_UNBOX_STR_NOT_EMPTY_OR_ZERO</li>
+            <li>Utilize debug_name in nativecall error messages</li>
+          </ul>
+          <p><a href="releases/MoarVM-2016.04.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2016.03</h3>
         </div>
         <div class="panel-body">
