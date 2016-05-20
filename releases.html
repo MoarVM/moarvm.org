@@ -34,6 +34,52 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2016.05</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+              <li>Use MSVC-provided stdint.h and inttypes.h when possible</li>
+              <li>Improved various error messages to include the debug type name</li>
+              <li>Eliminate call frame reference counts, instead using a linear call stack for
+                frames that never become heap-referenced and using the garbage collector to
+                manage those that do</li>
+              <li>Tune number of gen2 sized bins</li>
+              <li>Improve error reporting in P6opaque's compose function</li>
+              <li>Improved GC debugging support to catch more problems</li>
+              <li>Fix a race between serialization context resolution and garbage collection</li>
+              <li>Add a missing MVMROOT in shell/spawn</li>
+              <li>Fix segfault when trying to serialize an uncomposed P6opaque type</li>
+              <li>Update the build system to autodetect system provided libs</li>
+              <li>Add missing rooting, since the instrumentation level barrier may allocate</li>
+              <li>Fix cleanup of temp roots at thread exit</li>
+              <li>Add missing rooting of exception message in `die`</li>
+              <li>Fix CUnion layout computation GC issues</li>
+              <li>Fix data race in clearing of "in inter-gen set" flag</li>
+              <li>Various improvements and fixes to the spesh_graph tool</li>
+              <li>Add missing optimization of decont_s and decont_u ops</li>
+              <li>Eliminate duplicate MVMContext creation code</li>
+              <li>Fix full cleanup crash: the NFG uses the FSA, so have to destroy NFG first</li>
+              <li>Close dynvar log filehandle in instance destroy</li>
+              <li>Clean up cross-thread write logging mutex</li>
+              <li>Free debug names in STables</li>
+              <li>Free the string_heap_fast_table in CompUnit bodies</li>
+              <li>Free permroot descriptions</li>
+              <li>Free thread's finalization queue in tc destruction</li>
+              <li>Add docs about MVMROOT</li>
+              <li>Fix crash when GCing an ended thread</li>
+              <li>Implement loadbytecodebuffer and loadbytecodefh ops</li>
+              <li>Speed up initialization of non-specialized frames</li>
+              <li>Use varints to make serialization of various integers more compact, reducing
+                size of compiled output</li>
+              <li>Ensure we always produce at least one snapshot when heap profiling</li>
+              <li>Remove debug output when taking heap snapshots</li>
+          </ul>
+          <p><a href="releases/MoarVM-2016.05.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2016.04</h3>
         </div>
         <div class="panel-body">
