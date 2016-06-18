@@ -34,6 +34,39 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2016.06</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+              <li>Serialize the HLL role field of STables</li>
+              <li>Avoid VMNull setup memcpy/loop in specialized frame initialization</li>
+              <li>Stop caching MVMContext on a frame</li>
+              <li>Use frames directly when serializing closures, rather than having to create
+                an MVMContext wrapper for every one</li>
+              <li>Write SC index when deserializing, repossessing, and preparing to serialize,
+                saving a huge amount of linear scanning</li>
+              <li>Only used cached SC index if SC itself matches</li>
+              <li>Remove an unrequired memset to clear the args buffer</li>
+              <li>Inline args preparation into interpreter, and JIT it directly instead of
+                making a call to a tiny function</li>
+              <li>Mark getlexcaller as :noinline</li>
+              <li>Don't lose handlers during multi-level inlines</li>
+              <li>Eliminate loop in P6opaque's get_boxed_ref function, decreasing cost</li>
+              <li>Implement payload throw/handler support</li>
+              <li>Implement callerlex throwing mode</li>
+              <li>Make moar-gdb.py source-able, instead of only autoloadable</li>
+              <li>Fix inlining causing wrong lexical handler lookup</li>
+              <li>Make build in dir containing space work</li>
+              <li>Allow HLL handler for unhandled lexical exception</li>
+              <li>Add debug_name to "cannot iterate X with Y REPR" message</li>
+              <li>Give "this is not a X iterator" more info, too</li>
+          </ul>
+          <p><a href="releases/MoarVM-2016.06.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2016.05</h3>
         </div>
         <div class="panel-body">
