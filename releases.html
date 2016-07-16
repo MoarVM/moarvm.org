@@ -34,6 +34,27 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2016.07</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Implement a new multi-dispatch cache, structured as a tree, able to
+              hold more entries more memory-compactly, and able to cache dispatches
+              involving named parameters</li>
+            <li>JIT read_fhs op</li>
+            <li>Implement elems REPR function for MVMContext</li>
+            <li>Implement a BB-splitting manipulation function in the optimizer</li>
+            <li>Fix sha1 op to work with null bytes</li>
+            <li>Fix bad interaction between profiling and dead allocation elimination;
+              the presence of allocation logging would prevent the optimization, leading
+              to misleading profiler output results</li>
+          </ul>
+          <p><a href="releases/MoarVM-2016.07.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2016.06</h3>
         </div>
         <div class="panel-body">
