@@ -34,6 +34,68 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2016.09</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Do not crash when the container configuration can't be read</li>
+            <li>Correctly calculate the work_size when inlining between compilation units</li>
+            <li>Validate indices of param_ ops and require checkarity before param_*</li>
+            <li>Fix tautological comprison; snprintf returns an int, not a size_t</li>
+            <li>Fix tell for files that haven't been read from</li>
+            <li>Don't allow zero alignment in P6opaque storage spec</li>
+            <li>Index check lexicals when reading static flags</li>
+            <li>Add Decoder REPR and a number of ops that provide access to VM-backed
+                streaming decoding</li>
+            <li>Don't segfault when serializing an uncomposed p6opaque</li>
+            <li>Don't read_int into a size_t which is unsigned</li>
+            <li>Never leak sym_name from nativecall_build</li>
+            <li>Fix a couple of potential leaks in heap snapshots</li>
+            <li>Kick arg_ and argconst_ ops from the correct basic block when inlining</li>
+            <li>Use HASH_FIND_CACHE instead of HASH_FIND in MVMHash</li>
+            <li>Correct wording of named arguments error</li>
+            <li>Bounds check for hints in get_attribute and bind_attribute</li>
+            <li>Use hints for is_attribute_initialized, and null-check repr_data</li>
+            <li>Clean up various unused variables</li>
+            <li>Mark thread GC blocked while accepting a socket to prevent deadlocks</li>
+            <li>Configure.pl now has an explicit use lib "."</li>
+            <li>Fix missing finalization queue cleanup at thread exit</li>
+            <li>Mark SC used in bytecode loading as claimed to avoid keeping them around
+                for too long</li>
+            <li>Fix an error in multi caching of named arguments that could cause lookups
+                to fail and the cache to keep growing</li>
+          </ul>
+          <p><a href="releases/MoarVM-2016.09.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">2016.08</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Don't crash in P6opaque on NULL name_to_index_mapping</li>
+            <li>Fix off-by-one in grapheme iterator</li>
+            <li>Block/unblock thread for GC on semaphore wait</li>
+            <li>Mark blocked around some more lock acquisitions</li>
+            <li>Fix various cases of out-dated pointer reads on concurrency control constructs</li>
+            <li>Hold uv_sem_t at a level of indirection, so it won't move in memory</li>
+            <li>Add a flag for PIPE_MERGED_OUT_ERR; fix stdio setup for merge</li>
+            <li>Fix EOF detection when reading files from /proc and similar</li>
+            <li>Fix lost socket listen errors</li>
+            <li>Implement async cancellation completion notifications</li>
+            <li>Add some missing fact dependencies in spesh, fixing some wrong guard eliminations</li>
+            <li>Avoid use of possibly-invalidated decont facts in spesh</li>
+            <li>Remove keep_caller from MVMFrame</li>
+            <li>Correctly NULL-terminate the buffer in MVM_vm_dump_file</li>
+          </ul>
+          <p><a href="releases/MoarVM-2016.08.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2016.07</h3>
         </div>
         <div class="panel-body">
