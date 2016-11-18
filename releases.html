@@ -34,6 +34,101 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2016.11</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+              <li>Workaround tommath issue #56 which affects random bigint numbers > 32 bits</li>
+              <li>Fix memory leaks in nqp_nfa_run</li>
+              <li>Fix a sizeof arg that allocated a much-too-big buffer for callsite arg names</li>
+              <li>Add missing breaks in MVMString's copy_to</li>
+              <li>Prevent null deref when calling MVM_string_utf16_encode</li>
+              <li>Corrections to mkdir on Windows</li>
+              <li>Introduce MVM_SPESH_LIMIT, which limits how many specializations will be
+                performed; this is useful for debugging which specialized block is to blame
+                for a bug</li>
+              <li>Make sure we never box a NULL filename when creating backtraces</li>
+              <li>Fix the nativecall attribute error messages</li>
+              <li>Remove (non-existent) num16 from error message</li>
+              <li>Make the fixed size allocator provide useful information to Valgrind</li>
+              <li>Implement serialization of SCRef</li>
+              <li>Include file/line of unserializable closure, to aid debugging</li>
+              <li>Add type info when failing to bind an attribute</li>
+              <li>Use ffi_arg type for libffi nativecall return types</li>
+              <li>Handle libffi return type more correctly</li>
+              <li>Work around missing libatomic_ops prototype on s390x</li>
+              <li>Panic when trying to GC a locked mutex</li>
+              <li>Make VM panic output state that a panic occurred</li>
+              <li>Fix JIT code generation bug in nqp::exception</li>
+              <li>Add missing rooting of value pushed to concurrent queue</li>
+              <li>Add src/gc/debug.h dependency to Makefile</li>
+              <li>Mark a thread GC-blocked while it is in native code</li>
+              <li>Have "Cannot * a type object" also outputs the type's debug name</li>
+              <li>Don't reveal partially deserialized method cache</li>
+              <li>Give a bunch of exception ops REPR and debug name output</li>
+              <li>Prevent segfault when null string used as hash key</li>
+              <li>Request POSIX.1.c compliance on solaris</li>
+              <li>Change to use readdir insteal of readdir_r</li>
+              <li>Use GCC on Solaris by default</li>
+              <li>Give diagnostic output when compiling fails</li>
+              <li>Handle current Solaris compiler not understanding -mt</li>
+              <li>Fixed readdir so it won't check old errno</li>
+              <li>Work around clock_gettime issue on OSX</li>
+              <li>Refactor hashes to no longer need to flatten ropes in string keys</li>
+              <li>Save 8 (64-bit) or 4 (32-bit) bytes per entry in the MVMHash REPR</li>
+              <li>Remove the deprecated flattenropes op</li>
+              <li>Remove now-unused MVM_string_flatten function</li>
+              <li>Don't treat an nread of 0 in libuv read callbacks as an error</li>
+              <li>Bump to latest libatomic_ops</li>
+          </ul>
+          <p><a href="releases/MoarVM-2016.11.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">2016.10</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+              <li>Fix build without libtommath source</li>
+              <li>Make MVM_file_open_fh() throw if the file we opened was a directory</li>
+              <li>Fix bug and memory leaks in MVM_file_open_fh()</li>
+              <li>Add error message for likely MacOS build failure</li>
+              <li>Don't set inheriting process on inherited pipe, fixing a segfault</li>
+              <li>Update to the Unicode 9 database</li>
+              <li>Die on CStruct without any fields</li>
+              <li>Constant-fold unipropcode and unipvalcode</li>
+              <li>Use PRId64 instead of %d for 64 bit int format string args</li>
+              <li>"Cannot unbox type object" error gets debugname and native type info</li>
+              <li>Fix uninitialized arg_names of an MVMCallsite</li>
+              <li>Handle C++ constructors on libffi</li>
+              <li>Fix CUnion get_attribute treating inlined attrs as pointers</li>
+              <li>Fix 32 bit issue with rw args in NativeCall callbacks</li>
+              <li>Use better throw-away type for void nativecalls</li>
+              <li>Gracefully handle a 0 RSS reported by the Linux kernel</li>
+              <li>Fix "Invalid free()" in empty repossessed arrays</li>
+              <li>Make sure we mean "signed char" when we say "char"</li>
+              <li>Fix calculating structure sizes for arm64 and others</li>
+              <li>Disable JIT on x32, since it has a different calling convention</li>
+              <li>Fix pointer size unit in configure message</li>
+              <li>Use set_uint64 in from_num, otherwise we overflow on x32</li>
+              <li>Rewrite mkdir_p api, no function changes</li>
+              <li>Improve nativecall attribute error messages</li>
+              <li>Include debug_name in crossthreadwritelog and serialization errors</li>
+              <li>Deprecate async string I/O ops</li>
+              <li>Deprecate flattenropes op</li>
+              <li>Implement indexingoptimized op (replaces flattenropes, but is not in-place)</li>
+              <li>Fix memory leadk in ord_basechar_at</li>
+              <li>Ensure errno is grabbed before MVM_free is called</li>
+              <li>Make extra sure unlock only happens if lock happened</li>
+          </ul>
+          <p><a href="releases/MoarVM-2016.10.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2016.09</h3>
         </div>
         <div class="panel-body">
