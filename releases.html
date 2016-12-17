@@ -34,6 +34,58 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2016.12</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Decode Latin-1 and UTF-8 strings to 8-bit width when possible</li>
+            <li>Teach a few string functions to compress results into 8-bit storage</li>
+            <li>Fix for AIX's INFINITY not being a constant</li>
+            <li>Unlink libmoar before (re)installing it</li>
+            <li>Add configuration for AIX</li>
+            <li>Support Perl older than 5.10 for Configure.pl</li>
+            <li>Use "pkgconfig --libs libffi" additionally to --cflags</li>
+            <li>Fix powerpc detection on AIX (gcc)</li>
+            <li>Make multidim error messages say they are multidim</li>
+            <li>Add comment about where to find UNIDATA</li>
+            <li>Implement captureinnerlex op, for fixing QUIT/LAST phaser scoping in Perl 6</li>
+            <li>Fix mis-sized free in the NFG trie that only showed up in 32-bit</li>
+            <li>Add GC debug helper to "find" a pointer in nurseries/gen2 bins</li>
+            <li>Make ASSERT_NOT_FROMSPACE check fromspaces of all threads</li>
+            <li>Fix missing MVMROOT around an allocation</li>
+            <li>Fix typo in nfg.h comment</li>
+            <li>Fix native callback and GC interaction when embedded</li>
+            <li>Add GC block management functions to the public API</li>
+            <li>Mark throwpayload* as :throwish in oplist</li>
+            <li>Optimize the check for negative bignums</li>
+            <li>Remove useless mp_neg calls</li>
+            <li>Fix premature free of UV socket handles</li>
+            <li>Fix premature handle free in async UDP sockets</li>
+            <li>Add a "check every register access" GC debug mode</li>
+            <li>Provide a #define to disable dynlex caching</li>
+            <li>Provide a #define for deopt logging</li>
+            <li>Invalidate dynlex caches during deopt</li>
+            <li>Fix pow_I when it takes an exponent larger than 2**32</li>
+            <li>Only do MVM_ASSERT_NOT_FROMSPACE in GC debug mode</li>
+            <li>Add a fromspace assertion in finalize</li>
+            <li>Avoid a number of spesh GC invariant violations</li>
+            <li>Panic if we try to GC when speshing/JITing</li>
+            <li>Ensure we don't leak partially deserialized objects</li>
+            <li>Fix unrooted frame around SC object lookup</li>
+            <li>Remove some GC debug code</li>
+            <li>Avoid reading nativerefs in spesh, since it can cause boxing and thus GC</li>
+            <li>Cope with push being used on concurrent queues</li>
+            <li>MVMROOT around putting work on concurrent queue</li>
+            <li>MVMROOT eventloop queue when polling it</li>
+            <li>Do MVM_ASSIGN_REF after block/unblock in concurrent queue</li>
+            <li>Fix more unrooted frame around SC object lookup</li>
+          </ul>
+          <p><a href="releases/MoarVM-2016.12.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2016.11</h3>
         </div>
         <div class="panel-body">
