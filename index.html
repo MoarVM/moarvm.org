@@ -33,15 +33,19 @@
       </nav>
 
       <div class="jumbotron">
-        <h1>MoarVM 2016.12</h1>
+        <h1>MoarVM 2017.01</h1>
         <p>
-          More compact representation of some strings that fall within the ASCII
-          range. Portability improvements for AIX. Improved GC debug mode, which
-          has helped with tracking down and eliminating a number of occasional
-          crashes. And an assortment of other small, but very welcome, fixes and
-          optimizations.
+          Numerous Unicode improvements, including string comparison using the
+          Unicode Collation Algorithm, support for Unicode Name Aliases and Unicode
+          Named Character Sequences, updates to grapheme breaking including emoji
+          handling, and additional properties. Faster normalization, improving I/O
+          performance. Simplified and more efficient memory handling for callframes,
+          leading to significant speedups and memory reductions for some workloads.
+          Corrections to the UTF8-C8 encoding. Better handling of full GC collection
+          decision-making when doing I/O and heap profiling. And numerous smaller bug
+          fixes and tweaks across the VM.
         </p>
-        <p><a href="releases/MoarVM-2016.12.tar.gz" class="btn btn-primary btn-lg" role="button">Download</a></p>
+        <p><a href="releases/MoarVM-2017.01.tar.gz" class="btn btn-primary btn-lg" role="button">Download</a></p>
       </div>
 
       <div class="panel panel-default">

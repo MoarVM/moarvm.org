@@ -34,6 +34,68 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2017.01</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+              <li>Extract spesh block allocator from spesh, for wider use</li>
+              <li>Add a number of missing MVMROOTs, which could lead to outdated pointers;
+                also removed some unrequired MVMROOTs</li>
+              <li>Fix arg_flags allocation sizes</li>
+              <li>Remove an obsolete path from ldrpath</li>
+              <li>Check lexical accesses in GC debug mode 2 also</li>
+              <li>Add a #define to turn on inline logging</li>
+              <li>Fix callstack reset bug, which could corrupt deeply recursing callstacks</li>
+              <li>Don't allow re-compose of a P6opaque</li>
+              <li>Add a new unicmp_s op, which compares using the Unicode Collation Algorithm</li>
+              <li>Make sure we generate all values of the Line_Break property</li>
+              <li>Re-implement utf8-c8 encoding, fixing bugs and ensuring that non-NFC input
+                will round-trip properly also</li>
+              <li>Implement Bidi_Mirroring_Glyph as an integer property</li>
+              <li>Implement Emoji grapheme breaking and other combined codes</li>
+              <li>Add support for Grapheme_Cluster_Break=Prepend from Unicode 9.0</li>
+              <li>Make sure we break after Prepend if it's a control character</li>
+              <li>Add a script to download the latest version of all of the Unicode data</li>
+              <li>Missing rooting GC in rare exit handler case</li>
+              <li>Implement new setdispatcherfor op and add JIT for it</li>
+              <li>Use much faster atoi function in normalizer; 14% less CPU use when slurping
+                a file in UTF-8 encoding</li>
+              <li>For Decompose_Type, use int lookup instead of str for better performance</li>
+              <li>Fix heap snapshot crash on eventloop thread</li>
+              <li>Use /usr/bin/env perl for ./Configure.pl</li>
+              <li>Don't break after ZWJ or for MALE SIGN and FEMALE SIGN</li>
+              <li>Take into account actual allocated size of I/O buffers in gen2 promotion
+                statistics</li>
+              <li>Tweak full collection criteria in heap profiling</li>
+              <li>Free up spesh log slots after specialization, avoiding some leaks</li>
+              <li>Removed the getregref_ ops (unused by NQP or Perl 6)</li>
+              <li>Removed the continuationclone op (unused by Perl 6)</li>
+              <li>Enforce one-shot invocation of continuations</li>
+              <li>Greatly simplify handling of call frame working register lifetimes, leading
+                to consistently shorter lifetimes, less memory pressure, and faster calling
+              <li>Eliminate now-unused `tc` field in MVMFrame, saving a pointer per callframe</li>
+              <li>Simplify args cleanup functions</li>
+              <li>Reduce number of checks in call frame marking, making it faster</li>
+              <li>Implement getstrfromname op, to get named Unicode sequences</li>
+              <li>Fix GC in spesh triggered by managed mutex use</li>
+              <li>Fix data race in inlining extop fixup</li>
+              <li>Fix data race in callsite fixup during inlining</li>
+              <li>Fix data race in string fixup during inlining</li>
+              <li>Fix charname lookups of LINE FEED and CARRIAGE RETURN</li>
+              <li>Remove Unicode 1 names and add Unicode Name Aliases</li>
+              <li>Convert MVM_malloc+memset to MVM_calloc</li>
+              <li>Clean out ancient "remove after rebootstrap" line</li>
+              <li>Fix typo in MVM_CALLSTACK_REGIONS_SIZE's name</li>
+              <li>Fix missing cleanup of managed DecodeStream</li>
+              <li>Have DecodeStrem clean leftover char buffers</li>
+              <li>Fix a typo in decode stream destroy function</li>
+          </ul>
+          <p><a href="releases/MoarVM-2017.01.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2016.12</h3>
         </div>
         <div class="panel-body">

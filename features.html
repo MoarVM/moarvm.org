@@ -81,8 +81,8 @@
           <ul>
             <li>First-class code objects</li>
             <li>Lexical variables and closures</li>
-            <li>Exceptions</li>
-            <li>Continuations (single shot; partial multi-shot support)</li>
+            <li>Exceptions, with resumption support</li>
+            <li>Single-shot continuations</li>
             <li>I/O (files, pipes, sockets), and a range of file system and
               process operations</li>
             <li>Big integers</li>
@@ -119,9 +119,10 @@
           <h3 class="panel-title">Unicode</h3>
         </div>
         <div class="panel-body">
-          <p>MoarVM includes the Unicode 8.0 database, and can do property
+          <p>MoarVM includes the Unicode 9.0 database, and can do property
           lookups (such as those required in regular expression matching),
-          character resolution by name, case change operations, etc. Strings
+          character and sequence resolution by name, case change operations,
+          comparisons using the Unicode Collation Algorithm, etc. Strings
           work at grapheme level. MoarVM strings are opaque, and there is
           no confusion between strings and bunches of bytes. It makes no
           sense to ask for a string's encoding; rather, a string can be
