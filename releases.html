@@ -34,6 +34,47 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2017.02</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+              <li>Fix format strings that warn during compile</li>
+              <li>Implement missing cleanup of async task handles, fixing a memory leak</li>
+              <li>Make Unicode sequence and codepoint name lookup case-insensitive</li>
+              <li>Add Unicode sequences from NamedSequences.txt in the Unicode database</li>
+              <li>Remove second declaration of MVM_frame_destroy</li>
+              <li>JIT MVM_radix()</li>
+              <li>Make radix and radix_I 50% faster with Unicode Nd</li>
+              <li>Add East_Asian_Width prop</li>
+              <li>Fix memory leaks in synchronous sockets</li>
+              <li>Fix crashes in socket connect error handling</li>
+              <li>Don't leak memory in STable repossession</li>
+              <li>Missing MVMROOT around a lock acquisition</li>
+              <li>Refuse to form an NFA with a zeroed to-state</li>
+              <li>Add data section for JIT code, and use it for extop 'fake' registers</li>
+              <li>Correct typo in NFG trie node struct name</li>
+              <li>Fix overflow in div_i op</li>
+              <li>Implement support for synthetic graphemes in MVM_unicode_string_compare</li>
+              <li>Implement configurable collation_mode for MVM_unicode_string_compare</li>
+              <li>Use LDFLAGS in ld invocations</li>
+              <li>On Windows, create UTF-8 encoded argv upon program entry</li>
+              <li>On Windows, populate environment hash from Unicode environment</li>
+              <li>Some additional heuristics to cut down on cross-thread write log output</li>
+              <li>Fix abs_n op for negative zeros</li>
+              <li>Sort out semantics of closed async sockets</li>
+              <li>Fix overflow on 32-bit systems in is_full_collection()</li>
+              <li>Rename MVMArray file and constant to VMArray</li>
+              <li>Remove bogus indication that MoarVM builds on `cygwin`</li>
+              <li>Use utf8 for unicode_db files</li>
+              <li>Fix invalid read when GC was triggered in the string repeat op</li>
+              <li>Don't call MVM_string_graphs twice in indexing op, plus cleanup</li>
+          </ul>
+          <p><a href="releases/MoarVM-2017.02.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2017.01</h3>
         </div>
         <div class="panel-body">
