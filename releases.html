@@ -34,6 +34,47 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2017.03</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+              <li>Fix some missing variable initializations</li>
+              <li>Set effective_handlers in context-only frame</li>
+              <li>Streamline code in hash computation, hopefully fixing a Coverity warning</li>
+              <li>Detect and throw on over-size array</li>
+              <li>Put in a limit for codepoints in a grapheme, to avoid various overflows</li>
+              <li>Fix a missing NULL check at end of profiling</li>
+              <li>Panic when a new thread context can't create an uv_loop</li>
+              <li>Better handling of out of memory when creating a thread</li>
+              <li>Another attempt at silencing the pthread_yield warnings</li>
+              <li>Missing GC block marking in event loop starting, fixing a deadlock</li>
+              <li>Fix CArray marshalling of type objects</li>
+              <li>Provide a way to put Decoder in nl-translate mode</li>
+              <li>Ensure Decoder REPR never sees concurrent use</li>
+              <li>Debug option to detect concurrent VMArray use</li>
+              <li>Encode strings as UTF-8 in MVM_unicode_string_from_name</li>
+              <li>Reword exception message for read() outside original thread</li>
+              <li>Check that results of repeat/concat fit in an MVMString</li>
+              <li>Fix div_i JIT round to negative infinity</li>
+              <li>Ignore SIGPIPE by default</li>
+              <li>Only start readers if a process spawned OK</li>
+              <li>Remove deprecated char-mode async proc reading</li>
+              <li>Signal error to stdout/stderr on spawn failure</li>
+              <li>Do gen2 sweep before letting stolen threads go, fixing occasional SEGVs</li>
+              <li>Turn libtommath dependency into a submodule, use a MoarVM fork</li>
+              <li>Update libtommath fork to have expmod hang fix</li>
+              <li>Change MVM_string_equal_at_ignore_case to use fc</li>
+              <li>Fix MVM_string_equal_at_ignore_case when folding the haystack changes length</li>
+              <li>Mention debug name and REPR name in "requires obj with repr X" errors</li>
+              <li>Remove unneeded variable in MVM_string_index</li>
+              <li>Add MVM_string_index_ignore_case function and indexic_s op</li>
+              <li>A range of improvements to the MoarVM GDB plug-in</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2017.02</h3>
         </div>
         <div class="panel-body">
