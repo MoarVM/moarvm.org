@@ -34,6 +34,66 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2017.04</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Shorten the nursery when creating large bigints, to bring GC forward and
+              resolve excessive memory use</li>
+            <li>Use correct format for repeat/concat errors</li>
+            <li>Fix bug in indexic_s if expanding codepoint is the last codepoint</li>
+            <li>Special case "\r\n" in MVM_nfg_is_concat_stable for performance reasons</li>
+            <li>Further optimize MVM_nfg_is_concat_stable to speed up concatenation</li>
+            <li>Do not set use rpath if installing into proper system locations</li>
+            <li>Optimize passes_quickcheck_and_zero_ccc to be much faster</li>
+            <li>Give this_repr constants more meaningful names to aid debugging</li>
+            <li>Streamline MVM_bigint_radix and MVM_radix for Nd Unicode #'s</li>
+            <li>Fix case-insensitive string compare bug when synthetics are in the haystack</li>
+            <li>Improve description for "should eventually be unreachable" error</li>
+            <li>Correctly detect and handle overflow in mp_get_int64</li>
+            <li>Split into mp_get_int64 and mp_get_uint64</li>
+            <li>Only allocate and normalize for cp's that require it in MVM_string_chr, and
+              short-circuit Unicode property test for codepoints below 0x300</li>
+            <li>Provide a better error when failing to encode surrogates in UTF-8</li>
+            <li>Add a cast to suppress a compiler warning in strings/ops.c</li>
+            <li>Factor out code from equal_at_ignore_case for use in index_ignore_case also</li>
+            <li>Use both hex and decimal for UTF8 encoding error messages</li>
+            <li>Add parentheses in various places to suppress compiler warnings</li>
+            <li>Use PRIu64 in fprintf's to fix compiler warning about incorrect types</li>
+            <li>Add a check that introspection->is_tty is not NULL, avoiding a crash</li>
+            <li>Mention debug_name in errors about uncomposed repr</li>
+            <li>Add new --coverage option for Configure.pl</li>
+            <li>First prototype of a per-line coverage reporter, enabled by setting
+              MVM_COVERAGE_LOG</li>
+            <li>Cope with a native type with no nativesize, but signedness</li>
+            <li>Remove two functions in normalize.c that have been superseded</li>
+            <li>Give collapse_strands a 5.4% speed boost under some workloads</li>
+            <li>Add MVM_string_graphs_nocheck funct, use it in places we previously already
+              checked</li>
+            <li>Have a two-part loop in collapse strands to make loop tighter when possible</li>
+            <li>Implement serialize/deserialize in VMHash REPR</li>
+            <li>Use memmem in string index. Uses Knuth-Morris-Pratt on glibc, and adds the
+              FreeBSD memmem.c for use on Windows</li>
+            <li>Fix a join NFG bug when there was an  empty string and an empty seperator</li>
+            <li>Reorder MVMStaticFrameBody to save 16 bytes according to pahole; similarly
+              save 16 bytes in MVMCompUnitBody, 24 bytes in MVMJitCode, 8 bytes in
+              MVMIOSyncStreamData, SerializationRoot and SerializationReader</li>
+            <li>Remove arbitrary and small length range check for reading bytes from a file</li>
+            <li>Remove unused defines in threadcontext.h</li>
+            <li>Greatly reduce contention in the fixed-size allocator for multi-threaded
+              programs, giving up to 40% speedup in some cases</li>
+            <li>Add continuous coverage analysis to Travis builds, along with other Travis
+              improvements</li>
+            <li>Mark thread GC blocked when doing synchronous writes</li>
+            <li>Add missing MVMROOT when reading bytes, which could result in occasional
+              data loss</li>
+          </ul>
+          <p><a href="releases/MoarVM-2017.04.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2017.03</h3>
         </div>
         <div class="panel-body">
@@ -70,6 +130,7 @@
               <li>Add MVM_string_index_ignore_case function and indexic_s op</li>
               <li>A range of improvements to the MoarVM GDB plug-in</li>
           </ul>
+          <p><a href="releases/MoarVM-2017.03.tar.gz" class="btn btn-primary" role="button">Download</a></p>
         </div>
       </div>
 

@@ -33,16 +33,17 @@
       </nav>
 
       <div class="jumbotron">
-        <h1>MoarVM 2017.03</h1>
+        <h1>MoarVM 2017.04</h1>
         <p>
-          Corrects semantics of comparing strings ignoring case, and adds a new
-          case-insensitive string index op. Fixes a parallel GC bug that led to
-          a range of crashes. Improves error handling in asynchronous process
-          spawning. Adds a range of missing bounds checks. And includes many
-          other assorted fixes spanning JIT compilation, out-of-memory handling,
-          profiling, and more.
+          Greatly reduced contention in memory allocation, offering large speed-ups to
+          many multi-threaded applications. Greatly optimized string indexing operations,
+          along with many other optimizations in string handling. Added basic support for
+          measuring coverage, and also coverage report generation for MoarVM itself.
+          Improved memory pressure handling for large bigints. And numerous other
+          improvements, including bug fixes, error message improvements, and memory use
+          reductions.
         </p>
-        <p><a href="releases/MoarVM-2017.03.tar.gz" class="btn btn-primary btn-lg" role="button">Download</a></p>
+        <p><a href="releases/MoarVM-2017.04.tar.gz" class="btn btn-primary btn-lg" role="button">Download</a></p>
       </div>
 
       <div class="panel panel-default">
