@@ -34,6 +34,82 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2017.06</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+              <li>Make coerce_s_n work more like the Perl 6 Str.Num method</li>
+              <li>Eliminate socket string I/O</li>
+              <li>Re-implement synchronous sockets without using libuv, enabling them to be
+                passed between threads</li>
+              <li>Add ability to get port from already bind-ed socket</li>
+              <li>Add cpucores op to get the number of CPU cores</li>
+              <li>Fix inconsistency in decode stream take bytes API, so it returns null if
+                that number of bytes is not available</li>
+              <li>Fix memory leak in syncpipe</li>
+              <li>Removed unsed header file in threads.c</li>
+              <li>Remove unused args to bind_stdio_handle</li>
+              <li>Remove char-level I/O ops and the functions they called</li>
+              <li>Remove char-level I/O from synchronous I/O vtables</li>
+              <li>Remove unused encoding option in dir handle</li>
+              <li>Re-implement print/say debug output ops to encode and then use binary I/O</li>
+              <li>Eliminate use of libuv in synchronous file handles</li>
+              <li>Switch standard handles to use the new synchronous file handle code, which
+                means they can now be safely used from multiple threads also</li>
+              <li>Remove unused ->filename slot of syncfile</li>
+              <li>Debugging aid for introspecting P6opaque objects</li>
+              <li>Support merge_bytes in async proc ops, for reading STDOUT and STDERR
+                together</li>
+              <li>Support binding handles to file descriptors in async procs</li>
+              <li>Fix off-by-one in profiler node GC</li>
+              <li>Add string eqat/index ignorecase+ignoremark functions</li>
+              <li>Add new eqaticim_s and indexicim_s ops ignorecase+ignoremark</li>
+              <li>Use norm instead of n for the normalizer variable</li>
+              <li>Add improved support for GCB=Prepend</li>
+              <li>Improve Regional Indicators support during normalization</li>
+              <li>Serialize a Decoder REPR object into null, so incidental file handle
+                serialization in Perl 6 does not blow up</li>
+              <li>Improve named argument optimization, so we can specialize and throw out
+                instructions in more cases</li>
+              <li>JIT decodertakeline</li>
+              <li>Fix missed opportunity to run JITted code</li>
+              <li>Have inline log note what couldn't inline also</li>
+              <li>Remove successor when optional named argument is passed, so default code
+                can be eliminated</li>
+              <li>Flag writers that die when a basic block is eliminated, and disregard them
+                in PHI node analysis, provide more precise type information</li>
+              <li>Make a basic block elimination pre-pass before the main optimization work</li>
+              <li>Set dead writer when deleting instructions also, to further aid PHI merges</li>
+              <li>Track which basic blocks are part of a jump list</li>
+              <li>Delete pointless goto instructions (those at the end of a basic block that
+                simply go to the next block)</li>
+              <li>Remove bad Windows quoting option async proc code</li>
+              <li>Actually log inlines to stderr as the comment up top claims</li>
+              <li>Make find_separator only look at the last chars, which is far cheaper</li>
+              <li>Add help text for environment variables to Configure</li>
+              <li>Move NFG initialization into nfg.c</li>
+              <li>Cache CRLF grapheme value</li>
+              <li>Cache maximum separator length, to save recomputing it for every line that
+                is read</li>
+              <li>Cache a list of final separator graphemes, for faster stopper detection in
+                streaming decoders</li>
+              <li>Introduce a max final grapheme codepoint filter, for faster stopper
+                detection in streaming decoders</li>
+              <li>Add a UTF-8 decoding fast-path that doesn't need to go through the full
+                normalizer</li>
+              <li>Keep last freed chars buffer handy for re-use in streaming decoder</li>
+              <li>Make a smarter guess at decode result buffer size in streaming decoder</li>
+              <li>Don't copy when we can steal decoder output, saving a memory copy in most
+                line reading operations</li>
+              <li>Various micro-optimizations to UTF-8 decoding fast path</li>
+              <li>Fix newline translation in various encoding's streaming decoder</li>
+          </ul>
+          <p><a href="releases/MoarVM-2017.06.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2017.05</h3>
         </div>
         <div class="panel-body">

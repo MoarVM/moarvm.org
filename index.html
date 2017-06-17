@@ -33,14 +33,17 @@
       </nav>
 
       <div class="jumbotron">
-        <h1>MoarVM 2017.05</h1>
+        <h1>MoarVM 2017.06</h1>
         <p>
-          Improvements and additions to instrumentations, including improving
-          the accuracy of coverage reporting of specialized code and a new
-          high-precision low-impact logger. Deprecated char-mode async I/O
-          support removed. And a range of bug fixes and other enhancements.
+          Synchronous I/O reimplemented, lifting limtations on creating a handle
+          on one thread and reading/writing it on another thread. Optimized
+          UTF-8 decoding and reading data line by line. Dynamic optimization
+          improvements for named parameters and more accurate type information
+          propagation when dead code is eliminated. Further Unicode support and
+          optimization. More features in asynchronous process handling. And many
+          other bug fixes, new features, and optimizations.
         </p>
-        <p><a href="releases/MoarVM-2017.05.tar.gz" class="btn btn-primary btn-lg" role="button">Download</a></p>
+        <p><a href="releases/MoarVM-2017.06.tar.gz" class="btn btn-primary btn-lg" role="button">Download</a></p>
       </div>
 
       <div class="panel panel-default">
