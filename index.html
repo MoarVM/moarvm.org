@@ -33,17 +33,19 @@
       </nav>
 
       <div class="jumbotron">
-        <h1>MoarVM 2017.06</h1>
+        <h1>MoarVM 2017.07</h1>
         <p>
-          Synchronous I/O reimplemented, lifting limtations on creating a handle
-          on one thread and reading/writing it on another thread. Optimized
-          UTF-8 decoding and reading data line by line. Dynamic optimization
-          improvements for named parameters and more accurate type information
-          propagation when dead code is eliminated. Further Unicode support and
-          optimization. More features in asynchronous process handling. And many
-          other bug fixes, new features, and optimizations.
+          Full Unicode 9.0 and Emoji 4.0 text segmentation support. Faster
+          normalization, string indexing, and string concatenation. Collation
+          improvements, including support for reversing any of the levels.
+          Optional output buffering on file handles. Numerous tweaks to
+          dynamic optimization and JIT compilation to improve code quality,
+          with a focus on Perl 6 I/O code. Asynchronous process handling
+          improvements, including support for retrieving and plumbing together
+          processes at the file descriptor level. And numerous other fixes
+          and enhancements.
         </p>
-        <p><a href="releases/MoarVM-2017.06.tar.gz" class="btn btn-primary btn-lg" role="button">Download</a></p>
+        <p><a href="releases/MoarVM-2017.07.tar.gz" class="btn btn-primary btn-lg" role="button">Download</a></p>
       </div>
 
       <div class="panel panel-default">
@@ -51,28 +53,24 @@
           <h3 class="panel-title">What is MoarVM?</h3>
         </div>
         <div class="panel-body">
-          <p>Short for "Metamodel On A Runtime", MoarVM is a virtual machine built
-          especially for <a href="http://www.rakudo.org/">Rakudo Perl 6</a> and
-          the <a href="https://github.com/perl6/nqp/">NQP Compiler Toolchain</a>.
-          It uses dynamic optimization techniques to detect hot code and produce
-          specialized versions for the types that show up at runtime. The most
-          popular backend for Rakudo Perl 6, MoarVM stands out by:</p>
+          <p>Short for "Metamodel On A Runtime", MoarVM is a modern virtual
+            machine built for the <a href="http://www.rakudo.org/">Rakudo Perl
+            6</a> compiler and the <a href="https://github.com/perl6/nqp/">NQP
+            Compiler Toolchain</a>. MoarVM is used by the majority of Perl 6
+            programmers. Highlights include:</p>
           <ul>
-            <li>Running the Perl 6 specification test suite in the least time</li>
-            <li>Passing more of the Perl 6 specification tests than Rakudo Perl 6
-              on other backends</li>
-            <li>Having the lowest memory usage</li>
-            <li>Having the best startup time</li>
-            <li>Being fastest to build both NQP and Rakudo - and thus your Perl 6
-              and NQP programs too!</li>
-            <li>Being the only backend to support strings at grapheme level</li>
+            <li>Great Unicode support, with strings represented at grapheme
+              level</li>
+            <li>Dynamic analysis of running code to identify hot functions
+              and loops, and perform a range of optimizations, including type
+              specialization and inlining</li>
+            <li>Support for threads, a range of concurrency control constructs,
+              and asynchronous sockets, timers, processes, and more</li>
+            <li>Generational, parallel, garbage collection</li>
+            <li>Support for numerous language features, including first class
+              functions, exceptions, continuations, runtime loading of code,
+              big integers and interfacing with native libraries</li>
           </ul>
-          <p>For long-running workloads where startup time doesn't matter and
-            you need tried-and-tested threading support, Rakudo on the JVM may be
-            a better bet. It may also - once the slow startup is overcome - win on
-            performance for some workloads, once its sophisticated JIT compiler gets
-            to work. MoarVM is under active development in these areas, and the gap
-            continues to close.</p>
         </div>
       </div>
 
