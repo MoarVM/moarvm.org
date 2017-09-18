@@ -33,19 +33,19 @@
       </nav>
 
       <div class="jumbotron">
-        <h1>MoarVM 2017.07</h1>
+        <h1>MoarVM 2017.09</h1>
         <p>
-          Full Unicode 9.0 and Emoji 4.0 text segmentation support. Faster
-          normalization, string indexing, and string concatenation. Collation
-          improvements, including support for reversing any of the levels.
-          Optional output buffering on file handles. Numerous tweaks to
-          dynamic optimization and JIT compilation to improve code quality,
-          with a focus on Perl 6 I/O code. Asynchronous process handling
-          improvements, including support for retrieving and plumbing together
-          processes at the file descriptor level. And numerous other fixes
-          and enhancements.
+          As of this release, MoarVM now has a full implementation of the
+          Unicode collation algorithm and is using the Unicode 10 database.
+          Numerous other string and Unicode improvements, including adopting
+          the Knuth-Morris-Pratt string search algorithm. Numerous cleanups
+          and tweaks to the JIT compiler. Better optimization of conditionals,
+          exception handlers, and code involving native references. A new, more
+          efficient, heap snapshot output format, and other heap snapshot
+          improvements. And numerous other fixes and enhancements spanning
+          native calling, I/O, concurrency, and portability.
         </p>
-        <p><a href="releases/MoarVM-2017.07.tar.gz" class="btn btn-primary btn-lg" role="button">Download</a></p>
+        <p><a href="releases/MoarVM-2017.09.1.tar.gz" class="btn btn-primary btn-lg" role="button">Download</a></p>
       </div>
 
       <div class="panel panel-default">

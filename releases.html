@@ -34,6 +34,363 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2017.09.1</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>Assign variable in optimize_bb loop on its own line for clarity</li>
+            <li>Revert "Fix errors when running `make realclean" to unbreak build
+                using nmake</li>
+          </ul>
+          <p><a href="releases/MoarVM-2017.09.1.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">2017.09</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+              <li>Allocate async process read buffer based on amount last read, with a
+                minimum size limit</li>
+              <li>Implement the Knuth-Morris-Pratt string search algorithm</li>
+              <li>Add error string to 'failed to resolve' exception</li>
+              <li>Fix usage of ARG5 in JIT on Windows to use stack instead</li>
+              <li>JIT param_rp_i and param_rp_o</li>
+              <li>Fix calculation for maximum array size</li>
+              <li>Correct ==/= mistake in container optimization</li>
+              <li>Ensure strings created with MVM_string_repeat are in NFG form</li>
+              <li>Avoid evaluating arguments to MVM_ASSERT_NOT_FROMSPACE when it's disabled</li>
+              <li>Add up to date string documentation</li>
+              <li>Remove old strings.markdown documentation file</li>
+              <li>Speed up `index` 9x when Haystack is strand, needle is 1 long</li>
+              <li>Add new cached grapheme iterator</li>
+              <li>Always cache even for flat haystacks with KMP</li>
+              <li>Generate stacktraces on Travis CI when getting a segfault</li>
+              <li>Add MVM_DEBUG_NFG in more places</li>
+              <li>MVM_string_utf8_decodestream: free the buffer on malformed UTF-8</li>
+              <li>Only run NFG_CHECK on concat result that *should* be normalized</li>
+              <li>Revise some comments in MVM_string_is_control_full()</li>
+              <li>Make sure MVMROOT'd pointer is initialized as NULL</li>
+              <li>Align MVM_TELEMETRY_LOG usage statement</li>
+              <li>Align --tracing usage statement</li>
+              <li>Update Unicode database for Unicode 10</li>
+              <li>MVM_IS_32BIT_INT(i) with explicit casts</li>
+              <li>JIT eqat(ic|im|icim)</li>
+              <li>Building .dasc files depends on dynasm version</li>
+              <li>Add minimal 'dynamic array' library using macros</li>
+              <li>Make the JIT Graph use dynamic arrays</li>
+              <li>Cleanup JIT graph after use</li>
+              <li>Replace explicit JIT function return frame check</li>
+              <li>Wrap dasm_State in MVMJitComiler structure</li>
+              <li>Fix unlikely but possible stack overflow from user input</li>
+              <li>Allow MVM_string_get_grapheme_at_nocheck to be inlined</li>
+              <li>Make `eqat` 1.7x-2.5x faster</li>
+              <li>Fix indentation of switch in substrings_equal_nocheck</li>
+              <li>Use PRIi64 macro instead of %lld in MVM_coerce_i_s</li>
+              <li>Replace all uses of sprintf with snprintf</li>
+              <li>Consistently use MVMuint16 for was_multi</li>
+              <li>Add some explanation of GET_REG and cur_op to interp.c</li>
+              <li>Use < or <= sign for all conditionals in strings/ops.c</li>
+              <li>Rework MVMNFGSynthetic to not store base separately</li>
+              <li>Only use MVMGraphemeIter_cached for strands in KMP index</li>
+              <li>Split out JIT compiler init/deinit</li>
+              <li>Organise architecture-specific JIT source files</li>
+              <li>Check return status of DynASM</li>
+              <li>Remove JIT intermediates in make clean</li>
+              <li>Add 'POP' dynamic array method</li>
+              <li>Flush log on oops</li>
+              <li>Refactor labelling in JIT</li>
+              <li>Add spesh iterator and replace JitGraphBuilder</li>
+              <li>Fix leak of JIT graph</li>
+              <li>Simple fix for duplicated labels</li>
+              <li>Use VECTOR macro arguments only once if possible</li>
+              <li>Add vector SHIFT method</li>
+              <li>Enable JIT breakpoint insertion</li>
+              <li>Use single DynASM build target</li>
+              <li>Compile less with --no-jit</li>
+              <li>Add old-style suffix rule for dynasm compilation</li>
+              <li>Atomic increment not required for JIT sequence nr</li>
+              <li>Move size check into COPY_ARRAY</li>
+              <li>Correct buffer handling in UTF-8 fast->slow path</li>
+              <li>UCD: For sequences, convert from \x{ } to the Unicode codepoints</li>
+              <li>Flush standard handles at exit</li>
+              <li>Flush output buffer where needed</li>
+              <li>Ensure write to unwritable handle fails right off</li>
+              <li>Don't try and sync when flushing is enough</li>
+              <li>Better if_o/unless_o optimization in some cases</li>
+              <li>Do dead BB elimination pass after branch deletion</li>
+              <li>Optimize MVM_string_gi_move_to</li>
+              <li>Don't decont native refs when spesh logging</li>
+              <li>Handle native refs better in spesh stats</li>
+              <li>Support spesh multi resolution involving nativeref</li>
+              <li>Set facts on nativeref deconts</li>
+              <li>A little refactoring of second optimization pass</li>
+              <li>Remove fact copy we most likely don't now need</li>
+              <li>Re-flow and better explain set elimination code</li>
+              <li>Fix bug in gi_move_to if not starting at 0</li>
+              <li>Introduce a binary format for heapsnapshot, wtih snapshots at the beginning
+                of the file</li>
+              <li>Immediately write heap snapshots to file instead of keeping them around in
+                memory</li>
+              <li>Write parts of types/static frames/strings incrementally into heap snapshot
+                file</li>
+              <li>Add gc_describe functions for new spesh data structures</li>
+              <li>Use grapheme iterator cached for ignorecase/ignoremark index ops</li>
+              <li>Take more care when eliminating set inside inline</li>
+              <li>Re-compute dominance tree before stage 2 opts</li>
+              <li>Add a reliable locals count for inlines</li>
+              <li>Move throw -> goto optimization to second pass</li>
+              <li>Mark GC blocked when acquiring I/O mutex</li>
+              <li>Only use grapheme iter cached if the Haystack is a strand for index</li>
+              <li>Don't try to duplicate unreachable handlers on inline</li>
+              <li>Ensure gi->start is set to 0 for flat strings in MVM_string_gi_init</li>
+              <li>Fix a leak in CArray REPR</li>
+              <li>Merge Full Unicode Collation Algorithm Implementation</li>
+              <li>Remove unneeded file from UCA implementation</li>
+              <li>Nativecall: fix invalid pointer creation</li>
+              <li>Fix ignoremark with Prepend characters and ordbaseat op</li>
+              <li>For degenerate Synth's with Prepend and Extend set base cp to 1st cp</li>
+              <li>Fix case change when base cp isn't the first cp in synthetic</li>
+              <li>Fix elems of ConcBlockingQueue REPR</li>
+              <li>Implement getrusage op</li>
+              <li>Add documentation on UCA collation implementation</li>
+              <li>Include debug names in some wrong REPR errors</li>
+              <li>Fix MVMROOT in socket port/host code added in last release</li>
+              <li>In README, note that release tarballs won't work out of the box and point to
+                where to get working ones</li>
+              <li>Expose number of locks held by a thread through an op</li>
+              <li>Add missing concreteness checks in thread ops</li>
+              <li>Fix errors when running `make realclean</li>
+              <li>Store smallint value in 64bit if we negate them later</li>
+              <li>Fix segfault when compiling nqp with musl as libc</li>
+              <li>Avoid recursion in optimize_bb() when only 1 child node</li>
+          </ul>
+          <p><a href="releases/MoarVM-2017.09.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">2017.08.1</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+              <li>Fix regression in Windows JIT build</li>
+              <li>Remove broken JIT of parameter operations</li>
+          </ul>
+          <p><a href="releases/MoarVM-2017.08.1.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">2017.08</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+              <li>Dynamic optimization moved to a worker thread
+                <ul>
+                  <li>Threads now write sequential logs into a log buffer, and send it to the
+                    worker thread in a concurrent queue</li>
+                  <li>Quota of logs to avoid excessive memory use, with a boost when entering
+                    a new compilation unit for the sake of OSR</li>
+                  <li>Added MVM_SPESH_BLOCKING environment variable to allow for reproducible
+                    specialization results when debugging</li>
+                  <li>Reworked installation of specializations</li>
+                  <li>Reworked OSR implementation to account for specialization being done on
+                    a worker thread</li>
+                </ul>
+              </li>
+              <li>New statistics model for making better specialization decisions
+                <ul>
+                  <li>Frames carry a correlation ID to allow reconstruction of call stack and
+                    analysis on the specialization worker thread</li>
+                  <li>Produce specializations based upon most common occurring types, not just
+                    those sampled immediately after passing a threshold</li>
+                  <li>Megamorphic code gets a non-type specialization and may be JIT-compiled</li>
+                  <li>Remove hard limit on spesh candidate count</li>
+                  <li>MVM_SPESH_DUMP updated to show statistics and planned specializations</li>
+                  <li>Updated log analysis and guard insertion to use the new statistics model</li>
+                </ul>
+              </li>
+              <li>New argument guard, based around a tree, which means less checks need to be
+                performed when deciding on with specialization to run</li>
+              <li>Add dumping of new argument guard structure</li>
+              <li>Log time that specialization work consumes</li>
+              <li>Add a script to sum up logged spesh times</li>
+              <li>Better organization of MVMInstance and MVMThreadContext fields</li>
+              <li>Removed now-unused cur_usecapture field</li>
+              <li>Avoid passing a real NULL as an object argument in stack unwind handling</li>
+              <li>Disable spesh in initial load/deserialize; there's no useful data at this
+                point</li>
+              <li>Add thread ID range check to GC debug mode</li>
+              <li>Deduplicate code from MVM_string_indexing_optimized</li>
+              <li>Start off collapsing strands as 8bit instead of 32bit</li>
+              <li>Concatenation improvements
+                <ul>
+                  <li>When concat needs normalization only normalize one section</li>
+                  <li>Don't trigger re_nfg on concat for base character + combiner</li>
+                  <li>Add functions for iterating the codepoints of a grapheme</li>
+                  <li>Don't re_nfg when last_a or first_b are synthetics in concat</li>
+                  <li>Don't take the no re_nfg shortcut if a repetition contains a synthetic</li>
+                  <li>Don't do re_nfg shortcut if either a or b are repeats</li>
+                  <li>Use MVM_string_graphs_nocheck when able in concat</li>
+                  <li>Fix conditional to check first instead of last strand of string b</li>
+                </ul>
+              </li>
+              <li>Enable native callbacks on different threads</li>
+              <li>Fix double-decrement of unused args in inlining</li>
+              <li>More detailed dump of spesh slots</li>
+              <li>Don't NULL out spesh slots; they may be re-used</li>
+              <li>Make JIT include SC write barriers</li>
+              <li>Stronger validation of code objects in optimizer</li>
+              <li>Refactor code into iterate_gi_into_string() to reduce code duplication</li>
+              <li>Move collapse_strands() after iterate_gi_into_string()</li>
+              <li>NULL out registers on re-OSR</li>
+              <li>Only devirtualize REPR funcs in JIT when concreteness is known</li>
+              <li>Fix JIT of nqp::ordat and nqp::ordfirst</li>
+              <li>Update TinyMT to version 1.1</li>
+              <li>We always have threads now (thanks to specializer worker), so remove single
+                threaded VM instance lock avoidance paths</li>
+              <li>Improve GC thread sync-up
+                <ul>
+                  <li>Simplify handling of the thread list</li>
+                  <li>Introduce GC orchestration mutex/condvars, and use them to avoid busy
+                    waiting when synchronizing threads for GC</li>
+                 <ul>
+              </li>
+              <li>Avoid many array searches for SC code refs</li>
+              <li>JIT param_sp and param_sn</li>
+              <li>Inability to open telemeh log shall not be fatal</li>
+              <li>Output spesh worker info on telemetry channel</li>
+              <li>Size of MVMFrame reduced
+                <ul>
+                  <li>Eliminate effective_handlers field in MVMFrame</li>
+                  <li>Eliminate effective_bytecode field in MVMFrame</li>
+                  <li>Add function to encapsulate special return setup</li>
+                  <li>Move special return into a frame extras</li>
+                  <li>Move continuation tags into frame extras</li>
+                  <li>Move invoked_call_capture to frame extras</li>
+                  <li>Move dynamic lexical cache to frame extras</li>
+                  <li>Eliminate throw_address from frames</li>
+                  <li>Force MVMReturnType to be a single byte</li>
+                  <li>Toss never-used nameds re-use logic</li>
+                  <li>Eliminate need to memset MVMFrame</li>
+                  <li>Remove historical, now-unrequired, nullings</li>
+                  <li>Use a bit field for named args used when possible</li>
+                </ul>
+              </li>
+              <li>Improve NFA memory performance</li>
+              <li>Small optimization to string_equal, remove repeated checks</li>
+              <li>Remove two invoke handler functions we don't need</li>
+              <li>Remove long-unused newlexotic/lexoticresult ops</li>
+              <li>Remove now-dead newlexotic functions</li>
+              <li>Remove now-unused pool_index in MVMStaticFrame</li>
+              <li>Eliminate now-unused Lexotic REPR, lexotic cache</li>
+              <li>Remove a dead field</li>
+              <li>Remove unused gotolexotic function</li>
+              <li>Move spesh data into a separate object from MVMStaticFrame, for less memory
+                use and better GC performance</li>
+              <li>Break MVM_sc_get_sc into inline and slow path</li>
+              <li>Delete unused var in MVM_string_ascii_encode_substr</li>
+              <li>Avoid range check on every SC object access</li>
+              <li>Delete unused var in MVM_string_latin1_encode_substr</li>
+              <li>Fix MVM_string_compare to support deterministic comparing of synthetics</li>
+              <li>Disable JIT when we're not allowed to make memory executable</li>
+              <li>Have MVM_string_codes iterate the string with codepoint iterator</li>
+              <li>Speed up attribute reads during invocation</li>
+              <li>Document the various op adverbs</li>
+              <li>Reduce duplication and simplify logic in invoke</li>
+              <li>Move checking part of force_to_heap into an inline</li>
+              <li>Allocate frames on heap that tend to need promotion anyway</li>
+              <li>Improve deopt logging output</li>
+              <li>Append, not prepend, moved deopt one annotations</li>
+              <li>Turn decont into a deoptonepoint and insert guards after decont</li>
+              <li>Store deopt one target directly in bytecode rather than calculating it each
+                time</li>
+              <li>Implement speculative pre-selection of specializations and inlining based on
+                guarding against the invocation target</li>
+              <li>When inlining, replace receive instruction instead of send instruction, to
+                better cope with register re-use</li>
+              <li>JIT pow_I</li>
+              <li>Validate range of branch target in spesh code-gen</li>
+              <li>Anchor inlinee handlers to inliner entry</li>
+              <li>Fix and expand dead basic block removal</li>
+              <li>Remove duplicate use of named arg checking</li>
+              <li>More sophisticated named arg handling in spesh, removing sp_namedarg_used op</li>
+              <li>Make it possible to cancel an async socket reader</li>
+              <li>JIT rand_I and also give it a smallbigint path</li>
+              <li>Ensure that serialized padding bytes are 0</li>
+              <li>Avoid uninitialized bytes in default tables</li>
+              <li>Avoid uninitialized bytes at the end of serialized tables</li>
+              <li>Add -Werror=pointer-arith for gcc</li>
+              <li>Put hard upper limit on bytecode size to optimize</li>
+              <li>Move annotations multiple basic blocks if needed</li>
+              <li>Eliminate "blocked by alias" propagation checks</li>
+              <li>End basic blocks after all throwish/invokish</li>
+              <li>Extra fflush so spesh log is written before crash</li>
+              <li>Ensure frame handler start/ends are BB boundaries</li>
+              <li>Don't explode on spesh dump when no facts</li>
+              <li>Cope with extra successors when inlining</li>
+              <li>Factor out and re-use dead BB elimination</li>
+              <li>Allow for GOTO handler to become unreachable</li>
+              <li>More precise CFGs for control exception handlers</li>
+              <li>Add indexim_s op and improve/fix bugs in eqatim_s</li>
+              <li>Further harden against removed handlers</li>
+              <li>Add debugging aid for spesh preselection</li>
+              <li>Make rebless deopt stack top frame also</li>
+              <li>Bump usage of writers in deopt instructions</li>
+              <li>Start storing/using static frame in inline table</li>
+              <li>Use register holding code ref for deopt purposes</li>
+              <li>Can never inline frames declaring state vars</li>
+              <li>Correct handler order when inlining</li>
+              <li>Implement inlining of basic lexical lookups</li>
+              <li>Tune the inline size</li>
+              <li>The listen callback shall also push socket and peer IP and port</li>
+              <li>Don't set a bit we're meant to be clearing in GC gen2 promotion</li>
+              <li>Harden listen_cancel against dupe calls</li>
+              <li>JIT nativecallcast, trunc_i32, extend_i32</li>
+              <li>Make sure the libffi callback can be reused</li>
+              <li>JIT the create op</li>
+              <li>Check ffi_closure_alloc() return value</li>
+              <li>Implement atomic ops
+                <ul>
+                  <li>Provide a way to have an int type sized to the architecture's atomic
+                    size</li>
+                  <li>Implement cas for Scalar references and native integer references</li>
+                  <li>Implement atomic load and store for Scalar references and native integer
+                    references</li>
+                  <li>Implement atomic increment, decrement, and add for native integer
+                    references</li>
+                  <li>Provide an op for doing a full memory barrier</li>
+                  <li>JIT of the new atomic ops</li>
+                </ul>
+              </li>
+              <li>Fix a bug in index/eqat(im) and in ord_getbasechar</li>
+              <li>Add nqp::coveragecontrol op</li>
+              <li>Remove two more unneeded strlen from nativecall.c</li>
+              <li>Only foldcase the needle for ignorecase operations</li>
+              <li>Remove impossible less than zero checks on unsigneds</li>
+              <li>Add GC debug check on frame heap promotion</li>
+              <li>Correct an MVM_ASSIGN to barrier the right target in continuation invocation</li>
+              <li>Root thread object while creating thread context</li>
+              <li>Correct invokewithcapture GC handling</li>
+              <li>Extra GC debug checks after frame promotion</li>
+              <li>Blacklist unhandled param ops in spesh args handling</li>
+              <li>Add hostname to failed to resolve error</li>
+              <li>JIT param_rp_o and param_rp_i</li>
+              <li>Introduce NFG_CHECK which checks string is in NFG form</li>
+              <li>Fix concatenation bug when renormalization needed</li>
+              <li>JIT setcodeobj and captureinnerlex</li>
+          </ul>
+          <p><a href="releases/MoarVM-2017.08.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2017.07</h3>
         </div>
         <div class="panel-body">
