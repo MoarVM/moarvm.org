@@ -34,6 +34,283 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2017.12</h3>
+        </div>
+        <div class="panel-body">
+          <p>Miscellaneous:</p>
+          <ul>
+            <li>Fix ASAN flags for Darwin platform</li>
+            <li>Fix implementation of the new inline boundary indicators to set action</li>
+          </ul>
+          <p>Unicode:</p>
+          <ul>
+            <li>Fix it so Line_Break property returns XX as the default value, instead of
+                incorrectly returning BK</li>
+            <li>Fix it so Numeric_Type property doesn't return an empty string for codepoints
+                with the Digit property value</li>
+            <li>Make Bidi_Mirrored_Glyph an enum instead of storing the full codepoint value
+                in the bitfield</li>
+            <li>Make error messages consistent which refer to synthetic codepoints</li>
+            <li>Many, many fixes and changes to ucd2c.pl, which generates the Unicode database.
+                Most changes are not user visible but will be the foundation for making sure
+                we return the correct property values for codepoints not in UnicodeData.txt
+                (Primary Unicode Data source file)
+                <ul>
+                  <li>Note, we have the correct values for most of these other codepoints, but
+                      the goal is the get even these currently reserved characters working. Main
+                      pluses for this are: 1. Correctness 2. Unicode sometimes sets properties for
+                      codepoints based on likely future usage. This would allow better correctness
+                      if an older version of MoarVM is used with codepoints from a future versions
+                      of Unicode codepoints (as could be the case with OS distributions lagging
+                      behind current releases)</li>
+                </ul>
+            </li>
+          </ul>
+          <p>JIT:</p>
+          <ul>
+            <li>Lexical handler lookups no longer prevent a lot of inlines</li>
+            <li>jit-bisect.pl now uses MVM_SPESH_LIMIT when trying to find pesky spesh bugs</li>
+            <li>Fixed issue with taking a pointer-pointer to a moving object and don't read a NULL struct</li>
+          </ul>
+          <p>Spesh:</p>
+          <ul>
+            <li>Extend jit-bisect.pl to use MVM_SPESH_LIMIT</li>
+          </ul>
+          <p><a href="releases/MoarVM-2017.12.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">2017.11</h3>
+        </div>
+        <div class="panel-body">
+          <p>Miscellaneous:</p>
+          <ul>
+            <li>Show the actual type when &quot;no such attribute&quot; errors occur</li>
+            <li>In MVM_fixed_size_free and MVM_fixed_size_free_at_safepoint debug/error messages
+                use %lu instead of %d, put in missing output in one case</li>
+            <li>Harden event loop against fast cancellations</li>
+            <li>Remove dependency on Perl 5 autodie for compilation (expression engine)</li>
+            <li>Remove duplicate env variable usage line from moar --help</li>
+            <li>Update our internal release guide to include steps for signing tags</li>
+            <li>Profiler: Fix integer literal form for 1LL &lt;&lt; 32</li>
+            <li>Add support for a block noinline flag. Used to indicate that a block
+                may never be inlined; will bet set by Rakudo upon spotting uses of things that
+                need the dispatcher</li>
+            <li>Fix occasional old reads in ConcBlockingQueue</li>
+            <li>Put coerce_II op in same order relative to oplist</li>
+            <li>Retry in certain cases of EINTR in mvm_fileno, read_bytes,
+                read_one_packet, socket_write_bytes, socket_connect and socket_accept</li>
+          </ul>
+          <p>Unicode:</p>
+          <ul>
+            <li>Fix uppercase letters not giving Lu for the General_Category</li>
+            <li>collapse_strands with memcpy if all strands are same type (4x faster for strands of same type)</li>
+            <li>Fix bug causing utf8-c8 synthetics to combine with other codepoints</li>
+            <li>Optimize MVM_string_concat when the RHS is a single strand that's equal to the LHS's final strand</li>
+            <li>Fix+add comments for strand concat optimization</li>
+            <li>Speed up join of longer strings by a significant amount by concating multiple
+                times if there are more than 300 graphemes per string on average or there are
+                less than 4 pieces and more than 150 graphemes per string.</li>
+            <li>join: factor code into join_get_str_from_pos() function</li>
+            <li>Make sure General_Category 'Cn' codepoints match with C enum</li>
+            <li>Resolve unassigned codepoints as the default property values in MVM_unicode_get_property_str</li>
+            <li>Add an additional check that the &quot;bases&quot; of the strands are the same length
+                before checking if they're equal in string_from_strand_at_index.</li>
+            <li>Error message improvements to MVM_DEBUG_NFG #ifdef for synthetics</li>
+          </ul>
+          <p>JIT:</p>
+          <ul>
+            <li>JIT compile getarg_*, trunc_i16, param_rp_s, getrusage, coerce_II op,
+                getexcategory</li>
+            <li>Fix labeling off-by-one causing try/catch on some frames to fail</li>
+            <li>Mark nativeinvoke_* noinline to enable JIT compilation</li>
+            <li>Treat NULL strings correctly in JIT compiled native subs</li>
+            <li>JIT compile native calls with up to 3 UTF-8 string arguments</li>
+            <li>JIT compile native calls with integer rw arguments</li>
+          </ul>
+          <p>Iter:</p>
+          <ul>
+            <li>Don't segfault when MVM_iter on type object</li>
+            <li>Handle unsigned types to switch in MVM_iter()</li>
+          </ul>
+          <p>Spesh:</p>
+          <ul>
+            <li>Fix spesh dropping MVM_SPESH_ANN_DEOPT_ONE_INS annotations</li>
+            <li>Include reason when we cannot inline in the debug output</li>
+          </ul>
+          <p>Math:</p>
+          <ul>
+            <li>If dividing by 1 in MVM_bigint_div, just return the numerator</li>
+            <li>Make sure both objects are the same type when short-cutting division by 1 in MVM_bigint_div</li>
+            <li>Move assignment after MVMROOT in MVM_bigint_from_bigint</li>
+          </ul>
+          <p>libuv:</p>
+          <ul>
+            <li>Use uv_fs_copyfile in MVM_file_copy instead of manually opening a handle and
+                using and using uv_fs_sendfile to copy</li>
+            <li>Bump libuv to version 1.15.0</li>
+            <li>Make sure to close uv_timer handles after they are canceled</li>
+          </ul>
+          <p>Garbage Collection/Memory</p>
+          <ul>
+            <li>Fix unneeded GC blocking in loop</li>
+            <li>Fix pointer arithmetic in MVM_fixed_size_realloc_at_safepoint with a cast</li>
+            <li>Convert realloc plus memset 0 to recalloc in MVM_sc_set_object</li>
+            <li>FSA size debug: cooperate better with valgrind</li>
+            <li>Support FSA_SIZE_DEBUG in MVM_fixed_size_realloc and *realloc_at_safepoint</li>
+          </ul>
+          <p>MVMROOT:</p>
+          <ul>
+            <li>Add MVMROOT2..MVMROOT5 macros to make rooting multiple variables easier</li>
+            <li>Add a missing MVMROOT to MVM_bigint_from_bigint</li>
+            <li>Fix HLL representations of CArray elements out of sync after native calls</li>
+            <li>Add missing MVMROOTs to MVM_bytecode_finish_frame and prepare_and_verify_static_frame</li>
+            <li>Add missing MVMROOTs around managed mutex acquire in MVM_serialization_demand_code,
+                MVM_serialization_finish_deserialize_method_cache, MVM_serialization_demand_object
+                and MVM_serialization_finish_deserialize_method_cache</li>
+          </ul>
+          <p><a href="releases/MoarVM-2017.11.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">2017.10</h3>
+        </div>
+        <div class="panel-body">
+          <p>Miscellaneous:</p>
+          <ul>
+            <li>Unix socket support has been added</li>
+            <li>Add new DynASM version as submodule</li>
+            <li>Removal of Configure.pl --lua and --has-dynasm options, compiling with these
+                included 3rdparty libs is now required</li>
+            <li>Remove build dependency on Perl 5 Test::Exception module</li>
+            <li>Make a fast path for VMArray splice using memcpy</li>
+            <li>Add a few missing casts to MVMObject *</li>
+            <li>Cache the ENV var hash after first access</li>
+            <li>Improve MVM_dir_cwd() error message</li>
+            <li>Fix missing rooting/barriering in C[PP]Struct</li>
+            <li>Fix missing MVMROOTs in type parameterization handling</li>
+            <li>Fix returned tcp port values for async sockets (ntohs).  See RT#132135</li>
+            <li>Probe for gcc -Werror=* support. This allows building MoarVM on older GCCs</li>
+            <li>Fix issues with FreeBSD build, including adding new libuv file to Makefile.in</li>
+            <li>Protect parameterization additions with a mutex and fix for parametric type race</li>
+            <li>Bump libuv to ver. 1.14.1</li>
+            <li>Add MVM_fixed_size_realloc() and MVM_fixed_size_realloc_at_safepoint()</li>
+            <li>Fix a segfault when trying to bind a p6bigint to a matching attribute in a p6opaque</li>
+            <li>Include the type of unhandled register in error messages</li>
+          </ul>
+          <p>NativeCall:</p>
+          <ul>
+            <li>Factor out callback thread finding so code is now shared between libffi and dyncall backends</li>
+            <li>Make native callback thread finding more robust</li>
+            <li>Stash native thread ID after GC unblock</li>
+            <li>Many NativeCall functions can now be JIT'd</li>
+          </ul>
+          <p>JIT:</p>
+          <ul>
+            <li>JIT compile native calls with VMArray arguments</li>
+            <li>Basic JIT of lock/unlock</li>
+            <li>Support unsigned ints when JIT compiling native calls</li>
+            <li>Move null check into getdynlex func and remove bare null from getlexrel and getlexreldyn</li>
+            <li>Don't allow low-level null from getdynlex</li>
+            <li>Remove duplicate typedef for MVMJitCompiler</li>
+            <li>getlex_o now returns VNMull rather than null</li>
+            <li>Merge the 'expression tree' JIT compiler backend</li>
+            <li>Document the expression template syntax and IR structure</li>
+            <li>Document tiles</li>
+            <li>Add jit-bisect tool to help us bisect JIT issues</li>
+            <li>Add jit-dump tool to compare JIT output between runs</li>
+            <li>Process annotations on PHI nodes</li>
+            </ul>
+          <p>Frame:</p>
+          <ul>
+            <li>Ensure -&gt;caller/-&gt;static_info can't get outdated</li>
+            <li>Check caller chain before promotion</li>
+            <li>Set frame-&gt;caller up earlier</li>
+            <li>Add missing MVMROOT of outer/code_ref</li>
+            <li>Set frame-&gt;static_info in allocate_frame</li>
+            <li>Skip stats for frames beyond spesh max bytecode size</li>
+            <li>Don't generate log entries for huge frames</li>
+          </ul>
+          <p>Spesh:</p>
+          <ul>
+            <li>Fix possible access to moved object body</li>
+            <li>Add missing MVMROOT of return value for spesh logging</li>
+            <li>Don't give internal workers a spesh log</li>
+            <li>Make &quot;Can't find nc_site value on spesh ins&quot; non-fatal</li>
+          </ul>
+          <p>GC:</p>
+          <ul>
+            <li>Add more GC debug checks to help find -&gt;caller bug</li>
+            <li>Add debug assert in remove_one_frame</li>
+            <li>GC block pow_I thread due to it potentially being an expensive call</li>
+            <li>Mark thread GC blocked when locking file</li>
+            <li>Update GC debug code for growing nurseries</li>
+            <li>Avoid a thread yield loop in mark_thread_unlocked</li>
+            <li>Catch frame worklist adds with NULL static_info</li>
+            <li>Make thread GC nurseries scale to need</li>
+          </ul>
+          <p>Build:</p>
+          <ul>
+            <li>Sort the flags for MAST::Ops before generating them</li>
+          </ul>
+          <p>Strings:</p>
+          <ul>
+            <li>join: factor the concat stability checks into their own function and simplify conditionals</li>
+            <li>join: special case 8bit flat pieces/separator. 3x faster for joining 8bit flat strings</li>
+            <li>join: If only one item is to be joined, just return it</li>
+            <li>join: When everything to be joined is made up of strands, copy strands instead of making one flat string</li>
+            <li>Fix quaternary collation level's. Fixes RT#132216</li>
+            <li>collation: simplify quaternary and use define's for the bitmask</li>
+            <li>Speed up codes op by 10% for synthetic graphemes</li>
+            <li>In KMP based index set max stack alloca to 3000 bytes (used to be 4096)</li>
+            <li>Deduplicate the while loops into a #define in KMP based index</li>
+            <li>Fix utfc-c8 encoding for values &gt; 0x10FFFF and unicode surrogates</li>
+            <li>Fix concat bug with utf8c8 strings, flattening utf8c8 synths</li>
+            <li>Use the FSA for a temp alloc in MVM_string_join</li>
+            <li>Use FSA to allocate memory in NFA</li>
+            <li>Change realloc condition in MVM_string_utf8_decode to avoid unneeded reallocs</li>
+            <li>Add hex digits to the end of non-unique Unicode names (i.e. <CJK Ideograph-6183>)</li>
+                <li>Update Unicode Emoji to version 5</li>
+                <li>Download all emoji files and generate UCD for Emoji 4 and onward
+                <ul>
+                  <li>Since Emoji names in Unicode are not guaranteed to be 100% stable, we read from
+                      version 4 onward to ensure full compatibility with older MoarVM versions and
+                      Emoji versions</li>
+                </ul></li>
+                <li>Add info about planned features to Collation docs (Language/natural sort)</li>
+          </ul>
+          <p>Windows:</p>
+          <ul>
+            <li>Fix -&gt;seekable detection on TTY handles</li>
+            <li>Fix definition of MIN causing Windows issue</li>
+            <li>Pass user32 lib to build on Windows</li>
+            <li>#include ws2tcpip.h in syncsocket.c</li>
+          </ul>
+          <p>MacOS:</p>
+          <ul>
+            <li>Only include libuv posix-hrtime on *BSD not Darwin, was causing some versions
+                of MacOS not to build</li>
+            <li>Fix seekability detection on MacOS</li>
+          </ul>
+          <p>Solaris:</p>
+          <ul>
+            <li>Solaris doesn't have memmem() so use the 3rdparty/FreeBSD one</li>
+            <li>Fix segfault on Solaris due to the undefined behavior of passing NULL to print</li>
+          </ul>
+          <p>FreeBSD:</p>
+          <ul>
+            <li>Fix getaddrinfo failing with EAI_HINTS on FreeBSD</li>
+          </ul>
+          <p><a href="releases/MoarVM-2017.10.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2017.09.1</h3>
         </div>
         <div class="panel-body">
