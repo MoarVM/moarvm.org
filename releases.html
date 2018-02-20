@@ -32,7 +32,75 @@
           <li><a href="contributing.html">Contributing</a></li>
         </ul>
       </nav>
+<div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">2018.02</h3>
+        </div>
+        <div class="panel-body">
+<p>Miscellaneous:</p>
 
+<ul>
+<li>Clean up one-shot timers after firing</li>
+<li>Fix SEGV in profiler by testing the current thread's frame in heap snapshot</li>
+<li>Fix missing argument to syncsocket error message</li>
+<li>Fix EOF detection on zero-size files</li>
+</ul>
+
+<p>Strings:</p>
+
+<ul>
+<li>Add windows-1251 (Cyrillic) decode/encode support</li>
+<li>Refactor so code is shared between windows-1251 &amp; 1252</li>
+<li>Fix a bug causing encoding of ›, ˜, œ, ž, Ÿ, ™ and š with windows-1252 (Latin)
+to throw or fail encoding</li>
+</ul>
+
+<p>Spesh:</p>
+
+<ul>
+<li>Make MVM_spesh_manipulate_remove_handler_successors() public</li>
+<li>Move annotations to istrue when split from if_o</li>
+<li>Always split if_o into istrue and if_i</li>
+<li>Fix MVM_spesh_log_decont not logging anything</li>
+<li>Don't spesh log if we have a spesh_cand</li>
+<li>Don't optimize getattr unless known concrete</li>
+<li>Implement unmanaged_size in MVMSpeshLog repr</li>
+<li>Run basic facts discovery on inlined code</li>
+<li>Clean up handler successors after throwish ops become non-throwing</li>
+<li>Put inlined blocks between their caller and its successor</li>
+<li>Fix an off-by-one in uninline</li>
+<li>Remove superfluous DEOPT_ONE_INS annotation on some deconts</li>
+<li>Work around a segfault caused by type tuple without type information</li>
+<li>Revive removal of dead instructions after the first inlined function</li>
+<li>Fix SEGV when opening MVM_*_LOG files</li>
+</ul>
+
+<p>JIT:</p>
+
+<ul>
+<li>Add JIT templates for more than 44 ops</li>
+<li>Disable getlexstatic_o for the time being for stability reasons</li>
+<li>Fix segfault in JIT bytecode dumper on code without static frame</li>
+<li>Add NOOP expr JIT operator</li>
+<li>Don't output PHI in expr JIT log</li>
+<li>Better error in boxed ref for repr_id mismatch</li>
+<li>Add tiles for binary XOR and NOT</li>
+<li>Fix a miscompile in sp_p6ogetvt_o</li>
+<li>Only BAIL on DEOPT_ONE annotations on actual guard ops in expr JIT</li>
+<li>Merge non-control-flow basic blocks so expr JIT has more code to optimize</li>
+</ul>
+
+<p>Tooling:</p>
+
+<ul>
+<li>Update release_guide.md with info on generating releases.html</li>
+<li>Add script that generates moarvm.org/releases.html</li>
+<li>Edit the ChangeLog to include the original release</li>
+<li>Add script to generate Windows-1251 and 1252 codetables</li>
+</ul>
+<p><a href="releases/2018.02.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
 <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">2018.01</h3>
