@@ -34,6 +34,90 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2018.03</h3>
+        </div>
+        <div class="panel-body">
+<p>Miscellaneous
++ Add remote debugging support, optionally enabled with the --debug-port option
+  to MoarVM. This uses the MessagePack and allows:</p>
+
+<ul>
+<li>Suspending and resuming all threads, or individual threads
+<ul>
+<li>Enumerating threads and, when they are suspended, getting their stack traces</li>
+<li>Reading the lexical variables of a callframe</li>
+<li>Setting breakpoints and getting notified if they are hit (and, optionally, suspending execution)</li>
+<li>Stepping</li>
+<li>Fetching object attributes, array elements, and hash keys/values</li>
+</ul></li>
+<li>Add getppid op. Allows a child process to get the parent process id, and thus
+guess if it has become orphaned.</li>
+<li>Panic when Dyncall fails to allocate native callbacks</li>
+<li>Use uv_fs_copyfile API in MVM_file_copy</li>
+<li>Make IO signal handlers cancellable</li>
+<li>Add an tryfindmethod op which evaluates to null in the event that the method
+cannot be found</li>
+</ul>
+
+<p>Network:</p>
+
+<ul>
+<li>Ignore libuv-caused "fake" empty datagrams</li>
+<li>Expose both hostname and port of received datagrams</li>
+</ul>
+
+<p>Encodings:</p>
+
+<ul>
+<li>Change arguments for windows1252/1 decodestream ops</li>
+<li>Add proper support for replacements in decodestream for windows1252/1</li>
+<li>Add ops for strict decoding of windows-1251/1252, decoderepconfig, encodeconfig,
+decodeconfig and encoderepconfig</li>
+<li>Add support for replacements with more than one character for windows-1251 and windows-1252</li>
+<li>Add some string consts in MVMStringConsts for MVMDecodeStream</li>
+</ul>
+
+<p>Spesh:</p>
+
+<ul>
+<li>optimize eq_s and ne_s against empty string in spesh</li>
+</ul>
+
+<p>Tooling:</p>
+
+<ul>
+<li>Bump libuv version 1.19.2</li>
+<li>Move moarvm.org tool into proper folder. Add more release guide info</li>
+<li>Add CMP library to ./3rdparty which is used for supporting the debug server</li>
+<li>Add debug server protocol documentation</li>
+</ul>
+
+<p>JIT:</p>
+
+<ul>
+<li>Add JIT template for ne_s, const_n64, not_i, is(int|num|str|list), existskey,
+eqat_s, concat_s, isnull_s, isfalse, istrue, ishash</li>
+<li>Enable box_i and box_s templates</li>
+<li>Release only spill slots without active overlap</li>
+<li>Warn for things that should be a size but may not be in the expr JIT compiler</li>
+<li>Create store_write_barrier macro</li>
+</ul>
+
+<p>Profiler:</p>
+
+<ul>
+<li>Support for threaded profiling has been added, although it is not fully stable yet</li>
+<li>Record thread id in profile data</li>
+<li>Record if a thread is responsible for a gc</li>
+<li>Count spesh time properly</li>
+<li>Record when gc happens (msecs since start)</li>
+<li>Fix for gigantic and wrong spesh time in profiles</li>
+</ul>
+<p><a href="releases/2018.03.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2018.02</h3>
         </div>
         <div class="panel-body">
