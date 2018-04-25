@@ -34,6 +34,138 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2018.04</h3>
+        </div>
+        <div class="panel-body">
+<p>Strings:</p>
+
+<ul>
+<li>Speed up collapse_strands 4x by rewriting to target compiler auto vectorization</li>
+<li>Vectorize turn_32bit_into_8bit_unchecked, 10% speedup for string_escape()</li>
+<li>Vectorize string flip operation for flat strings, ~25% speedup</li>
+<li>Speed up string cmp by 3-5x in the general case and by 6-10x if both strings are flat</li>
+<li>Speed up string index by 1.5x for a flat haystack and a needle of a differing type</li>
+<li>Add support for the windows-932 variant of the ShiftJIS encoding</li>
+<li>Fix bug in windows-1252 and windows-1252 decodestream with replacement when a replacement occurs in the last position of the input stream</li>
+</ul>
+
+<p>JIT:</p>
+
+<ul>
+<li>Inline simple cu string access into exprjit template</li>
+<li>Rename ^spesh_slot to ^spesh_slot_addr and add ^spesh_slot_value</li>
+<li>JIT expr templates for getstringfrom and getwvalfrom</li>
+<li>JIT floor_n, continuationinvoke, ctx</li>
+<li>JIT a few ops that ThreadPoolScheduler uses</li>
+<li>Measure and report time spent on JIT compilation</li>
+</ul>
+
+<p>Garbage Collection/Memory:</p>
+
+<ul>
+<li>Ensure memory blocks in the nursery are aligned where necessary</li>
+<li>Suspend other threads during global destruction</li>
+<li>Spot use of an item already put in a gen2 freelist</li>
+<li>Register sig_hash as an Instance root</li>
+</ul>
+
+<p>Math:</p>
+
+<ul>
+<li>Fix drift in Num-&gt;Str roundtrip; As a side effect effect div_In op becomes 14x slower</li>
+<li>Use Grisu3 algorithm for stringifying Num's, makes Num stringification 2x faster</li>
+<li>Fix handling of denormals in div_In op</li>
+<li>Generalize mp_get_double()</li>
+</ul>
+
+<p>Profiler:</p>
+
+<ul>
+<li>Log getrusage in the profile</li>
+</ul>
+
+<p>Ops:</p>
+
+<ul>
+<li>Add getsignals op, queries for valid signals</li>
+</ul>
+
+<p>Libraries:</p>
+
+<ul>
+<li>Patch libtommath to fix build on Solaris</li>
+<li>Add libatomic_ops as a submodule instead of in-tree</li>
+</ul>
+
+<p>6Model:</p>
+
+<ul>
+<li>Make tryfindmeth not throw in some cases it did</li>
+<li>Add missing write barrier enforcement in CPPStruct, CStruct</li>
+<li>Fix missing GC mark of deserializer contexts list</li>
+<li>Use Fixed Size Allocator for all_scs list</li>
+<li>Rename sc_weakhash mutex for more clarity over what it covers</li>
+<li>Fix segfault on concurrent array access while resizing</li>
+</ul>
+
+<p>IO:</p>
+
+<ul>
+<li>Mark thread blocked around getaddrinfo</li>
+<li>Make getrusage op modify an existing array instead of allocating one in the op itself</li>
+<li>Convey the process ID of a started child</li>
+<li>Guard against negative and zero signals in MVM_io_signal_handle</li>
+<li>Populate valid_sigs flag set handler function if not set</li>
+<li>Create bit-flag to indicate signals found on host</li>
+</ul>
+
+<p>Spesh:</p>
+
+<ul>
+<li>Keep wvals if only dep needs changing</li>
+<li>Fix fixing of wvals during inline</li>
+<li>Fix negated spesh of known type</li>
+<li>Add optimize_unbox</li>
+<li>Optimize known values for istrue</li>
+<li>Remove object boolification from optimize_iffy</li>
+<li>Discover type of getrusage in spesh</li>
+<li>Fix optimization of zombie conditional causing segfault</li>
+<li>Insert null-out-instructions before prof_enter</li>
+</ul>
+
+<p>Debug Server
++ Cut module names out of filenames
++ Only suspend on actually must-suspend breakpoints
++ Add metadata for ReentrantMutex and Semaphore</p>
+
+<p>Tooling/Build:</p>
+
+<ul>
+<li>Fix loading bytecode on big endian systems</li>
+<li>Move libatomic_ops module to a different directory</li>
+<li>Tell user to delete folder if submodule dir already exists</li>
+<li>Don't build specify -D_FILE_OFFSET_BITS for dyncall</li>
+<li>Fix Solaris 32-bit build: don't build specify -D_FILE_OFFSET_BITS for dyncall</li>
+<li>Fix Configure.pl --asan flag on clang</li>
+<li>Add --show-autovect --show-autovect-failed flags to Configure.pl</li>
+<li>Use Configure.pl to generate vectorization defines on clang, so we get a warning
+if vectorization fails for specific loops</li>
+</ul>
+
+<p>Miscellaneous:</p>
+
+<ul>
+<li>Fix confused pointer offsetting in FSA_SIZE_DEBUG</li>
+<li>Fix memory corruption when running with FSA_SIZE_DEBUG set</li>
+<li>Correct lazy static lexical deserialization</li>
+<li>Fix small integer return values of libffi callbacks</li>
+<li>Fix bytecodedump to understand inlines</li>
+</ul>
+<p><a href="releases/2018.04.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2018.03</h3>
         </div>
         <div class="panel-body">
@@ -2307,7 +2439,7 @@ growth in multi-threaded applications</li>
 escape, blshift_i,  brshift_i, write_fhs, cmp_I</li>
 <li>Optimize out a bunch of unnecessary "set" instructions</li>
 <li>Turn a bunch of const_s + findmeth_s into cheaper findmeth</li>
-<li>Implement nqp::closefh_i which retuns the exit code of a pipe</li>
+<li>Implement nqp::closefh_i which returns the exit code of a pipe</li>
 <li>Allow nativecasting a CStruct to another CStruct</li>
 <li>Fix temp register usage in optimize_istrue_isfalse</li>
 <li>Fix a regression by eagerly deserializing stables/objects</li>
