@@ -34,6 +34,137 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2018.05</h3>
+        </div>
+        <div class="panel-body">
+<p>Miscellaneous:</p>
+
+<ul>
+<li>Correct op name in exception message for ctxcallerskipthunks</li>
+<li>Remove explicit temp rooting in 'slice' interp op</li>
+</ul>
+
+<p>6model:</p>
+
+<ul>
+<li>Fix warning about missing cast</li>
+<li>Improve debug helper for p6opaque dumping</li>
+<li>Sort hashes before serialization for more reproducible builds</li>
+<li>Add CPPStruct/CUnion-reprs where it was forgotten</li>
+<li>Implement one dimensional inlined shaped CArrays</li>
+<li>Fix missing bounds check in NFA results push</li>
+<li>Change multidim implementation exception message</li>
+<li>Make error msg lowercase; match overall msg style</li>
+<li>Add 'slice' positional op for VMArray</li>
+<li>For NFAs with many codepoints, use binary search</li>
+</ul>
+
+<p>Documentation:</p>
+
+<ul>
+<li>Add instructions to the release guide about gpg signing</li>
+</ul>
+
+<p>IO:</p>
+
+<ul>
+<li>Push error string argument in the right place</li>
+<li>Check we have a concrete OS handle in IO ops</li>
+<li>Remove repeated MVMROOT</li>
+<li>Root correct object when pushing host/port info</li>
+<li>Close server socket handle when client side closes</li>
+</ul>
+
+<p>Ops:</p>
+
+<ul>
+<li>Add new slice op</li>
+</ul>
+
+<p>Strings:</p>
+
+<ul>
+<li>Randomly seed a hash secret to mitigate ease of DOS attack. For more
+information see https://cry.nu/perl6/secure-hashing-for-moarvm</li>
+<li>Check hash value before str eq in hash buckets. 15% faster hash lookups and insertion</li>
+<li>Make sure hashing function never returns 0 to prevent cached_hash_code from being regenerated each time in those cases</li>
+<li>In string index, avoid checking for concreteness multiple times</li>
+<li>Make sure <code>getstrfromname</code> will resolve generated names</li>
+<li>Use <code>&amp;lt;private-use-XXXX&amp;gt;</code> and <code>&amp;lt;surrogate-XXXX&amp;gt;</code> for as Unicode names for private
+use and surrogates as recommended by Unicode</li>
+<li>Use all uppercase for Hangul Syllable names</li>
+<li>Fix CJK Unified Ideograph and other derived Unicode names to match Unicode spec</li>
+<li>Add a new MVMhashv type for representing the hash value</li>
+<li>Implement memmem_two_uint32(), up to 45% faster index of short (2-3 grapheme) needles in a flat 32 bit haystack</li>
+<li>Implement an optimized memmem for 32 bit string search 4-15x faster for flat 32 bit haystacks</li>
+</ul>
+
+<p>JIT:</p>
+
+<ul>
+<li>Add getlexcaller, sp_getstringfrom, iterkey_s, iterval, splice, slice, cmp_i,
+string cmp, lexprimspec, ctxlexpad, captureposarg, inf, neginf, currentthread,
+unless_s, if_s, threadlockcount, capturenamedshash, captureexistsnamed, and
+hllizefor JIT templates</li>
+<li>Refactor storage of temporary variables in NativeCall-JIT code</li>
+<li>Put jit templates in same order as ops in interp.c</li>
+<li>Fix a DynASM issue that caused integer overflow in encoding jump offsets</li>
+</ul>
+
+<p>Spesh:</p>
+
+<ul>
+<li>Add bytecode size to inline log</li>
+<li>Fix format string parameters</li>
+<li>Put sizes of spesh graphs into the spesh log</li>
+<li>Don't leak CUUID/name</li>
+<li>Log graph of inlinee prior to inlining</li>
+<li>Wrap debug printing</li>
+<li>Set type facts on a resolved method</li>
+<li>Specialize isnull</li>
+</ul>
+
+<p>Profiler:</p>
+
+<ul>
+<li>Extract recursion loop for smaller stack frames</li>
+<li>Don't uninstrument any more</li>
+<li>Store the size we malloc and use it with strncpy</li>
+<li>Fix off-by-one in profile's GC dumping</li>
+<li>Insert prof_allocated in the exact right place</li>
+<li>Add missing break statement</li>
+<li>Fix optional parameter allocations</li>
+</ul>
+
+<p>Debug Server:</p>
+
+<ul>
+<li>Don't use %b in format string</li>
+<li>Fix mixed usage of malloc and FSA</li>
+<li>Use official API for thread lock count</li>
+<li>Allow unrecognized fields in messages</li>
+<li>Throw out superfluous debugspam</li>
+<li>Add a "handle equivalence class" command</li>
+<li>Bump minor protocol version to 1.1 for new messagetype</li>
+</ul>
+
+<p>Tooling/Build:</p>
+
+<ul>
+<li>Add <code>update-changelog.p6</code> tool for faster categorization of commits into the ChangeLog</li>
+<li>Move uthash.h from 3rdparty to src/strings since it is heavily modified and
+cannot be substituted for the generic version of the library</li>
+<li>Make jit-comparify break on 'ret'</li>
+<li>Ensure <code>make realclean</code> cleans 3rdparty/cmp</li>
+<li>Fix off by one issue in jit-bisect.pl</li>
+<li>Fix Makefile indentation</li>
+<li>Report time spent on JIT in spesh-time.p6 tool</li>
+</ul>
+<p><a href="releases/MoarVM-2018.05.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2018.04.1</h3>
         </div>
         <div class="panel-body">
