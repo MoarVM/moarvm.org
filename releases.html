@@ -34,6 +34,128 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2018.06</h3>
+        </div>
+        <div class="panel-body">
+<p>6model:</p>
+
+<ul>
+<li>Allow MVMContext atkey to work on all sizes of native ints</li>
+<li>Add support for all native int types to getlexref_ni</li>
+<li>Fix three memory leaks when serialization fails</li>
+<li>Generalize attribute_as_atomic to obj attrs too</li>
+<li>Optimize MVM_serialization_read_int so as not to need memcpy calls</li>
+<li>Speed up at_pos, bind_key and at_key by about 4% by speeding up dispatch</li>
+<li>Make MVM_sc_get_sc_object MVM_STATIC_INLINE</li>
+<li>Add some branch prediction hints to frame.c for very unlikely cases</li>
+</ul>
+
+<p>Debug Server:</p>
+
+<ul>
+<li>Check that socket() doesn't return -1 in debugserver</li>
+<li>Free local variables in debugserver</li>
+<li>Prevent breakpoints from being hit over and over in
+MVM_debugserver_breakpoint_check</li>
+</ul>
+
+<p>IO:</p>
+
+<ul>
+<li>Change getsignals output from hash to array</li>
+<li>Define SIGBREAK on WIN32</li>
+</ul>
+
+<p>JIT:</p>
+
+<ul>
+<li>Implement pow_i instruction</li>
+<li>Sort the expr jit templates with the new script</li>
+<li>Replace 'invokish' guard infrastructure with on-stack position check and
+update</li>
+<li>JIT compile getsignals</li>
+<li>Fix encoderep/encoderepconf returning value into wrong register</li>
+<li>Expr JIT template for encoderepconf, decont_s, assertparamcheck, param_rp_s,
+param_rp_o and param_sn, checkarity</li>
+</ul>
+
+<p>Ops:</p>
+
+<ul>
+<li>Add coerce_us op for coercing unsigned integers to strings</li>
+<li>Add new atkey_u op</li>
+<li>Add atomicbindattr_o and casattr_o ops</li>
+<li>Add new guard spesh ops</li>
+<li>Add spesh plugin ops</li>
+</ul>
+
+<p>Platform:</p>
+
+<ul>
+<li>Only use the 64 bit memory access code in memmem32 for cpu's that support
+unaligned accesses.</li>
+</ul>
+
+<p>Spesh:</p>
+
+<ul>
+<li>Implement a new spesh plugin mechanism, which allows for a mapping of guards
+to results. The setup of the guards is implemented in code running on MoarVM,
+and the interpreter then walks the guard table to pick the applicable result.
+Spesh itself can then look at this table and compile the guards in as needed,
+together with JIT-compiling them.</li>
+<li>Implement bytecode assembly for speshresolve</li>
+</ul>
+
+<p>Strings:</p>
+
+<ul>
+<li>Make MVM_string_utf8_decode 8% faster with vectorized 8bit check</li>
+<li>Guard against null pointer dereference in decodestream_discard</li>
+<li>Fix potential issue in shiftjis decoder if replacement had synthetic -1</li>
+<li>Handle synthetics and normalization properly in string bitwise ops</li>
+<li>Use the Unicode database propcode constants instead of querying property codes
+on MoarVM initialization</li>
+<li>Speed up MVM_string_find_cclass and grapheme_is_cclass for whitespace,
+punctuation and newline char classes</li>
+<li>Make .lines 2x faster by speeding up MVM_find_cclass for newlines</li>
+<li>Convert HASH_DEL_IN_BKT, HASH_ADD_TO_BKT, HASH_MAKE_TABLE and
+HASH_EXPAND_BUCKETS from macros to inlines</li>
+<li>For non-MVMString hash keys, check hashval before doing a memcmp for some
+speed up</li>
+</ul>
+
+<p>Instrumentation:</p>
+
+<ul>
+<li>Free local variable in line coverage</li>
+</ul>
+
+<p>Miscellaneous:</p>
+
+<ul>
+<li>Add support for all native int's in lexprimspec</li>
+<li>Put interp.c in the same order as the oplist</li>
+<li>Fix a use-after-free in frame.c</li>
+<li>Optimize sp_jit_enter in interp.c a few percent</li>
+</ul>
+
+<p>Tooling/Build:</p>
+
+<ul>
+<li>Add a script which sorts the expr templates by oplist order</li>
+<li>Add script to compare order of oplist and interp.c op order</li>
+<li>Fix off-by-one in jit-bisect.pl</li>
+<li>Add Intel C Compiler as an option to Configure.pl</li>
+<li>Fix handling of denormals for Intel C Compiler</li>
+<li>Add branch predictor hint macros to optimize common/uncommon conditions</li>
+<li>Fix links on releases page generated with moarvm.org release tool</li>
+</ul>
+<p><a href="releases/MoarVM-2018.06.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2018.05</h3>
         </div>
         <div class="panel-body">
