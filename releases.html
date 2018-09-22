@@ -34,6 +34,139 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2018.09</h3>
+        </div>
+        <div class="panel-body">
+<p>Core:</p>
+
+<ul>
+<li>[6edaac44] Add true_value and false_value to HLL config for future hllbool op</li>
+</ul>
+
+<p>Documentation:</p>
+
+<ul>
+<li>[156b5bc3] Clarify a few things in bytecode specification</li>
+<li>[e17a53b8] Update the release guide a bit</li>
+</ul>
+
+<p>GC:</p>
+
+<ul>
+<li>[ccf3dd37] Fix alignment of nursery allocations. Fixes segfaults on armhf</li>
+</ul>
+
+<p>IO:</p>
+
+<ul>
+<li>[51f2db57] Add support in write_fhb op for writing 16 bit VM arrays to a
+filehandle</li>
+</ul>
+
+<p>JIT:</p>
+
+<ul>
+<li>[848f74e3] Add exprjit macros for register type constants</li>
+<li>[18cb687c] Add ^zero/^one exprjit macros for 0 and 1 integers</li>
+<li>[398f073b] Add param_sp and hasunipropc exprjit templates</li>
+<li>[9e0237ed] Add binddynlex exprjit template</li>
+<li>[3c10d230] Add getarg_* exprjit templates</li>
+<li>[af6353d3] Add bindlex_n* exprjit templates</li>
+<li>[9ed59041] Add reprname exprjit template</li>
+<li>[f43ab19e] Add objprim{bits,unsigned} exprjit templates</li>
+<li>[722f0939] Add down-cast operations to cast_unsigned_load_addr</li>
+<li>[891d5c02] Implement truncation via unsigned cast for expr JIT</li>
+<li>[ef474331] Teach the lego JIT to compile hllbool</li>
+<li>[c1c2b7e3,c1c2b7e3] JIT compile hllboolfor, hllboolfor</li>
+<li>[756a97d1] JIT compile hllbool</li>
+<li>[37a2cd36] Increase array size of args on MVMJitTile struct</li>
+<li>[9bef425a] Add objprimspec exprjit template</li>
+<li>[9590c483] Implement cast_load_addr tile for exprjit</li>
+<li>[6556de6d] Make minor JIT doc changes</li>
+<li>[17365037] Add a macro for decoder_ensure_decoder and templates for
+decoder&lt;addbytes takebytes takeline empty&gt;</li>
+<li>[f71f55cf] JIT decoder(empty|takebytes)</li>
+<li>[c1b7b549] Add paramnamesused exprjit template</li>
+<li>[f5928803] Add getpid and hintfor exprjit templates</li>
+<li>[8a70d24d] Add ctx exprjit template</li>
+<li>[14f6956c] Add existspos exprjit template</li>
+<li>[77d75210][14f6956c][8a70d24d][f5928803][c1b7b549][9bef425a][f43ab19e]
+[9ed59041][af6353d3][3c10d230][9e0237ed][398f073b]
+Add unshift_*, existspos, ctx, getpid, hintfor, paramnamesused, objprimspec,
+objprim{bits,unsigned}, reprname, bindlex_n*, getarg_*, binddynlex, param_sp
+and hasunipropc exprjit templates</li>
+<li>[1d4bd3ec] Bind 'let:' declarations eagerly in expr JIT compiler</li>
+<li>[dc1cc51b] Tighten scope rules for expr JIT compiler</li>
+<li>[e4542ee1] New template compiler, Single-pass compilation, Better type and
+format checking, a few syntax changes</li>
+<li>[7567696e] Pass MVMRegister to lexical-binding function for exprjit. This
+accommodates the exprjit templates and allows us to the pass the value
+instead of a pointer.</li>
+</ul>
+
+<p>Libraries:</p>
+
+<ul>
+<li>[73e2f53d] Update libuv to 1.23.0</li>
+</ul>
+
+<p>Ops:</p>
+
+<ul>
+<li>[954bdf88] New hllbool and hllboolfor ops</li>
+</ul>
+
+<p>Platform:</p>
+
+<ul>
+<li>[3abd2888] Throw error on failure in decodelocaltime</li>
+<li>[a8dfd479] Fix on decodelocaltime on Windows</li>
+</ul>
+
+<p>Profiler:</p>
+
+<ul>
+<li>[bcbe9b20] Pass an array with information on types to profiler</li>
+</ul>
+
+<p>Spesh:</p>
+
+<ul>
+<li>[24860d4c] Let spesh discover the type of hllbool[for]</li>
+<li>[7c5740fb] Teach spesh to replace hllboolfor by the result for known values</li>
+<li>[ee0004bf] Teach spesh to replace hllbool by the result for known values</li>
+<li>[2fb3265a] Fix segfault of native subs with more than 8 arguments</li>
+<li>[c49fc88a] Fix rw args of JITed calls to JITed native calls</li>
+<li>[96b88eba] Leak fixes in Spash</li>
+<li>[b217a115] Destroy inlinee after inlining</li>
+</ul>
+
+<p>Strings:</p>
+
+<ul>
+<li>[3e94a68f] Pass through BOM with utf16le and utf16be</li>
+<li>[ff750504] Make sure MVM_string_utf16le/be_decodestream are predeclared</li>
+<li>[ad12d8e4] Fix some bugs with utf16* decodestream get_chars, and retain state</li>
+<li>[792cdd58,ad12d8e4 ff750504 3e94a68f] Add support for utf16le and utf16be to
+decodestream. utf16le and utf16be do not expect a byte order marker and
+will pass them through as Zero Width Non-Break Space per UTF16 spec</li>
+<li>[ddde0950] Add encode support for utf16le and utf16be</li>
+<li>[b162c7c4] Add utf16le and utf16be encoding types and implement for buffer
+decode</li>
+<li>[578c2f76] Add support for utf-16 to decodestream</li>
+<li>[f06c695a] Make Unicode Block name lookup work for unassigned cp's</li>
+</ul>
+
+<p>Misc:</p>
+
+<ul>
+<li>[652056de] Fix use-after-free in cleanup</li>
+</ul>
+<p><a href="releases/MoarVM-2018.09.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2018.08</h3>
         </div>
         <div class="panel-body">
