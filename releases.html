@@ -34,6 +34,111 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2018.11</h3>
+        </div>
+        <div class="panel-body">
+<p>Other:</p>
+
+<ul>
+<li>Rework the way bytecode is generated. Eliminate most of the MAST classes and
+allow us to compile bytecode without having to have everything in memory at
+the same time. The new compiler can walk the QAST tree and turn what used to
+be multile MAST objects into a single buffer. Now the QAST is turned into
+bytecode as directly as possible. This greatly decreases the maximum memory
+used for this operation.</li>
+<li>[d590f25b] Ensure make realclean removes minilua binary</li>
+<li>[9ef725d5] Always rebuild minilua to work around issue #999</li>
+<li>[d721125d] Fix MVM_operand_type_mask in lib/MAST. The old mask was not
+extended when unsigned types were added.</li>
+</ul>
+
+<p>6model:</p>
+
+<ul>
+<li>[7ba02259] Correct named argument type tuple index calc. Fixes an
+out-of-bounds memory access. Resolves issue #996</li>
+<li>[9f19fffa] Add new write_buf repr function to speed up write* ops</li>
+</ul>
+
+<p>Core:</p>
+
+<ul>
+<li>[dcb1dce9] JIT compile param_rp_u</li>
+<li>[65db5b4d] Implement writeuint op</li>
+<li>[f6fb4646] Make bytecode dumper more resilient against invalid bytecode</li>
+</ul>
+
+<p>Docs:</p>
+
+<ul>
+<li>[43c5cd4a] Add mul exprjit op to documentation</li>
+</ul>
+
+<p>JIT:</p>
+
+<ul>
+<li>[7a110b71] Add hllboolfor exprjit template</li>
+<li>[9b2ab169] Add radix_I exprjit template</li>
+<li>[0accc8ce] Add coerce_* exprjit templates</li>
+<li>[5167d102] Add extend_{u,i}* exprjit templates</li>
+<li>[0c2b13a2] Add exprjit integer multiplication op: mul_i</li>
+<li>[d40bac9f] Use arithmetic right shift in JIT of brshift_i to ensure new bits
+are shifted to match the initial sign bit</li>
+<li>[9468b7f7] Fix trunc to casting upwards</li>
+<li>[e7a1330b] JIT compile coerce_us</li>
+<li>[cfd6c966] Expr JIT template for sp_findmeth</li>
+<li>[d6ad3117] Expr JIT compile serializetobuf</li>
+<li>[40a4e375] Expr JIT compile unbox_u</li>
+<li>[fbdb36d7] JIT compile unbox_u</li>
+<li>[efff300c] JIT compile remaining extend and trunc ops: extend_{i8,u8,u32} and trunc_{i8,u8}</li>
+<li>[39ded5fe] JIT compile decodertakeallchars</li>
+<li>[64b44ea0] JIT compile writeint and writeuint</li>
+<li>[2c4967d1] Teach the lego JIT about coerce_(iu|ui), extend_[ui]16, trunc_u(16|32)</li>
+</ul>
+
+<p>Ops:</p>
+
+<ul>
+<li>[6dfa5043] Implement readint, readuint and readnum ops</li>
+<li>[231cd1a1] New serializetobuf op for assisting bytecode assembly in NQP</li>
+<li>[07464ae3] Add a writedouble op</li>
+<li>[311e2683] Add the buffertocu op</li>
+</ul>
+
+<p>Profiler:</p>
+
+<ul>
+<li>[6ff60a3b] Fix "pointer cast size mismatch" warnings on 32-bit arch's to resolve issue #444</li>
+<li>[7aa9500e] Keep track of nativecallcast invokes</li>
+<li>[cd4f98af] Split "cleared bytes" into managed/unmanaged to prevent underflow</li>
+<li>[add43502] Log parent thread id on thread creation</li>
+<li>[acb5000b] call node's first entry time should be relative</li>
+<li>[543f53aa,3eadf765 acb5000b] Expose first entry and start time in profiler data</li>
+</ul>
+
+<p>Spesh:</p>
+
+<ul>
+<li>[c933b516] Free spesh log entries after consuming them. Reduces memory usage</li>
+<li>[6236eb5d] Fix a segfault that could occur due to missing facts</li>
+<li>[25e7fa48] Teach spesh about known values for PHI nodes</li>
+<li>[a74af558] output known type's debugname in spesh log</li>
+<li>[950fb0e1] Unblock optimizing the box_* into a fastbox. Allow box_i to go through int cache.</li>
+<li>[d8065362] decont on nativeref shall become decont_* + box_* to more easily
+get rid of a native ref taking instruction.</li>
+</ul>
+
+<p>Tooling/Build:</p>
+
+<ul>
+<li>[c0799ec1] Include system library paths in Configure.pl if configured to use them to fix issue #1000</li>
+<li>[c130b7cd] Add a --nodelay flag to jit-bisect.pl</li>
+</ul>
+<p><a href="releases/MoarVM-2018.11.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2018.10</h3>
         </div>
         <div class="panel-body">
