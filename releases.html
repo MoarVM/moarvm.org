@@ -34,6 +34,165 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2019.03</h3>
+        </div>
+        <div class="panel-body">
+<p>Spesh:</p>
+
+<ul>
+<li>New partial escape analysis allows objects to be replaced by registers</li>
+<li>[03d4271c] Spesh optimize get/bind attribute for int32</li>
+<li>[ff9666bd] Fix predecessor pointers when merging basic blocks in spesh</li>
+<li>[75d5bc6e] Fix memory leak in inlining</li>
+<li>[d42fd895] MVMROOT before allocation</li>
+<li>[9eac21cb,d42fd895] Fix broken macro expansion on Windows. Fixes issue #1048</li>
+<li>[215430c4] Lower bindattr_i On CStruct Objects</li>
+<li>[a37c0bff] Fix wrong type selection for push_* And pop_*</li>
+<li>[a6dad31d] Copy deopt usage info when doing guard reg split</li>
+<li>[3629362f] Add deopt uses as needed for scalar replacements</li>
+<li>[2d936a5a] Remove unused variable</li>
+<li>[c29536d7] Implement deopt materialization of native attrs</li>
+<li>[4081221b] Log target register of eliminated allocations</li>
+<li>[0f5e2441] Correct a thinko, remove an unused variable</li>
+<li>[357b8abc] Distribute deopt usages when inlining</li>
+<li>[6d01c3cb] Use correct indexes for deopt usage chain lookups</li>
+<li>[84451aa3] Switch on using the PEA deopt mechanism</li>
+<li>[166d0acf] Log deopt offset to index outcome</li>
+<li>[b4e059bd] Don't forget synthetic annotations</li>
+<li>[62a8ae10] Only add deopt in for allocations we replace</li>
+<li>[9562c74e] Note if deopt offset -&gt; index resolution fails</li>
+<li>[4f08a861] Materialize objects with object attrs during deopt</li>
+<li>[77f36083] Don't confuse deopt offsets and indices</li>
+<li>[6e1bcce9] Merge materialization deopt info during inline</li>
+<li>[f85ae3c2] Record registers holding attrs to use in deopt</li>
+<li>[ae3de1b6] Sketch out creating deopt/materialization info</li>
+<li>[edfc8ffe] Keep a set of tracked registers</li>
+<li>[fe7930e4] Dump materialization data</li>
+<li>[e9eb9b32] Target register goes with deopt point</li>
+<li>[7ee34c23] Preparations for deopt materialization</li>
+<li>[685ba324] Fix inline end annotation motion on BB deletion</li>
+<li>[072bf4b6] Handle non-merge case of PHI</li>
+<li>[ba1f7cf3] Make it easier to grep out the EA opts</li>
+<li>[1bfdb947] Do guard elimination during scalar replacement</li>
+<li>[d9a0dd8b] Allow flow control, but not loops</li>
+<li>[c19afcd5] Walk graph in reverse postorder for PEA</li>
+<li>[895b1b0e] Properly tweak CFG after control flow op rewrite</li>
+<li>[66d96aec] Handle int64, num64, and str attributes in PEA</li>
+<li>[ac8f2095] Implement minimal escape analysis and scalar replacement (PEA)</li>
+<li>[4c191154] Add BOOTHash to spesh cheat list</li>
+<li>[3f5204d7] Disable inlining when running the debug server</li>
+<li>[7fc6be10] Add a limit on spesh plugin guard set size</li>
+<li>[909d354c] Allow dead instruction elimination in inlines</li>
+<li>[0fef86cb] Save deopt usage info when writing bytecode</li>
+<li>[c5bc342e] Fix rakudo build failure on big endian architectures</li>
+<li>[07fe8e4a] Teach optimize_smart_coerce About Boot Types</li>
+<li>[16d03884] Put inline-preventing insturction in spesh log</li>
+</ul>
+
+<p>6model:</p>
+
+<ul>
+<li>[19515dbd] Fix segfault in dump_p6opaque when an attribute holds a VMArray</li>
+<li>[d626337b] CStruct bindattr_i Opt Shall Release Its Temp Register</li>
+<li>[6ecbeb1f] DU Chain Of CStruct bindattr_i Opt Was Wrong</li>
+<li>[2bc5ce7b] Fix segfaults related to corrupted CStruct STables. Fixes issue #2564</li>
+<li>[07de9219] Fix compiler warnings on some printf specifiers</li>
+<li>[45d15efe] Turn elems On VMArray Into Direct Memory Access</li>
+</ul>
+
+<p>Core:</p>
+
+<ul>
+<li>[682ca82f] Fix nativecall refresh clearing used child object pointers</li>
+<li>[a6939d7c] randscale_n and rand_I are not pure ops, so don't mark them as such</li>
+<li>[5431d50f] Ensure last_payload and plugin_guard_args are valid so spesh plugins can be used outside speshresolve</li>
+<li>[600ded2b] Only read debug lexicals in bytecode version 6</li>
+<li>[8c8b0b0f,600ded2b] Minimal handling of bytecode format version 6, Only read debug lexicals in bytecode version 6</li>
+<li>[473324ee] Notice Specializable Instructions Everywhere In Bytecode</li>
+<li>[1404d516] Support endian switching in writenum and readnum</li>
+</ul>
+
+<p>Debug Server:</p>
+
+<ul>
+<li>[d66c0708] Use debug local names in debug server</li>
+</ul>
+
+<p>Documentation:</p>
+
+<ul>
+<li>[6f92a01d] Specify debug name mapping bytecode format changes</li>
+</ul>
+
+<p>IO:</p>
+
+<ul>
+<li>[631cfdf6] Call strerror for directory errors so we get error text not just an error code on POSIX platforms</li>
+</ul>
+
+<p>JIT:</p>
+
+<ul>
+<li>[7ca62826] JIT compile getlexref_u*</li>
+<li>[ce8249a3] Fix JITed extend_u8 accidentally extending 16 bits.</li>
+<li>[ac078196] Fix rw args of native calls not getting updated if JIT compilation fails</li>
+<li>[f818bd6d] Support double type arguments in NativeCall JIT</li>
+<li>[f55ecdec] Fix harmless off-by-one preventing optimization</li>
+<li>[e459d36b] Also JIT stat and lstat</li>
+<li>[d6d057a2] Jit (open|read|close)_dir</li>
+<li>[30ab2af3] Add op name to JIT "bailed completely" error</li>
+<li>[583a2de8] LDLIBS should go after the source files, before output to fix TravisCI</li>
+<li>[2ee7596d] Fix call to memcpy with NULL *src in lego JIT compiler</li>
+<li>[45cf9013] Compile minilua with only the needed flags so it doesn't need to be compiled every time. See issue #999</li>
+<li>[c9cd9880] Fix JIT compiled getcodename not always dieing on type objects</li>
+<li>[caf7e4ff] Fix jump condition in JIT compiled getcodename</li>
+</ul>
+
+<p>Math:</p>
+
+<ul>
+<li>[eccbc854] Make MoarVM compatible with old &amp; new LibTomMath. Fixes issue #1034</li>
+<li>[f7204a3e] Fix name collision with existing LibTomMath Function. Fixes issue #1032</li>
+</ul>
+
+<p>Ops:</p>
+
+<ul>
+<li>[cbb6abc5] Add debug map state to MAST::Frame</li>
+<li>[03304a37] Remove internal ops from MAST NQP modules</li>
+</ul>
+
+<p>Other:</p>
+
+<ul>
+<li>[5ed7108d] Remove obsolete MAST compiler</li>
+<li>[6b42653a] Add the MVM_SPESH_PEA_DISABLE envvar to turn PEA on/off</li>
+</ul>
+
+<p>Profiler:</p>
+
+<ul>
+<li>[64d41cc1] Integrate scalar replacement with profiling</li>
+</ul>
+
+<p>Strings:</p>
+
+<ul>
+<li>[ec8a240e] Remove some unused variables in utf16 decode to fix issue #1030</li>
+</ul>
+
+<p>Tooling/Build:</p>
+
+<ul>
+<li>[f938f08c] Add some safety checks for macOS due to homebrew binutils and Xcode incompatibilities</li>
+<li>[a1cfd702] Configure.pl: fix cross-compilation</li>
+<li>[60c152f6] Create a GNU type TAR archive to fix archive extract using AIX <code>tar</code></li>
+</ul>
+<p><a href="releases/MoarVM-2019.03.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2018.12</h3>
         </div>
         <div class="panel-body">
