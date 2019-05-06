@@ -34,6 +34,129 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2019.05</h3>
+        </div>
+        <div class="panel-body">
+<p>Other:</p>
+
+<ul>
+<li>[97e28f07] Implement --no-relocatable Configure.pl flag.</li>
+<li>[2b75a2ff] Use a relative RPATH in moarvm.</li>
+<li>[62b58164] Update libuv to 1.26</li>
+<li>[8f8026b1] Add MVM_execpath() to public API, a forward to uv_exepath(). The function is helpful to implement wrapper programs</li>
+</ul>
+
+<p>6model:</p>
+
+<ul>
+<li>[8fef1999] Reject out-of-bounds unbox slot numbers</li>
+<li>[275098a2] Don't accept out-of-range repr ids</li>
+<li>[7b112da3] Guard SCRef initialize against null SC</li>
+<li>[ab21dd17] Guard serialization read against &lt; 0 offsets</li>
+<li>[bacfcf96] Heapsnapshot: Calculate CStruct unmanaged size</li>
+<li>[fab0c4bd] Only Opt 32/16/8 Bit Access On Signed Integers</li>
+<li>[9a4bbda3] Activate getattr_i Optimization On CStruct</li>
+<li>[834db592] MVMSpeshLog: implement describe_refs for heap profiler</li>
+<li>[ea83e229] ConcBlockingQueue: implement unmanaged_size for heap profiler</li>
+</ul>
+
+<p>Core:</p>
+
+<ul>
+<li>[2e87a0a0] Use C bitfields to save space in MVMOpInfo, makes these structs go from 40 bytes to 32 bytes</li>
+<li>[65441793] Activate 2nd argument count check for invocations</li>
+<li>[c90bd6b4] Guard getdynlex against no caller frame</li>
+<li>[a92be015] Guard some ops in interp against type objects</li>
+<li>[35976e24] Fuzzing: guard frame invoke error against null outers</li>
+<li>[c8a44b8d] Make sure invalid indices for lexical vivify throw</li>
+<li>[c10fee65] Handle inlining of outer lexical binds</li>
+<li>[64679b99] Allow selection of max inline size per HLL. Makes it possible to set a maximum inline size limit per HLL</li>
+<li>[5f706515] Simplify abs_n to just use fabs and also jit it (#1073)</li>
+<li>[d1590671] Add uname op</li>
+<li>[b51bb132] Add a newmixintype op</li>
+<li>[28e2b38b] Add a smrt_intify op</li>
+</ul>
+
+<p>GC:</p>
+
+<ul>
+<li>[3dff3a2a] Ensure only one thread can take a heap snapshot or dump data at the same time</li>
+</ul>
+
+<p>IO:</p>
+
+<ul>
+<li>[741779ac] Better error handling of process stdin writes. Detect the case that we already closed its stdin handle</li>
+<li>[adefbe4d] Avoid unbounded growth of active async task list</li>
+<li>[0a9ccb11] Use UV_MAXHOSTNAMESIZE as cross platform MAXHOSTNAMELEN</li>
+</ul>
+
+<p>JIT:</p>
+
+<ul>
+<li>[645a70c0] Add backtrace and backtracestrings lego and exprjit template (#1085)</li>
+<li>[3c2e98d4] Add istty_fh legojit (#1084)</li>
+<li>[9e5196d8] Add typeparameterat exprjit template (#1080)</li>
+<li>[0c6b3b1b] Add indexingoptimized exprjit template (#1078)</li>
+<li>[e1dc1b39] Add fileno_fh legojit and exprjit template</li>
+<li>[d568e681] Add typeparameterized exprjit template</li>
+<li>[6421e512] Add resume exprjit template</li>
+<li>[0b45ec7b] Add replace exprjit template</li>
+<li>[5a6b9ea3] Add clone exprjit template</li>
+<li>[33751f43] JIT sp_bind_i32 And sp_get_i32</li>
+<li>[c5e43265] Make JIT of sp_get_o match the interp</li>
+<li>[bfbfd0c1] JIT sp_bind_i32</li>
+</ul>
+
+<p>Ops:</p>
+
+<ul>
+<li>[081823ff] MAST Ops: remove redundant range checks</li>
+<li>[8eb232db] Fix lexical to locals debug_map getting written to bytecode files in random order</li>
+</ul>
+
+<p>Profiler:</p>
+
+<ul>
+<li>[423a9cc7] Fix misc. problems with profiling</li>
+<li>[95094ae2] Count deallocated objects categorized by life time</li>
+<li>[38252329] Heapsnapshot: properly handle empty debug name</li>
+</ul>
+
+<p>Spesh:</p>
+
+<ul>
+<li>[9cd8a06d] Set the default inline max size to 192 bytes</li>
+<li>[5e363398] Avoid a bunch of malloc/free churn in code-gen</li>
+<li>[ade57cee] Learn Type Fact About nativecallcast</li>
+<li>[0d2968e7] Also call optimize_bb for unspecialized inlines</li>
+<li>[bc98cb94,0d2968e7] Run optimize_bb over inlined code, Also call optimize_bb for unspecialized inlines</li>
+<li>[5994d89c] Add facts to null op during optimize</li>
+<li>[ff9870ec] Lliberalize eliminate_set to cover inlines</li>
+<li>[960f4b67] Chase PHIs when retaining deopt info for inlining. Otherwise, we might not keep things alive for deopt points that need them to be alive if it was the PHI itself that got marked with deopt usages</li>
+<li>[e41e355e] Add vivifying non-p6o object ops: sp_getvt_o and sp_getvc_o</li>
+</ul>
+
+<p>Strings:</p>
+
+<ul>
+<li>[295cde4f] Avoid duplicate checks in hash access</li>
+</ul>
+
+<p>Tooling/Build:</p>
+
+<ul>
+<li>[cc06ad28] Never build a relocatable moar on OpenBSD. OpenBSDs implementation of $ORIGIN in rpath is unreliable</li>
+<li>[49c1eb07] Check for mixed toolchain on macOS</li>
+<li>[12bfa1b6] Never build a relocatable moar on AIX</li>
+<li>[0cb5eca4] update_ops: don't generate prepargs, as nqp does it by itself</li>
+<li>[0e94d75a] Temporarily use -fno-ret-protector when building on OpenBSD to prevent segfault</li>
+</ul>
+<p><a href="releases/MoarVM-2019.05.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2019.03</h3>
         </div>
         <div class="panel-body">
