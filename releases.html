@@ -34,6 +34,118 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2019.07</h3>
+        </div>
+        <div class="panel-body">
+<p>6model:</p>
+
+<ul>
+<li>[065b2b42] When there's no .^find_method nor method cache, output debug name</li>
+<li>[36469a62] Throw an exception instead triggering a segfault when trying to HAS before a type is defined</li>
+<li>[fe472ce9] Enforce wb in get_attribute of C repr. Fixes non-deterministic segfaults in anything that non-trivially uses CStruct/CPPStruct/CUnion reprs</li>
+<li>[9ed86e4c] Eliminate an unused collectable flag</li>
+<li>[24b3ef1a] Fix inlining CStruct and CUnion in CPPStruct REPR instances</li>
+</ul>
+
+<p>Core:</p>
+
+<ul>
+<li>[f2ee9baa] Add freemem and totalmem ops</li>
+<li>[1c279a23] Don't needlessly install VMNulls into -&gt;work to reduce cost of entry into spesh'd/JIT-compiled frames</li>
+<li>[f8743c11] Add type name to exception if a thing can't be coerced</li>
+</ul>
+
+<p>Debug Server:</p>
+
+<ul>
+<li>[61f0b7e8] Silence clang dangling-else &amp; return-type warnings</li>
+</ul>
+
+<p>Documentation:</p>
+
+<ul>
+<li>[145149c2] Update bytecode docs to define SC acronym</li>
+<li>[807c2dab] Add contribution guidelines</li>
+</ul>
+
+<p>IO:</p>
+
+<ul>
+<li>[3241e9f5] Fix memory leak in socket_read_bytes</li>
+<li>[6bc095d8] Move freeing of event_loop_wakeup to after uv_loop_close</li>
+</ul>
+
+<p>JIT:</p>
+
+<ul>
+<li>[6053919e] Add exprJIT template for strfromcodes</li>
+<li>[b55658b9] Store first and then initialize in 'create' expr template to fix potential race</li>
+<li>[69033692] Fix decodeconf and add decoderepconf legojit</li>
+<li>[c160a22f,69033692] Add decodeconf and decoderepconf ops to legojit</li>
+</ul>
+
+<p>Libraries:</p>
+
+<ul>
+<li>[a515819b] Update libuv to version 1.29.1</li>
+</ul>
+
+<p>Math:</p>
+
+<ul>
+<li>[0e7599e7] Throw if MVM_is_prime called with too many rounds</li>
+<li>[2fe2f588] Use a cheaper way to force_bigint</li>
+<li>[aad6fdc0] Greatly reduce allocation churn on bigint ops</li>
+<li>[c5545770] Use mp_set_int in force_bigint when we know we have a 32-bit int</li>
+</ul>
+
+<p>Ops:</p>
+
+<ul>
+<li>[c20f896f] Skip numification in mast nodes code</li>
+</ul>
+
+<p>Other:</p>
+
+<ul>
+<li>[5b5e7f19] Clean up CMP object files on Windows when running <code>make realclean</code></li>
+<li>[75602b0e] Add the ability to detect the malloc_trim() function</li>
+</ul>
+
+<p>Platform:</p>
+
+<ul>
+<li>[dc3f36c0] Remove compiler warning that was accidently left in</li>
+<li>[aeae1033] musl does not have malloc_trim, so only use it w/ glibc</li>
+<li>[42ea81f3,aeae1033,75602b0e,dc3f36c0] Ask malloc to free kernel pages on GC collection to reduce max memory usage</li>
+</ul>
+
+<p>Profiler:</p>
+
+<ul>
+<li>[fbd48017] Remove profiling overhead from profiles</li>
+<li>[807b92f9] Use strndup instead of malloc+strncpy</li>
+</ul>
+
+<p>Spesh:</p>
+
+<ul>
+<li>[ed1ce32f] Silence -Wlogical-op-parentheses warnings</li>
+</ul>
+
+<p>Tooling/Build:</p>
+
+<ul>
+<li>[44b69939] Fix warning in Configure in non-relocatable builds</li>
+<li>[55b27c2a] Fix -fno-ret-protector flag passing on OpenBSD</li>
+<li>[5f29b094] Fail when being requested to do a relocatable build and we can't</li>
+<li>[b5172363] Default to doing a non-relocatable build</li>
+</ul>
+<p><a href="releases/MoarVM-2019.07.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2019.05</h3>
         </div>
         <div class="panel-body">
@@ -118,6 +230,7 @@
 <p>Profiler:</p>
 
 <ul>
+<li>Introduce confprog to allow profiling of specific subroutines</li>
 <li>[423a9cc7] Fix misc. problems with profiling</li>
 <li>[95094ae2] Count deallocated objects categorized by life time</li>
 <li>[38252329] Heapsnapshot: properly handle empty debug name</li>
