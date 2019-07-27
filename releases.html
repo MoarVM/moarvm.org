@@ -34,6 +34,56 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2019.07.1</h3>
+        </div>
+        <div class="panel-body">
+<p>Core:</p>
+
+<ul>
+<li>[79d21189] Bump level until after instrumenting instead of before to fix various races</li>
+<li>[36cb624e] Avoid various races in profile/coverage/debug</li>
+<li>[cb5787aa] Fix possible memory corruption in bindkey_*</li>
+<li>[e99af058] Fix pointer arithmetic in inlined CArrays in CStruct/CPPStruct REPRs</li>
+</ul>
+
+<p>Debug Server:</p>
+
+<ul>
+<li>[58c54a1f] Unbreak debugger instrumentation</li>
+<li>[052966bb] Init debug socket for Windows</li>
+</ul>
+
+<p>Platform:</p>
+
+<ul>
+<li>[7360ee5d] Fix GC rooting in MVM_platform_uname</li>
+</ul>
+
+<p>Profiler:</p>
+
+<ul>
+<li>[1c274772] Don't return null from filename()</li>
+<li>[df226330] Add band_i, bor_i, bxor_i ops</li>
+<li>[8f4997b3] Fix dealloc profile logging by following any forwarder</li>
+</ul>
+
+<p>Spesh:</p>
+
+<ul>
+<li>[536cff8b] Put limits on local and inline counts for inlining</li>
+</ul>
+
+<p>Tooling/Build:</p>
+
+<ul>
+<li>[cfead8e2] Only use -fno-ret-protector with Clang on OpenBSD if the JIT is enabled</li>
+<li>[2501678a] Fix Configure.pl failing when --prefix /usr is passed</li>
+</ul>
+<p><a href="releases/MoarVM-2019.07.1.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2019.07</h3>
         </div>
         <div class="panel-body">
