@@ -34,6 +34,288 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2019.11</h3>
+        </div>
+        <div class="panel-body">
+<p>6model:</p>
+
+<ul>
+<li>[8a5cc88a,af76729d] Fix incorrect conditional in deserialize_context</li>
+<li>[59fa3b82] Fix for run-away CORE context on closures</li>
+<li>[1b0950e3] Give higher layers a way to check if a nativecall site is set up</li>
+<li>[47cd6c66] Fix the CStr REPR's copy_to function</li>
+<li>[d52282b2] Fix possible deadlock in finish_parameterizing</li>
+<li>[fd2659ed] Fix possible access to fromspace in code_pair_configure_container_spec</li>
+<li>[366a7b7a] Add missing write barrier to MVM_6model_get_how</li>
+<li>[a4a599e3] Fix possible access to fromspace in MVM_code_location</li>
+<li>[0864cb76] Don't crash with read-int/write-int on unsupported reprs</li>
+<li>[177706fe] Better error message for P6opaque in multidim functions</li>
+<li>[b7151da7,d76ebbe4] Fix possible memory corruption in CStruct's, CPPStruct's and CUnion's get_attribute</li>
+<li>[289ccd8c] Don't segfault when trying to get the debug name of a NULL object</li>
+<li>[1a973a37] Add elem count in ConcBlockingQueue to telemetry log</li>
+<li>[4a90335f] Fix possible access to fromspace in CStruct's get_attribute</li>
+<li>[39a4f05f] Fix possible segfaults related to corrupted CPPStruct STables</li>
+<li>[23fd0449] Fix CStruct's compute_allocation_strategy leaving the allocate_in_gen2 flag on by accident</li>
+<li>[ca9d44f2] Fix possible access to fromspace in MVM_repr_dimensions</li>
+<li>[0a12e3c4] Fix ConcBlockingQueue possibly unshifting an outdated item pointer</li>
+</ul>
+
+<p>Core:</p>
+
+<ul>
+<li>[a5d553cd] Add missing concreteness checks to most array ops</li>
+<li>[95f69be8] Implement serialization of NativeCall reprs with dyncall</li>
+<li>[efeec455] Dynamic library loading works with unicody paths on Windows</li>
+<li>[e0e3ea9f,fa2e4f21,fa2e4f21,01f85c8b,ddf5b56b] Add more context to error messages</li>
+<li>[55b6f734] Make sure autobox on return and slurpy nameds uses int cache</li>
+<li>[e9e0731a] Make sure intcache type is rooted</li>
+<li>[9138c699] Fix possible access to fromspace in MVM_frame_move_to_heap</li>
+<li>[3f97d73d] Fix a subtle bug in instrument_graph</li>
+<li>[8622835b] Fix possible memory corruption in MVM_frame_capture_*</li>
+<li>[90252a8f] Fix possible access to fromspace in MVM_args_set_result_(obj|str)</li>
+<li>[1fd0fdcd] Fix stack simulation losing track in some cases</li>
+<li>[cfc5d000] Give error message improvement to libffi as well</li>
+<li>[703fd647] Fix a nativecall error message in dyncall</li>
+<li>[3e715b42] NativeCall: output index of argument with repr mismatch (#1141)</li>
+<li>[e2f57637] Fix bogus "Decoder may not be used concurrently" after exceptions</li>
+<li>[00a1ddb9] Fix GC processing uninitialized data in autoclosing of frames</li>
+<li>[2dbf6225] Fix comp units using obsolete pointers to their filename</li>
+<li>[e0bc6e2f] Fix slurpy arg handling possibly accessing an outdated arg context</li>
+<li>[64a6f69c] Fix possible invalid memory access when throwing exceptions</li>
+<li>[4ab1d425] Fix autobox possibly writing to an outdated target</li>
+</ul>
+
+<p>Debug Server:</p>
+
+<ul>
+<li>[85ce8ecc] Better error if getaddrinfo in debugserver fails</li>
+<li>[b1bb9349] Prepend "Debugserver:" to errors/output originating from the debugserver</li>
+</ul>
+
+<p>Docs:</p>
+
+<ul>
+<li>[56fa7a0c] Improve naming in documentation</li>
+<li>[1eeae85f] Document heapsnapshot format version 3.1</li>
+<li>[ee18678e] Update "Features" part of readme</li>
+</ul>
+
+<p>GC:</p>
+
+<ul>
+<li>[b0b3fc8c] Fix obscure deadlock in run_gc</li>
+<li>[329f669c,ea9b29e8] Fix race condition with exited threads still in the thread list</li>
+<li>[bcc785d2] Fix overflow objects still belonging to exiting thread</li>
+<li>[aa2270c7] Fix overflow objects getting freed prematurely on thread exit</li>
+<li>[68666832] Fix segfaults in GCDEBUG_LOGs</li>
+<li>[539f1d03] Fix possible access to fromspace in finalize_handler_caller</li>
+<li>[fdc5eacf] VMEvent: put gc_promoted_bytes_since_last_full in GCEvent</li>
+<li>[aa934648] Fix swapped parameters in call to profiler_log_gen2_roots</li>
+<li>[1850b6c5] GCEvent shall report gen2root count from all TCs</li>
+<li>[6f72c92f] VMEvent: divide timing numbers by 1000</li>
+<li>[3faf1985] Introduce vmevent, "VM Event Subscription"</li>
+<li>[24e2986a] Do heapsnapshot/instrumented data gathering earlier in GC</li>
+<li>[7e190207] Log GC start a little later to fix profiling</li>
+<li>[35101eb8] New GC debug level (3) triggers the GC on each mem allocation</li>
+</ul>
+
+<p>IO:</p>
+
+<ul>
+<li>[acd1156b] Use more appropriate flags with getaddrinfo</li>
+<li>[16485506] Fix format strings in calls to MVM_exception_throw_adhoc</li>
+<li>[36c35db1] Make MVM_file_is_rwx honor root and groups</li>
+<li>[379ec77a,d9a067d4,2f4798b8,3fa99b4d,2f4798b8,...] IP6NS Grant: Improve hostname resolution</li>
+<li>[5dfed008] Fix possible SEGV in async_spawn_on_exit</li>
+<li>[6926a492] Fixed file permission interpretation problems around groups</li>
+<li>[241be06b] Fix possible access to fromspace in MVM_dir_open</li>
+<li>[2c9a92e9] Add a missing gc root for asyncsocket listen setup</li>
+<li>[9c896d6c] Add gc pressure for process output read ops</li>
+<li>[606c4437] Fix possible access to fromspace in UDP socket setup</li>
+<li>[57a6d475] Add a missing gc root for asyncsocket listen setup</li>
+<li>[bf3c6a97] Fix warning about directive in format string</li>
+<li>[93739d56] Improve error when failing to spawn process</li>
+</ul>
+
+<p>JIT:</p>
+
+<ul>
+<li>[d5f5185b] We should not overwrite assigned type</li>
+<li>[97e26c01] Fix bug in takedispatcher</li>
+<li>[e594fbcb] Add missing cast to sp_p6oget_bi</li>
+<li>[f8eca66b] Fix exprjit sp_p6oget_bi</li>
+<li>[17475350] Syntactically distinguish let keyword variants</li>
+<li>[27dcb378] Implement exprjit of sp_bind_o</li>
+<li>[2ac137c3] Use the new deopt index for synthetic guards</li>
+<li>[e4a756c6] Deoptimization in the expression JIT</li>
+<li>[f8b05151] Use correct deopt index for guard opcodes</li>
+<li>[d79e7d5a] Revert template compiler back to v5.10</li>
+<li>[10404ee5] Jit the log, exp and ceil ops</li>
+<li>[7f828342] Handle NaN in FP branching comparisons</li>
+<li>[6c622553] Fix floating point comparisons</li>
+<li>[7f8061a5] Support floating point comparisons</li>
+<li>[27e9f979] Functions that return floating point values</li>
+<li>[fb75f9a6] Compile with numeric function argument</li>
+<li>[09c0df4f] A few more numeric tiles</li>
+<li>[4002c19b] Make jit-dump.pl useful again</li>
+<li>[d79c8306] Use the correct registers for numeric tiles</li>
+<li>[cebb89ce] Basic floating point templates and tiles</li>
+<li>[c9aebedb] Handle floating point registers better</li>
+<li>[a62a2ff2] Spill live range compatible with requested set</li>
+<li>[6b00c2b3] Live ranges are given register set</li>
+<li>[4d65e467] Support floating point registers in load, spill and copy</li>
+<li>[87710a12] Floating point support in the register allocator</li>
+<li>[821e8535] Make STORE polymorphic on input</li>
+<li>[3069ed4b] More rigorous type checking</li>
+<li>[05297fa6] Split type check from expr type resolution</li>
+<li>[0f33b570] Basic expression support for floating point operators</li>
+<li>[c3af0d66] Try to select the first input register as output register</li>
+<li>[b58bbf0f] Enfore input/output registers better</li>
+<li>[9d34cb64] Enforce output-operand form in register allocator</li>
+<li>[43138989] Minor debugging / structure improvements</li>
+<li>[ed1ed12b] Reorganize JIT register definitions</li>
+<li>[cfd81276] Parse oplist operands</li>
+<li>[4407f68a] Move JIT-compile support libs to tools/lib</li>
+<li>[e5076fc5] Autogenerate tile predeclarations</li>
+<li>[b49fa493] Use bitmap for free register set</li>
+<li>[9c969b1b] Add missing write barrier to lego JIT implementation of setcodeobj</li>
+<li>[f0978d6a] Jit getuniprop_(int|bool|str)</li>
+<li>[e5321a36] Jit captureposarg_n</li>
+<li>[9f679f32] Jit and add a template for smrt_intify</li>
+</ul>
+
+<p>Libraries:</p>
+
+<ul>
+<li>[0f05efbb] Update to libuv version 1.33.0</li>
+<li>[d24f6952] Use updated dyncall library with "execstack" fix</li>
+<li>[eed5fe14] [DynASM] Take in REX encoding fix</li>
+</ul>
+
+<p>Math:</p>
+
+<ul>
+<li>[c390b30c] Fix possible access to fromspace in MVM_coerce_sI</li>
+<li>[a001b7e4] Fix many memory corruption issues in bigint operations</li>
+</ul>
+
+<p>Ops:</p>
+
+<ul>
+<li>[d189b29b] Make socket family handling portable</li>
+</ul>
+
+<p>Other:</p>
+
+<ul>
+<li>[bb239a91] Fix MVMSpeshPluginState type defined twice</li>
+<li>[5f177f58] Make MVM_HASH_RANDOMIZE properly control hash rand</li>
+<li>[ff4f6031] Factor out run_deserialization_frame() to avoid code repetition</li>
+<li>[b26638eb] Add MVM_vm_run_bytecode() as alternative to MVM_vm_run_file()</li>
+<li>[1a8988c0] Add "use 5.020" to expr-template-compiler.pl</li>
+<li>[7d23bd26] update_ops.p6: properly deeply clone spans data</li>
+<li>[e4b87265] Add reference to roast Unicode update instructions</li>
+</ul>
+
+<p>Platform:</p>
+
+<ul>
+<li>[87d7f58d] Deduplicate and shorten open and fopen wrappers</li>
+<li>[e127b849] Improve Unicode handling with paths</li>
+<li>[9d6f4493] Fix possible access to fromspace in MVM_platfrom_uname</li>
+</ul>
+
+<p>Profiler:</p>
+
+<ul>
+<li>[0b531f9c] Implement the MVM_CONFPROG_DEBUG env var which enables control of confprog</li>
+<li>[70bcaf90] Make unicode path fixes compile on non-Windows</li>
+<li>[6ecbf6e0] Profiler: Fix uninitialized field in MVM_profiler_log_gc_start</li>
+<li>[9f24debe] Profiler: Prevent overflow in the 'total exclusive time' calculation</li>
+<li>[81f9ccdf] Profiler: Fix call graph node getting missed by the GC</li>
+<li>[8e7e1210,289e9dfc] Silence some clang warnings and fix "mixed code/declaration" error</li>
+<li>[5534e95f,1e448ece,...] Add new heapsnapshot format with zstd support</li>
+<li>[4ca494f5] Profiler: Expose number of stolen gen2 roots</li>
+<li>[87912784] Profiler: Put "stolen" gen2roots in profiler data</li>
+<li>[370b9a29] Heapanalyzer: add debug "DUMP_EVERYTHING_RAW" to v3</li>
+</ul>
+
+<p>Spesh:</p>
+
+<ul>
+<li>[0f0e6d3a] Work around MSVC not coping well with preprocessor instructions inside an MVMROOT</li>
+<li>[c61236f9] Fix access to freed memory in resolve_using_guards</li>
+<li>[acb04a44] Fix possible memory corruption in resolve_using_guards</li>
+<li>[3d83cb46] Add a few missing static keywords before a few functions</li>
+<li>[40fcdb7e] Fix incorrect return type in get_effective_size</li>
+<li>[3e8652ea] Add missing root for VMEvent SpeshOverviewEvent</li>
+<li>[189ef298] Update deopt idx if we clone the deopt annotation</li>
+<li>[dfbc5a45] Make deopt use index rather than target address</li>
+<li>[c3e38bb9] Turn pushes/pops into MVMROOT again</li>
+<li>[cf3b545e] Reinstate callsite during uninlining</li>
+<li>[38915b93] Tweak spesh logging's new compunit handling/quotas</li>
+<li>[b2287bc4] Fix possible memory corruption of spesh plugin guards by untimely GC</li>
+<li>[557056bf] Fix formatting code warning in an error path</li>
+<li>[e7bad16e] Fix pointer type mismatch warnings with a cast</li>
+<li>[204eb28f] VMEvent: new event type: SpeshOverviewEvent</li>
+<li>[269b73ee] Add missing break statement</li>
+<li>[03d3db93] Sanity check if hash ever gets an initialize func</li>
+<li>[aa2e96c4] Comment when slurpy hash has been created</li>
+<li>[43e3d114] Output duplicate getarg ops in spesh log</li>
+<li>[46516af4] Lower slurpy positional args to a set of getarg ops</li>
+<li>[09bd015c] Give arg spesh more comments for when it bails</li>
+<li>[d1af2f2f] Handle arg spesh native param passed a Scalar</li>
+<li>[5c787f37] Only getlexperinvtype → constant if only one type record exists</li>
+<li>[5b174f52] Allow param_*_ins ops to spesh when Int/Num/Str present</li>
+<li>[b3469f92] Actually optimize smrt_intify when able</li>
+<li>[654a136d] Fix panic in spesh when deserialization causes GC during fact finding</li>
+<li>[4227c713] Fix possible invalid access to fromspace in spesh worker startup</li>
+<li>[f18bfadb] Add missing MVMROOT in MVM_spesh_plugin_register</li>
+<li>[5d8095b8] Spesh optimize smrt_intify like smrt_(num|str)ify</li>
+</ul>
+
+<p>Strings:</p>
+
+<ul>
+<li>[da19661e] Reset utf8 pointer to point at original string before use</li>
+<li>[ff007f2f] Use right types/format string, pull dup code out</li>
+<li>[0e412038] Show chars near bad bytes in another encoding path</li>
+<li>[fece31c5] Free the correct things in encoding error path</li>
+<li>[5f14524a] Show correct bad bytes in encoding errors</li>
+<li>[5cf5c56b] Simplify freeing of buffer in UTF8_REJECT cases</li>
+<li>[07983e4c] Fix possible access to fromspace in MVM_string_flip</li>
+<li>[b49b5202] Fix issue #1163, gb2313 clang warnings</li>
+<li>[8211189c] Add the reference of GB18030</li>
+<li>[986f3403] Add GB18030 encode, decode and decodestream support</li>
+<li>[695a24de] Fix memory corruption caused by missing write barriers in string ops</li>
+<li>[7d7a2b73] Remove large sections of zeros in the conversion table</li>
+<li>[709bb7ed] Add comments about how the conversion tables are generated</li>
+<li>[5ffa9264] Generate conversion table from a source file</li>
+<li>[bca6f392,f46e5d7e,07f6305f,6730e51f,e78080f6] Fix possible access to fromspace in some string functions</li>
+<li>[78164189] Remove bogus MVMROOT from MVM_unicode_string_compare</li>
+<li>[b614a7b4] Update collation data to Unicode 12.1</li>
+<li>[8f425147] Update Unicode to 12.1</li>
+<li>[9e6abe46,fc56c02c] Use a decode_handler function for decodestream</li>
+<li>[75f1c965] Fixed an overflow problem</li>
+<li>[9213f2f0] Fix duplicate includes</li>
+<li>[73f28d38] Add GB2312 encode, decode and decodestream support</li>
+</ul>
+
+<p>Tooling/Build:</p>
+
+<ul>
+<li>[32003eec] Use <code>make</code> exit status as own</li>
+<li>[8efd3825] Make Configure.pl and  tools/update_ops.p6 executable</li>
+<li>[277676a1] Add better support of PEA to spesh bisect</li>
+<li>[fcdb8433] Configure.pl: Add missing return in has_native_library</li>
+<li>[2bcb911d] Separate includes from submodules from system-wide includes</li>
+<li>[53a6308c] Get moar build working with spaces in path</li>
+</ul>
+<p><a href="releases/MoarVM-2019.11.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2019.07.1</h3>
         </div>
         <div class="panel-body">
