@@ -34,6 +34,74 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2020.07</h3>
+        </div>
+        <div class="panel-body">
+<p>6model:</p>
+
+<ul>
+<li>[32ce5f97] Constant-fold spesh-time-known unbox/decont_n/s</li>
+</ul>
+
+<p>Core:</p>
+
+<ul>
+<li>[44504309,8e75378f,1d52655e,d564695f] Introduce the setthreadname op</li>
+</ul>
+
+<p>Debug Server:</p>
+
+<ul>
+<li>[707f6ce7,12780324] Debugserver Protocol 1.2: add thread "name" field</li>
+</ul>
+
+<p>GC:</p>
+
+<ul>
+<li>[06d8cdd1] Fix compiler warning in GC debug code</li>
+</ul>
+
+<p>JIT:</p>
+
+<ul>
+<li>[19374884] Add JIT templates for return_(i|n|s)</li>
+</ul>
+
+<p>Other:</p>
+
+<ul>
+<li>[a4cb0c51,2a3290df,183becd2,0a0a9ba9,953bac6c] Give io loop thread and spesh thread a name</li>
+</ul>
+
+<p>Spesh:</p>
+
+<ul>
+<li>[9a9ca434] Propagate facts in set elimination in one more case</li>
+<li>[af5b89b6] Give known type flag when turning return to box in inline</li>
+</ul>
+
+<p>Unicode:</p>
+
+<ul>
+<li>[e5d597d1] Eliminate $annotate_anyway, which is no longer used</li>
+<li>[1d00a2b5] Don't add placeholders such as "&lt;control&gt;" to the Unicode names lookup hash</li>
+<li>[07dbc19a] Don't change the name to NULL (occasionally, if it starts with '&lt;')</li>
+<li>[0369f512] Unwrap the generated codepoint_names to one entry per line</li>
+<li>[cfe6ed8f] Consistent whitespace for the initialiser for codepoint_bitfield_indexes</li>
+<li>[23dfde97] Fix building on older compilers by explicitly stating gnu99 usage</li>
+<li>[67c8413f] Fix ucd2c.pl script error propagation</li>
+</ul>
+
+<p>Tooling/Build:</p>
+
+<ul>
+<li>[0c651c23] Fix downloading of Unicode data</li>
+</ul>
+<p><a href="releases/MoarVM-2020.07.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2020.06</h3>
         </div>
         <div class="panel-body">
@@ -45,7 +113,7 @@
 <li>[55ee90b17][a5061624d] Add MVM_HASH_(BIND|GET)_FREE macros</li>
 <li>[3149bbb4f] find_repr_by_name now holds mutex_repr_registry when reading repr_hash</li>
 <li>[c70587551] Where possible, iterate over lexical_names_list instead of lexical_names</li>
-<li>[290f518af] Free REPR data before throws and where appropriate, set st-&amp;gt;REPR_data to NULL</li>
+<li>[290f518af] Free REPR data before throws and where appropriate, set <code>st-&amp;gt;REPR_data</code> to NULL</li>
 <li>[7a799da87] Copy lexical_names_list when copying a StaticFrame</li>
 <li>[2922f3d1a] mutex_container_registry is held while reading from container_registry</li>
 <li>[3fe584876] Use correct encoding for deserializing strings</li>
