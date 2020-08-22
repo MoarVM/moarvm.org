@@ -34,6 +34,46 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2020.08</h3>
+        </div>
+        <div class="panel-body">
+<p>Core:</p>
+
+<ul>
+<li>[c0ed9e32] Make extop marks reachable again in MVM_op_get_mark</li>
+</ul>
+
+<p>Debug Server:</p>
+
+<ul>
+<li>[b78b523d][2a9f0f06] Implement <code>FindMethod</code> op and add a <code>name</code> field for it</li>
+<li>[7a2881a8] Implement simplest case of <code>decont</code> op</li>
+<li>[f6f12f5a] Fix compiler warnings</li>
+</ul>
+
+<p>GC:</p>
+
+<ul>
+<li>[da237717] Move MVM_malloc_trim call after MVM_gc_collect_free_gen2_unmarked call</li>
+</ul>
+
+<p>Strings:</p>
+
+<ul>
+<li>[393ae579] Fix case insensitive string matching with an empty string</li>
+</ul>
+
+<p>Tooling/Build:</p>
+
+<ul>
+<li>[6d5a3b02] Make <code>Configure.pl</code> executable again</li>
+<li>[1f182b48] Add new <code>Configure.pl</code> flag <code>--dtrace</code> which allows to put DTrace points in the code</li>
+</ul>
+<p><a href="releases/MoarVM-2020.08.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2020.07</h3>
         </div>
         <div class="panel-body">
