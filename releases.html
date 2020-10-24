@@ -34,6 +34,55 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2020.10</h3>
+        </div>
+        <div class="panel-body">
+<p>6model:</p>
+
+<ul>
+<li>[fb992950] Add MVM_str_hash_iterator_target_deleted() for HASH_DEBUG_ITER</li>
+</ul>
+
+<p>Core:</p>
+
+<ul>
+<li>[df77d3cf] Simplify and optimize isprime_I</li>
+<li>[8852896d] A more complete fix for the hash max probe distance bug</li>
+<li>[a27c7882] Make lookup table in MVP_round_up_log_base2() based on uint8_t</li>
+<li>[0015fd05] Re-instate meaningful hash iterator debugging inside HASH_DEBUG_ITER</li>
+<li>[60070970] oops if MVM_fixed_size_alloc() is called for a size of 0 bytes</li>
+</ul>
+
+<p>Debug Server:</p>
+
+<ul>
+<li>[3c3a24bf] Fix two *printf size warnings reported on ILP32 platforms</li>
+</ul>
+
+<p>IO:</p>
+
+<ul>
+<li>[95d21703] Minor optimization of MVM_file_isexecutable on Windows</li>
+<li>[882dbf04] Add a function to fix up the STD IO handles</li>
+</ul>
+
+<p>Strings:</p>
+
+<ul>
+<li>[a989f7b5] <code>char</code> can be unsigned. Rewrite the "is it ASCII?" test to handle this too</li>
+</ul>
+
+<p>Tooling/Build:</p>
+
+<ul>
+<li>[dc50eddd] For the pthread_setname_np probe, use an auto char array instead of malloc</li>
+<li>[4f5787d3] Create a unicode.c with #include directives instead of generating it with cat</li>
+</ul>
+<p><a href="releases/MoarVM-2020.10.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2020.09</h3>
         </div>
         <div class="panel-body">
