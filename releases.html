@@ -34,6 +34,54 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2020.11</h3>
+        </div>
+        <div class="panel-body">
+<p>6model:</p>
+
+<ul>
+<li>[af9ebffb,ffc8a269,75177470,38a2f815,2e8b5657] Fix interning of parametrics</li>
+<li>[3c5deb2f] Implement serialize/deserialize of CStr REPR</li>
+<li>[a37cd763,cbb92b03,dfbdcc9d] Eliminate pointer mismatch warnings on big endian systems</li>
+<li>[2a98b8f3] MVM_nativeref_{read,write}<em>lex</em>i should handle uint8, uint16, uint32</li>
+<li>[608b90eb] No need to MVMROOT <code>root</code> twice in <code>get_attribute</code></li>
+</ul>
+
+<p>Core:</p>
+
+<ul>
+<li>[88722e8e] Fix zeroing of reallocated memory in MVM_recalloc</li>
+<li>[1eda12a0] Use <code>foo(void)</code> instead of just <code>foo()</code> for functions that take no arguments</li>
+</ul>
+
+<p>Platform:</p>
+
+<ul>
+<li>[18e6f94e] Import pthread on Windows to get a type</li>
+</ul>
+
+<p>Strings:</p>
+
+<ul>
+<li>[cefec1fb] Regenerate Unicode database files for v13.0, v13.1</li>
+<li>[2cac07c9] Regenerate unicode_db to fix minor comment difference</li>
+<li>[4ced726f] Use MVM_{malloc,realloc,calloc,free} consistency</li>
+<li>[55964708] <code>swap_bytes</code> in utf16.c needs to also swap bytes on big endian platforms</li>
+</ul>
+
+<p>Tooling/Build:</p>
+
+<ul>
+<li>[f212c081] Update generation scripts for Unicode 13.0, 13.1</li>
+<li>[004e4bc7] The probe for <code>pthread_setname_np</code> needs prototypes from &lt;string.h&gt;</li>
+<li>[6a2284e6,aa83051a] Report the lines that caused coverage</li>
+<li>[7167b3d1,56fca429] Remove unused, unneeded and misspelled block filter</li>
+</ul>
+<p><a href="releases/MoarVM-2020.11.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2020.10</h3>
         </div>
         <div class="panel-body">
