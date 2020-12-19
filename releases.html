@@ -34,6 +34,72 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2020.12</h3>
+        </div>
+        <div class="panel-body">
+<p>6model:</p>
+
+<ul>
+<li>[ce0cbf58,372e4341,ed15b258,1e98d73b,93aae582,93a1ba85,04063d19,
+d65501b2,1b2867fb,1f695ac6,5048630d,d8ecb325,1dd5b3c7,c544ca9f,
+897d2e98,3833c31e,9c527362,3ab21b9e,b3fa6df2]
+Hash allocation as a single memory block</li>
+<li>[730596d0,62828269,bd6b0b32,6fac5ab2,eb33fb55,c7811142,99aab70e,
+2b20583f,52a516f6,358e7fd5,491e8dcd,46634be8,b432533e,2913e0ac,
+30fbd9ab,00f29c72,7d6107e6,a024f543,37c2d2d6,7caffe8a,2e208823,
+ffb2031b,fecfad19,d9dccf25]
+Store some hash bits in the low bits of the hashtable metadata byte, with the
+probe distance in the high bits, and the split between the two updated dynamically</li>
+<li>[bed0a49f] Early exit gc_mark for VMArray+MVMHash if able</li>
+<li>[9fbcdb4d] P6opaque's <code>spesh</code> must handle P6bigint values inline, as some are too big</li>
+<li>[4cfde6ed,ac941c0d,8d68b18f] Eliminate static race condition</li>
+<li>[5a21247e] Improve performance of repeated <code>unshift</code> calls</li>
+<li>[b8653cae] Turn gen2 default allocation off on (de)serialization failures</li>
+</ul>
+
+<p>Core:</p>
+
+<ul>
+<li>[5f1712cb,741e6acd,868de8cc,9b9de0ab,60b47f62,175525ce,c2f3e04b,01c0950d]
+Replace <code>MVM_box_{int,num,str,uint}</code> and <code>MVM_unbox_str</code> with calls to
+<code>MVM_repr_box_{int,num,str,uint}</code> and <code>MVM_repr_get_str</code></li>
+<li>[490ee80d] Make curcode OP inlinable</li>
+<li>[998ea76a]  Calling <code>MVM_exception_throw_adhoc</code> in the spesh worker should be an oops</li>
+<li>[fa9b6659] Use simpler stdio calls in exceptions.c where possible</li>
+<li>[ec507862] Add <code>MVM_set_running_threads_context</code></li>
+<li>[0c3a38fa] Move <code>MVM_{set,get}_running_threads_context</code> to threadcontext.h</li>
+<li>[34e06864] Simplify and inline <code>MVM_nativecall_find_thread_context</code></li>
+</ul>
+
+<p>Documentation:</p>
+
+<ul>
+<li>[ae5f7ad4] Update some docs to Raku era</li>
+</ul>
+
+<p>JIT:</p>
+
+<ul>
+<li>[fbd386a0,7bdfb38b] On Apple Silicon with arch arm64, do not attempt to JIT</li>
+<li>[3838247e] Add word and byte-sized return value macros to the lego JIT</li>
+</ul>
+
+<p>Math:</p>
+
+<ul>
+<li>[70cefcff] Minimally exact bigint/bigint =&gt; num conversion, including rounding</li>
+</ul>
+
+<p>Strings:</p>
+
+<ul>
+<li>[a6118ff2] New debug helper: <code>MVM_dump_string</code></li>
+</ul>
+<p><a href="releases/MoarVM-2020.12.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2020.11</h3>
         </div>
         <div class="panel-body">
