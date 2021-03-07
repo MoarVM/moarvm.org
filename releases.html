@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>MoarVM - A VM for NQP and Rakudo Perl 6</title>
+    <title>MoarVM - A VM for NQP and Rakudo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -21,7 +21,7 @@
 
       <div class="page-header" id="banner">
         <h1>MoarVM</h1>
-        <p class="lead">A VM for NQP And Rakudo Perl 6</p>
+        <p class="lead">A VM for NQP And Rakudo</p>
       </div>
       <nav class="navbar navbar-default" role="navigation">
         <ul class="nav navbar-nav">
@@ -1896,7 +1896,7 @@ decode</li>
 <p>6model:</p>
 
 <ul>
-<li>[d4d8ff41] Mark functions used in Perl 6 extops MVM_PUBLIC</li>
+<li>[d4d8ff41] Mark functions used in Rakudo extops MVM_PUBLIC</li>
 <li>[4199a956] Enable gc_free of MVMContext</li>
 <li>[e1df3411] Speedup VMArray zero_slots by using memset instead of a loop</li>
 <li>[46c08a0e] Fix memory leak in CArray given P6 Str's</li>
@@ -2698,7 +2698,7 @@ to throw or fail encoding</li>
 <li>New spesh-bisect.pl tool</li>
 <li>Fix OSR of thread entry frame</li>
 <li>Allow some cross-HLL inlining, this means we can inline bits of NQP
-(usually guts like Block.clone) into Perl 6 routines that call them.</li>
+(usually guts like Block.clone) into Raku routines that call them.</li>
 </ul>
 
 <p>Garbage Collection/Memory:</p>
@@ -3494,7 +3494,7 @@ register</li>
         </div>
         <div class="panel-body">
 <ul>
-<li>Make coerce_s_n work more like the Perl 6 Str.Num method</li>
+<li>Make coerce_s_n work more like the Raku Str.Num method</li>
 <li>Eliminate socket string I/O</li>
 <li>Re-implement synchronous sockets without using libuv, enabling them to be
 passed between threads</li>
@@ -3524,7 +3524,7 @@ together</li>
 <li>Add improved support for GCB=Prepend</li>
 <li>Improve Regional Indicators support during normalization</li>
 <li>Serialize a Decoder REPR object into null, so incidental file handle
-serialization in Perl 6 does not blow up</li>
+serialization in Raku does not blow up</li>
 <li>Improve named argument optimization, so we can specialize and throw out
 instructions in more cases</li>
 <li>JIT decodertakeline</li>
@@ -3768,8 +3768,8 @@ a file in UTF-8 encoding</li>
 statistics</li>
 <li>Tweak full collection criteria in heap profiling</li>
 <li>Free up spesh log slots after specialization, avoiding some leaks</li>
-<li>Removed the getregref_ ops (unused by NQP or Perl 6)</li>
-<li>Removed the continuationclone op (unused by Perl 6)</li>
+<li>Removed the getregref_ ops (unused by NQP or Raku)</li>
+<li>Removed the continuationclone op (unused by Raku)</li>
 <li>Enforce one-shot invocation of continuations</li>
 <li>Greatly simplify handling of call frame working register lifetimes, leading
 to consistently shorter lifetimes, less memory pressure, and faster calling</li>
@@ -3809,7 +3809,7 @@ to consistently shorter lifetimes, less memory pressure, and faster calling</li>
 <li>Fix powerpc detection on AIX (gcc)</li>
 <li>Make multidim error messages say they are multidim</li>
 <li>Add comment about where to find UNIDATA</li>
-<li>Implement captureinnerlex op, for fixing QUIT/LAST phaser scoping in Perl 6</li>
+<li>Implement captureinnerlex op, for fixing QUIT/LAST phaser scoping in Raku</li>
 <li>Fix mis-sized free in the NFG trie that only showed up in 32-bit</li>
 <li>Add GC debug helper to "find" a pointer in nurseries/gen2 bins</li>
 <li>Make ASSERT_NOT_FROMSPACE check fromspaces of all threads</li>
@@ -4832,7 +4832,7 @@ level and tracking use of specialized/JITted code and inlinings</li>
 <li>Include filename in spesh log</li>
 <li>Fix negative division in JIT</li>
 <li>Mark getlexouter as not inlinable</li>
-<li>Add mechanism for objects to get a persistent ID, used in Perl 6's .WHICH</li>
+<li>Add mechanism for objects to get a persistent ID, used in Raku's .WHICH</li>
 <li>Fix regression on PowerPC</li>
 <li>Add missing SC write barrier to MVM_repr_bind_attr_*</li>
 <li>JIT getattrs_* and bindattrs_* ops</li>
@@ -5211,7 +5211,7 @@ meta-objects</li>
 <li>Simplified and fixed UTF-16 encoding</li>
 <li>Implemented unsigned native integer array support</li>
 <li>Added various missing write barriers on STables</li>
-<li>Added openpipe functionality, to support qx/qqx in Perl 6</li>
+<li>Added openpipe functionality, to support qx/qqx in Raku</li>
 <li>Corrected accidental and potentially explosive use of REPR(...) on STables</li>
 <li>Switched to using flag bits to mark liveness in GC</li>
 <li>GC forwarder pointer used in nursery now overwrites existing object body,
@@ -5245,7 +5245,7 @@ saving 4 or 8 bytes on every collectable object</li>
           <h3 class="panel-title">2014.01</h3>
         </div>
         <div class="panel-body">
-<p>The first official MoarVM release! Capable of running the 2014.01 release of Rakudo Perl 6, the first one with MoarVM support. (No change log for this initial release, since it's basically "all the things".)</p>
+<p>The first official MoarVM release! Capable of running the 2014.01 release of Rakudo, the first one with MoarVM support. (No change log for this initial release, since it's basically "all the things".)</p>
 <p><a href="releases/MoarVM-2014.01.tar.gz" class="btn btn-primary" role="button">Download</a></p>
 </div>
 </div>
