@@ -34,6 +34,73 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2021.04</h3>
+        </div>
+        <div class="panel-body">
+<p>6model:</p>
+
+<ul>
+<li>[79027bdd] Fix inlines missing synthetic deopt points</li>
+<li>[fd9f4bda,6670a64d] Constrain C pointer serialization to sizes &lt;= INT32_MAX</li>
+<li>[96d05ecc] Fix possible GC upset caused by half-deserialized STables</li>
+<li>[63a69af5] Use the FSA for <code>MVMActiveHandler</code>s</li>
+<li>[1de34262,c66b9e2,a6238bc] Fix a segfauult in <code>VMArray</code>'s <code>copy_elems</code></li>
+<li>[726447d7] Fix a segfault on trying to use an untyped array with buffer write functions</li>
+</ul>
+
+<p>Core:</p>
+
+<ul>
+<li>[c10426a5] Remove <code>nqp::time_i</code> and <code>nqp::time_n</code> in favor of <code>nqp:time</code> which just return integer nanoseconds since the epoch</li>
+<li>[53312b9f] Deprecate now unused <code>graphs_s</code> operator</li>
+<li>[fe39d19f] Eliminate the <code>sec_n</code>, <code>asec_n</code> and <code>sech_h</code> operators, which are no longer used</li>
+<li>[7da73d21] Set "allocate in gen2" in 2 last locations that create objects persisting for the lifetime of the interpreter</li>
+<li>[a90b4ec0,16fe88f] Add a <code>setup_notify</code> handler and queue to <code>nqp::signal</code> to avoid race conditions when setting up a signal handler</li>
+<li>[f7564376] Fix <code>getobjsc</code> returning <code>NULL</code> when the object has no SC</li>
+<li>[572ec70c] Prohibit <code>hllbool</code> when the HLL doesn't have special booleans</li>
+<li>[36237011] No longer require an exception as argument of <code>nqp::backtrace</code>, making creating <code>Failure</code> objects
+faster and avoiding the inconsistencies caused by inlining</li>
+<li>[5bba90a0] Fixing generated backtraces missing inlined frames</li>
+<li>[9b5d14c0] Save a <code>malloc+free</code> per frame when creating a <code>Backtrace</code> object</li>
+<li>[41f420ed] Fix a memory leak related to Unicode hashes</li>
+<li>[08525be5] Make <code>smrt_intify</code> specializable like other smrt_* operators</li>
+<li>[b553aba6] Remove double-MVMROOT of result in <code>MVM_args_set_result_obj</code></li>
+</ul>
+
+<p>Documentation:</p>
+
+<ul>
+<li>[8a5e05b0] Update README</li>
+</ul>
+
+<p>JIT:</p>
+
+<ul>
+<li>[d923f504] Only call <code>MVM_jit_bytecode_dump_enabled</code> if code is non-NULL</li>
+<li>[3a62bdf7] Fix JITed <code>ordfirst</code>/<code>ordat</code>/<code>ordbaseat</code> returning 4294967295 instead of -1</li>
+<li>[dba4b528]  Fix expr JITed <code>ordbaseat</code> and <code>getcpbyname</code> returning 4294967295 instead of -1</li>
+</ul>
+
+<p>Spesh:</p>
+
+<ul>
+<li>[298298aa] Fix spesh removing not-really-dead code</li>
+<li>[0fa35556] Fix possible segfault on exit when using spesh log</li>
+</ul>
+
+<p>Tooling/Build:</p>
+
+<ul>
+<li>[8c6322dc] Disable Travis and AppVeyor as CI, they have been superseded by AzureCI</li>
+<li>[71dcb28a,8c979fd,7c39762,5fad749,e3decf0] Update Azure CI GNU/Linux versions,
+add old versions, speed up testing, disable not working coverage job and add a task to test <code>--full-cleanup</code> option</li>
+<li>[2eda6f86,f9a964d] Fix when building to a directory which includes a '+' in its file name</li>
+</ul>
+<p><a href="releases/MoarVM-2021.04.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2021.03</h3>
         </div>
         <div class="panel-body">
