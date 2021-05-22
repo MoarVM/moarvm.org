@@ -34,6 +34,69 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2021.05</h3>
+        </div>
+        <div class="panel-body">
+<p>Core:</p>
+
+<ul>
+<li>[a75a206a] Always log the type coming out of an <code>nqp::decont</code></li>
+<li>[5ba30ed8] <code>MVM_fixed_size_destroy</code> needs to free the safepoint overflow list</li>
+<li>[961a1985,00eb44c7,c37ad91b] Free loaded libs during full cleanup</li>
+<li>[bf5fa9bc] Make <code>MVM_fixkey_hash_foreach</code> static inline</li>
+</ul>
+
+<p>IO:</p>
+
+<ul>
+<li>[8f4cb5d8] Do not downcast <code>bytes</code> argument to <code>write()</code>/<code>send()</code> calls</li>
+</ul>
+
+<p>Libraries:</p>
+
+<ul>
+<li>[5ee04f0f] Ensure the version of libzstd is at least 1.0.0</li>
+</ul>
+
+<p>Math:</p>
+
+<ul>
+<li>[24420774] Convert MVM_num_{isnanorinf,posinf,neginf,nan} to inline functions</li>
+<li>[179f5e50,31daadba,86e1289e,d6029122,31b13731] Implement <code>MVM_num_isnanorinf</code> using <code>isinf</code> and <code>isnan</code> if we find them</li>
+</ul>
+
+<p>Platform:</p>
+
+<ul>
+<li>[69f8b227,366c0e25,32c4c2d8,2c171255,b9860db6,cb01a109,4dcfda9a,da172e92,0e3fd6c3,6d449962]
+Cleanup the build system probes</li>
+<li>[47e192b8,fa1eaacb,3073a3f9,44bd160e,3b8050f7,db6cca0e,9a70c3b6,54ab1516,29a421ec,e740b881,8611c7bf,d0a38131]
+Refactor the C compiler probe code and add a probe for <code>log()</code> for negative values</li>
+</ul>
+
+<p>Spesh:</p>
+
+<ul>
+<li>[c8c1b4f2] Fix spesh missing writes to containers</li>
+<li>[14d9dd56] Fix missing <code>gc_mark</code> of <code>simstackframe</code>'s <code>arg_types</code></li>
+<li>[e1d546ab,dc1f710bd5dafd9fb40ff431a8d86e646fa018a1,543258ab10120c1cefcec86cda62b408f740c164] Propagate spesh facts after guard elimination</li>
+<li>[a1cfecd6] Fix getting garbage numbers after spesh optimized away <code>smart_intify</code></li>
+</ul>
+
+<p>Tooling/Build:</p>
+
+<ul>
+<li>[9f82a46b] Add a test configuration for MinGW on Windows</li>
+<li>[19db00f7] Update CI package index before installing packages</li>
+<li>[5ab2a1d2] Remove unnecessary Windows-specific jobs from CI</li>
+<li>[87cd6f5d] Only check for leaks on Ubuntu &gt;=20.04 </li>
+<li>[67f5dddb] Run NQP/Rakudo under catchsegv in GNU/Linux CI jobs</li>
+</ul>
+<p><a href="releases/MoarVM-2021.05.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2021.04</h3>
         </div>
         <div class="panel-body">
