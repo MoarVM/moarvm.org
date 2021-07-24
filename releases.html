@@ -34,6 +34,62 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2021.07</h3>
+        </div>
+        <div class="panel-body">
+<p>6model:</p>
+
+<ul>
+<li>[21f8cadd] Fix "Collectable in a gen2 freelist accessed" when deserializing a method cache</li>
+<li>[d7a07bf3] Fix possible acces to a freed SC during deserialization</li>
+<li>[8f513d55] Convert more <code>realloc+memset(0)</code> to <code>recalloc</code></li>
+</ul>
+
+<p>Core:</p>
+
+<ul>
+<li>[736154d2] Fix some bugs in the various <code>hash_fsck</code> functions</li>
+<li>[1180c988] Fix read buffer overflow in bytecode dumper</li>
+<li>[a27efd30] Fix overflows on slight reallocations of fixed size alloced buffers</li>
+</ul>
+
+<p>IO:</p>
+
+<ul>
+<li>[8e9afcf5] Fix error handling of <code>mkdir</code></li>
+<li>[97948c2a] Assign the result of a <code>socket(2)</code> call immediately</li>
+<li>[af001c96,3a3eb7f9] Fix possible deadlock when waiting for mutex_threads</li>
+</ul>
+
+<p>Profiler:</p>
+
+<ul>
+<li>[ab2a0100,f8d5f300] Simplify code needed for GCC to avoid a warning</li>
+</ul>
+
+<p>Spesh:</p>
+
+<ul>
+<li>[a4d59492] Fix memory corruption by accessing freed spesh stats</li>
+</ul>
+
+<p>Strings:</p>
+
+<ul>
+<li>[4fea2f9a] Fix ShiftJIS decoder bug where a replacement is used
+and a decoding error is encountered after '\r' character</li>
+</ul>
+
+<p>Tooling/Build:</p>
+
+<ul>
+<li>[42bbff95] Remove msinttypes from <code>$PREFIX\include</code> as no longer needed</li>
+</ul>
+<p><a href="releases/MoarVM-2021.07.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2021.06</h3>
         </div>
         <div class="panel-body">
