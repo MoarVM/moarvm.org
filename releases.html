@@ -34,6 +34,34 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2021.08</h3>
+        </div>
+        <div class="panel-body">
+<p>Core:</p>
+
+<ul>
+<li>[2f5c21fb] Fix another bug in <code>MVM_str_hash_fsck</code></li>
+<li>[7355f744] Free filename if exception when loading bytecode</li>
+<li>[8cc7fbdf,7907b85b,0c032a00,a81f129a,7f8bc1e7] Switch <code>MVM_coerce_n_s</code> to Ryū from Grisu3 with a <code>sprintf</code> fallback</li>
+</ul>
+
+<p>JIT:</p>
+
+<ul>
+<li>[2932ef5b] Add JIT templates for <code>(bind|get)attr(s)?_*</code></li>
+</ul>
+
+<p>Spesh:</p>
+
+<ul>
+<li>[d4a8093e] Fix deadlock by untimely GC in multi-threaded programs</li>
+<li>[a932b173] Fix spesh optimizing away still needed label register</li>
+</ul>
+<p><a href="releases/MoarVM-2021.08.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2021.07</h3>
         </div>
         <div class="panel-body">
