@@ -34,6 +34,27 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2021.09</h3>
+        </div>
+        <div class="panel-body">
+<p>Core:</p>
+
+<ul>
+<li>[0b713ada,e5cbede8] Store <code>key_right_shift</code> - metadata_hash_bits in the hashtable</li>
+<li>[5ead9f0d] Respect <code>--full-cleanup</code> in <code>nqp::exit</code></li>
+<li>[7a385a35] Fix possible access to fromspace in NativeCall callbacks</li>
+</ul>
+
+<p>GC:</p>
+
+<ul>
+<li>[bb14f423] Fix finalizers of gen2 objects rarely getting run</li>
+</ul>
+<p><a href="releases/MoarVM-2021.09.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2021.08</h3>
         </div>
         <div class="panel-body">
@@ -202,7 +223,7 @@ Refactor the C compiler probe code and add a probe for <code>log()</code> for ne
 <li>[9f82a46b] Add a test configuration for MinGW on Windows</li>
 <li>[19db00f7] Update CI package index before installing packages</li>
 <li>[5ab2a1d2] Remove unnecessary Windows-specific jobs from CI</li>
-<li>[87cd6f5d] Only check for leaks on Ubuntu &gt;=20.04 </li>
+<li>[87cd6f5d] Only check for leaks on Ubuntu &gt;=20.04</li>
 <li>[67f5dddb] Run NQP/Rakudo under catchsegv in GNU/Linux CI jobs</li>
 </ul>
 <p><a href="releases/MoarVM-2021.05.tar.gz" class="btn btn-primary" role="button">Download</a></p>
