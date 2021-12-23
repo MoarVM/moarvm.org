@@ -34,6 +34,92 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2021.12</h3>
+        </div>
+        <div class="panel-body">
+<p>Core:</p>
+
+<ul>
+<li>Allocate frame work and, when possible, environment registers on the
+callstack [fd571614][9266e794][7eca0ed3][d83edbea]</li>
+<li>Negative numbers should not be prime [1bd61725]</li>
+<li>Fix segfaults when a frame has more than 8192 locals [24392a32]</li>
+<li>Some small optimizations for frame allocation [9903a543][fcddd121]
+[4d145b46][93809811]</li>
+<li>When NativeCall is libffi, copy <code>ffi_ret_type</code> and <code>ffi_arg_types</code>
+[a2a82f99]</li>
+<li>When NativeCall is libffi, don't leak ffi_arg_types during GC [a3c17d0f]</li>
+<li>Avoid thread safety issues in intern lookups [08d41d5e]</li>
+<li>Fix threading issues caused by misalignment in --valgrind builds
+[ea5a86a1]</li>
+<li>Remove counter productive NULL checks in decont ops [8aca849f]</li>
+<li>Dispatcher replace arg syscall [68b8f429][ed0c8ec0][4cdce310][0a5b37a1]</li>
+<li>Migrate special return to callstack and simplify return handling
+[05b34685][485ca825][f58cf69f][139f54aa][feba1cd5][3f45b234][8e197406]
+[776a1e3c][4adf3a2c][ce19abf2][0f43204e][2f423b20][b8e90bf8][cb7deb4b]
+[843cf0f3][cd3b759b][f2685cd9][9f22ccc2]</li>
+<li>Mark nqp::radix as :pure [9d5bcfc5]</li>
+<li>New disp nativecall [e3614b05][8b33b49a][1eb6bd4c][58cb30a8]
+[3f6ffa19][3881e22e][7dd49341][d44be4f2][2acd842a][b0b0638e][a9c3db5d]
+[7de49439][ece63176][40267983][8aac4bf7][d5956209][5b477341][e403ec59]
+[21f6f323][87442f53][ee404907][960d87db][1e0d70c4][2e2f6607][4fd9c73a]
+[cfcab847][d843f4ab][cd9541be][9bbd50cd][795d75ed][785d3e03][e1b5e35d]
+[c451fede][35963970][45692bbc]</li>
+<li>Properly extend int return values of native calls to 64 bits [bd83921d]</li>
+<li>Fix use of uninitialized memory in native callbacks with libffi
+[0006714d]</li>
+<li>Close socket on async error during an async connection [2a124542]</li>
+<li>Fix various callstack region record related failures [e7e0bdc0][469bf913]
+[6903c952][c15c093d]</li>
+<li>Alloca the nativecall args that we can [5503065c]</li>
+<li>Deserialize empty hashes robustly [c1e8775f][2fa51c61][0a674c8c]</li>
+<li>Fix segfaults due to race condition when initializing native call sites
+[207db4bb]</li>
+<li>Fix segfault with void native calls [fd6a4103][768228b3]</li>
+</ul>
+
+<p>GC:</p>
+
+<ul>
+<li>Fix possible access to fromspace in code_pair_configure_container_spec
+[cd809ee4][0821570a]</li>
+<li>Fix possible access to fromspace after MVM_capture_replace_arg [81082e1c]</li>
+<li>Fix possible access to fromspace in MVM_disp_program_run [6fd62329]</li>
+<li>Fix possible access to fromspace in native calls [f4aa22ad]</li>
+<li>Fix possible access to fromspace when autoboxing return values [f0e4b08c]</li>
+</ul>
+
+<p>JIT:</p>
+
+<ul>
+<li>Improve the jit implementation of nqp::abs_i [52c4a6d7]</li>
+<li>Use callp instead of call in jit of new(mixin)type [ba03cb2e]</li>
+<li>Lego JIT of getcurhllsym [4c3f4cde]</li>
+<li>Fix race conditions in JIT compiled dispatches [4c6755f4]</li>
+<li>Fix JITed return from nested runloops [8a91bf8e]</li>
+</ul>
+
+<p>Spesh:</p>
+
+<ul>
+<li>Eliminate hllbool/boot-boolify-boxed-int pairs in spesh [14a8befd]</li>
+<li>show annotation for delayed temps in spesh log [10e5344c]</li>
+<li>Fix invalid pred chain caused by MVM_spesh_manipulate_split_BB_at
+[44c88da7]</li>
+<li>Fix out of bounds read of PHI facts in spesh [8a684b33]</li>
+<li>Fix uninitialized register after PEA and inlining [bb719a63]</li>
+</ul>
+
+<p>Strings:</p>
+
+<ul>
+<li>Use alloca in MVM_string_memmem_grapheme32str... [9a37bb61]</li>
+</ul>
+<p><a href="releases/MoarVM-2021.12.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2021.10</h3>
         </div>
         <div class="panel-body">
