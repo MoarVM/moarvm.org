@@ -34,6 +34,48 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2022.12</h3>
+        </div>
+        <div class="panel-body">
+<p>Core:</p>
+
+<ul>
+<li>Protect the two property code lookup hashes being set up with a mutex
+[9bc1beed]</li>
+<li>Add fallback resolver [43e60db9][a6fbcf6b][35064bf9][c89c3ec8][5d0f92c6]</li>
+<li>Add definition of AI_NUMERICSERV, fixes build on MacOS 10.6 for ppc 
+[976c1168]</li>
+<li>Add unsigned comparison ops (eq, ne, (l|g)(e|t)) [c77dc1d4]</li>
+<li>Add chown op [c69534c6][a1cbb9c4]</li>
+<li>Reset errno to error of latest call to mkdir [4089a869]</li>
+</ul>
+
+<p>Documentation:</p>
+
+<p>GC:</p>
+
+<ul>
+<li>Remove the fixed size allocator (FSA) [2a8c494e]</li>
+</ul>
+
+<p>JIT:</p>
+
+<p>Spesh:</p>
+
+<ul>
+<li>use correct format string in spesh log skip line [4575c474]</li>
+</ul>
+
+<p>Strings:</p>
+
+<ul>
+<li>Use 2-char-at-a-time version of jeaiii's itoa [fd0cadbf]</li>
+</ul>
+<p><a href="releases/MoarVM-2022.12.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2022.07</h3>
         </div>
         <div class="panel-body">
