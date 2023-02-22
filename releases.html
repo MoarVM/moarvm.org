@@ -34,6 +34,52 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2023.02</h3>
+        </div>
+        <div class="panel-body">
+<p>Core:</p>
+
+<ul>
+<li>Avoid implicit function declarations in pthread_setname_np probe [9e6d9a8f]</li>
+<li>Speedup creating sha1 digest string [8f90dc7c]</li>
+<li>Bump mimalloc to v2.0.9 [d5430563]</li>
+<li>Speedup VMArray's deserialize()... [a508c06b]</li>
+<li>Update repo checking out script to also use 'main' [c9055873]</li>
+<li>Add <code>--has-mimalloc</code> option to use system mimalloc [99479afe]</li>
+<li>Update GitHub CI pipelines to track branch renames and OS deprecations
+[d7721042][e4336c71][d1bc8ff8][87183069][165e8297][8a80d3c6][8ddf6702]</li>
+<li>Work around "const_iX NYI" after getlexstatic_o with fallback resolver
+[34bae78d]</li>
+</ul>
+
+<p>Documentation:</p>
+
+<p>GC:</p>
+
+<p>JIT:</p>
+
+<ul>
+<li>Jit nqp::rand_(i|n) [6866ff81]</li>
+</ul>
+
+<p>Spesh:</p>
+
+<ul>
+<li>Use right size for a lit_str_idx in JIT and spesh [6b456a6c]</li>
+</ul>
+
+<p>Strings:</p>
+
+<ul>
+<li>Simplify MVM_string_utf8_c8_encode_C_string [a64765e7]</li>
+<li>Simplify MVM_string_index [ada3b80b]</li>
+<li>Update to Unicode 15.0 [ebefe261]</li>
+</ul>
+<p><a href="releases/MoarVM-2023.02.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2022.12</h3>
         </div>
         <div class="panel-body">
