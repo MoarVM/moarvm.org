@@ -34,6 +34,45 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2024.09</h3>
+        </div>
+        <div class="panel-body">
+<p>Core:</p>
+
+<ul>
+<li>When -latomic is needed, don't lose the libs entry [6ed6986b]</li>
+<li>Hand-Apply fix to minilua for CVE-2014-5461 [570db261]</li>
+<li>Fix NAN/INFINITY definitions to work on Windows 11 SDK [b7750ec2]</li>
+<li>We don't have to account for "start" in size calculation ...</li>
+</ul>
+
+<p>Documentation:</p>
+
+<p>GC:</p>
+
+<ul>
+<li>A re-imagining of the MVMROOT macros [ac82e446]</li>
+</ul>
+
+<p>JIT:</p>
+
+<p>Spesh:</p>
+
+<ul>
+<li>When guarding conc or type and type is known, guard just conc/type [abab265d]</li>
+</ul>
+
+<p>Strings:</p>
+
+<ul>
+<li>latin1.c and ascii.c can return str_consts.empty for 0-length string [2a0dc7f1]</li>
+<li>Split string's "any" union field into "any" and "any_ptr" [f14712b6]</li>
+</ul>
+<p><a href="releases/MoarVM-2024.09.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2024.08</h3>
         </div>
         <div class="panel-body">
