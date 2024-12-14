@@ -34,6 +34,62 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2024.12</h3>
+        </div>
+        <div class="panel-body">
+<p>Core:</p>
+
+<ul>
+<li>Update libuv to version 1.49.2 [00ad43bb]</li>
+<li>Add missing mode initializers to socket function pointer structs [740aa3b9]</li>
+<li>all-thread-bt syscall: dump backtraces, optionally exit [33c9996a]</li>
+<li>Initialize telemeh in MVM_vm_create_instance [b45eac44]</li>
+<li>add telemetry output to queue, semaphore, and procops [3e74bea7]</li>
+<li>Allow user code to send to telemetry log [a02ec774]</li>
+<li>telemetry: output mapping CUs from files/bytes/buffer [c6e4ea8b]</li>
+<li>telemetry: output something when oops or panic [e3a1790d]</li>
+<li>telemetry: ensure at least one batch is serialized [eb383b95]</li>
+<li>Explicitly cast to unsigned during a sign-extending shift [b9416a2f]</li>
+<li>Only memcpy operands of extop if it is not NULL [6faec356]</li>
+<li>Fix longjmp on Windows [2891ad5b][b9461e90][275348bc]</li>
+<li>More UBSAN fixes [79edc97f][6242cbb5][c5cd090c]</li>
+<li>Fix MVM_dump_p6opaque debug helper for bigints [c3629fb7]</li>
+<li>Windows long path support revival [54a16387][dc99016a][f56e6b95][612aa25d]
+[efd9632a][db9984b0][cf3a8945][fb6e5231][704065a9][7f7757e9]</li>
+<li>Fix a compile warning on cl / Windows [e851fcff]</li>
+<li>Difference fast path when comparing 8-bit strings [aff9c1c9]</li>
+<li>add "is-debugserver-running" syscall [32a8500a]</li>
+<li>debugserver: prevent GC oops when stepping past a gc run [f6d81f99]</li>
+</ul>
+
+<p>Documentation:</p>
+
+<ul>
+<li>Update release guide to align with current practice. [fd9da869]</li>
+</ul>
+
+<p>GC:</p>
+
+<ul>
+<li>vmeventsubscribe: don't crash in gc run [939e64dc]</li>
+</ul>
+
+<p>JIT:</p>
+
+<p>Spesh:</p>
+
+<ul>
+<li>spesh: don't deeply recurse into inline attempts [a041dd10]</li>
+<li>Only memcpy spesh_slots if it is not NULL [20e180d8]</li>
+<li>Only qsort outcome_hits if it is not NULL [d03de65b]</li>
+</ul>
+
+<p>Strings:</p>
+<p><a href="releases/MoarVM-2024.12.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2024.10</h3>
         </div>
         <div class="panel-body">
