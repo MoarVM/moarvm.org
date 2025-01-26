@@ -37,30 +37,45 @@
           <h3 class="panel-title">2025.01</h3>
         </div>
         <div class="panel-body">
-<p>Core:
-   * [caf97bf0] Fix MVM_setjmp on 32bit Windows
-   * [df1715d6] Micro-optimize P6opaque's get_attribute() (#1884)
-   * [7d15fcab] Remove temporary define for migrating Rakudo extops (#1671)
-   * [4f183bc0] Fix OS-is-windows check that doesn't work in this file
-   * [9a1aebb3] Use correct fallthrough annotation (#1885)
-   * [fa5bfd92] Port over "cache devshell dll location" from rakudo CI
-   * [1c2ea87e] Install gdb extension (#1848)</p>
+<p>Core:</p>
 
-<p>Documentation:
-   * [8102c510] beautify release_guide.md</p>
+<ul>
+<li>Fix MVM_setjmp on 32bit Windows [caf97bf0]</li>
+<li>Micro-optimize P6opaque's get_attribute() (#1884) [df1715d6]</li>
+<li>Remove temporary define for migrating Rakudo extops (#1671) [7d15fcab]</li>
+<li>Fix OS-is-windows check that doesn't work in this file [4f183bc0]</li>
+<li>Use correct fallthrough annotation (#1885) [9a1aebb3]</li>
+<li>Port over "cache devshell dll location" from rakudo CI [fa5bfd92]</li>
+<li>Install gdb extension (#1848) [1c2ea87e]</li>
+</ul>
 
-<p>JIT:
-   * [dd98cb2e] Don't try to enable the JIT unless it's possible (#1887)</p>
+<p>Documentation:</p>
 
-<p>Spesh:
-   * [52d3452e] Guard against out-of-bounds jumps in spesh arg guard program.</p>
+<ul>
+<li>beautify release_guide.md [8102c510]</li>
+</ul>
 
-<p>CI:
-   * [777294c4] Maybe the order jobs are started is alphabetical?
-   * [c1d1f60e] Fix format specifiers clang on OSX complains about
-   * [1f5bf409] GH Actions: Remove the deprecated macos-12 runner
-   * [afc8354b] Do not persist tokens in CI artifacts
-   * [6f3f53c4] Change comment style because gcc complains</p>
+<p>JIT:</p>
+
+<ul>
+<li>Don't try to enable the JIT unless it's possible (#1887) [dd98cb2e]</li>
+</ul>
+
+<p>Spesh:</p>
+
+<ul>
+<li>Guard against out-of-bounds jumps in spesh arg guard program. [52d3452e]</li>
+</ul>
+
+<p>CI:</p>
+
+<ul>
+<li>Maybe the order jobs are started is alphabetical? [777294c4]</li>
+<li>Fix format specifiers clang on OSX complains about [c1d1f60e]</li>
+<li>GH Actions: Remove the deprecated macos-12 runner [1f5bf409]</li>
+<li>Do not persist tokens in CI artifacts [afc8354b]</li>
+<li>Change comment style because gcc complains [6f3f53c4]</li>
+</ul>
 <p><a href="releases/MoarVM-2025.01.tar.gz" class="btn btn-primary" role="button">Download</a></p>
 </div>
 </div>
