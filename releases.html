@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>MoarVM - A VM for NQP and Rakudo Perl 6</title>
+    <title>MoarVM - A VM for Rakudo and NQP</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -21,7 +21,7 @@
 
       <div class="page-header" id="banner">
         <h1>MoarVM</h1>
-        <p class="lead">A VM for NQP And Rakudo Perl 6</p>
+        <p class="lead">A VM for Rakudo and NQP</p>
       </div>
       <nav class="navbar navbar-default" role="navigation">
         <ul class="nav navbar-nav">
@@ -32,6 +32,54 @@
           <li><a href="contributing.html">Contributing</a></li>
         </ul>
       </nav>
+<div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">2025.02</h3>
+        </div>
+        <div class="panel-body">
+<p>Core:</p>
+
+<ul>
+<li>Optimize passing CPointer to nativecall ever so slightly [6f19ada9]</li>
+<li>Turn off vla errors and bump libuv [05cc853e]</li>
+<li>Counteract drift in timers with repeat [8bc35a9d]</li>
+<li>Enable experimental c11 atomics on MSVC [7ff15b3e]</li>
+<li>Debugserver loaded file notifications [fc2d31f3]</li>
+<li>Convert old perl6 refs to Raku [21f32c03]</li>
+<li>Add type specialized VMArray atpos implementations [d3e812e4]</li>
+<li>gdb string pretty printer improvement [2dda0262]</li>
+</ul>
+
+<p>Documentation:</p>
+
+<ul>
+<li>Update many Perl 6 -&gt; Rakudo [2744dcc7]</li>
+</ul>
+
+<p>GC:</p>
+
+<p>JIT:</p>
+
+<p>Spesh:</p>
+
+<ul>
+<li>Make accesses to spesh arg guard atomic [a70bc220]</li>
+</ul>
+
+<p>Strings:</p>
+
+<ul>
+<li>Use rapidhash instead of siphash for string hashes [62765054]</li>
+<li>Speedup MVM_string_find_cclass by adding cases... [a0b70918][21d96b37]</li>
+<li>Maybe optimize MVM_string_latin1_decode() [16eecc4e]</li>
+<li>Some simplifications to MVM_string_utf8_decode [9a1af71f][474faf87][aa11775c]
+[c9eeb2a1]</li>
+</ul>
+
+<p>CI:</p>
+<p><a href="releases/MoarVM-2025.02.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
 <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">2025.01</h3>
