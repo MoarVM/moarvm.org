@@ -34,6 +34,30 @@
       </nav>
 <div class="panel panel-default">
         <div class="panel-heading">
+          <h3 class="panel-title">2025.03</h3>
+        </div>
+        <div class="panel-body">
+<p>Core:</p>
+
+<ul>
+<li>Safely handle filenameless CUs in throw_closure_serialization_error [3ecde0a0f]</li>
+<li>In regular vm exit, stop and join eventloop (#1924) [4ae74411e]</li>
+<li>Don't turn slurpies into huge amounts of code (#1921) [282254418]</li>
+<li>Only look for lexicals in frames that have any [c153f9f70]</li>
+<li>Save allocating a string in decodestream for empty string [3edbf6db7]</li>
+<li>MVM_platform_sleep takes no tc argument (#1918) [0416a0974]</li>
+<li>use GetSystemTimePreciseAsFileTime instead of GetSystemTimeAsFileTime [49b013ed8]</li>
+<li><p>Pre-size bstack for exact amount getting added [597a8ba82]
+GC:</p></li>
+<li><p>Avoid segfault in GC with nqp::objectid [ccfe7ebad]
+Spesh:</p></li>
+<li><p>Avoid mis-spesh of routines with multiple slurpies of the same kind [455eae34f]</p></li>
+</ul>
+<p><a href="releases/MoarVM-2025.03.tar.gz" class="btn btn-primary" role="button">Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading">
           <h3 class="panel-title">2025.02</h3>
         </div>
         <div class="panel-body">
